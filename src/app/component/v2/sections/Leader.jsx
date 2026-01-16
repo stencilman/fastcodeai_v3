@@ -7,7 +7,7 @@ import iit from "../../../../../public/leader/iit/icon2.png";
 import max from "../../../../../public/leader/max/icon2.png";
 import nyu from "../../../../../public/leader/nyu/icon2.png";
 import quote from "../../../../../public/leader/quote.svg";
-import arjun from "../../../../../public/arjun_jain/profile3.png";
+import arjun from "../../../../../public/arjun_jain.png";
 import Button from "../../Button";
 
 const Leader = () => {
