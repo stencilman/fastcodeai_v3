@@ -1,0 +1,70 @@
+.case-studies-swiper .swiper-slide {
+  height: auto;
+}
+
+.case-studies-swiper .swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Progress bar animation for top pagination */
+.progress-bar-animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #dbdbdb;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+.active-progress {
+  animation: ptcom-design__moveGrayBackground__b3pahd 3s linear forwards;
+}
+
+@keyframes ptcom-design__moveGrayBackground__b3pahd {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Custom styling for the case study cards */
+.case-study-card {
+  transition: transform 0.3s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Navigation button hover effects */
+.nav-button {
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #2D3748;
+}
+
+/* Progress animation */
+@keyframes progressAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 0.15;
+    transform: translateX(0);
+  }
+}
+
+.progress-active {
+  animation: progressAnimation 0.3s ease forwards;
+}
