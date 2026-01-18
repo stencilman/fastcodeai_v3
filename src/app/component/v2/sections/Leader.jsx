@@ -79,40 +79,7 @@ const Leader = () => {
           </div>
 
           {/* CEO Desk Card - Spans 8 columns - Order 4 (last on mobile) */}
-          <div className="lg:col-span-8 order-4 lg:order-2">
-            <div className="h-full w-full rounded-3xl bg-[#0C1C46] border border-white/10 p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
-              {/* Background Glow Effect */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
-
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                {/* Quote Icon */}
-                <div className="flex-shrink-0">
-                  <Image src={quote} alt="quote" width={170} height={170} />
-                </div>
-
-                {/* Text Content */}
-                <div
-                  className="flex-1"
-                  //   style={{
-                  //     background:
-                  //       "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
-                  //   }}
-                >
-                  <h3 className="text-2xl md:text-3xl font-medium mb-4">
-                    From the CEO&apos;s Desk
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed text-base md:text-lg font-light">
-                    True innovation isn&apos;t just about publishing papers;
-                    it&apos;s about making that math work in the messy,
-                    unpredictable real world. At FastCodeAI, we bridge the gap
-                    between deep research and deployment. We don&apos;t just
-                    predict the future of intelligence—we engineer it, one
-                    algorithm at a time.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Name and Button - Order 2 */}
           <div className="lg:col-span-4 flex flex-col items-center md:items-start gap-4 order-2 lg:order-3">

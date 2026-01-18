@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import icon1 from "../../../../../public/power/icon1.svg";
 import icon2 from "../../../../../public/power/icon2.svg";
 import icon3 from "../../../../../public/power/icon3.svg";
@@ -11,18 +12,21 @@ const Power = () => {
       title: "Co-Creation",
       description:
         "Your domain expertise + our AI. Shared equity, shared outcomes. Best for: New AI-native products, strategic innovation bets",
+      href: "/what-we-do/co-creation",
     },
     {
       icon: icon2,
       title: "Platform Deployment",
       description:
         "Proven RAG & data infra solutions. Live in weeks, not years. Best for: Immediate operational impact, proven use cases",
+      href: "/what-we-do/platform-development",
     },
     {
       icon: icon3,
       title: "Research-as-a-Service",
       description:
         "Frontier R&D capability on demand. No lab required. Best for: Exploratory research, competitive moats, hard problems",
+      href: "/what-we-do/research",
     },
   ];
 
@@ -42,9 +46,11 @@ const Power = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
-              className=" p-6 md:p-10 rounded-[18px] text-center "
+              href={card.href}
+              aria-label={`${card.title} details`}
+              className=" p-6 md:p-10 rounded-[18px] text-center block focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 hover:scale-[1.01] transition-transform"
               style={{
                 background:
                   "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
@@ -68,7 +74,7 @@ const Power = () => {
               <p className="text-[#9EB3CF] text-lg  max-w-sm mx-auto">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
