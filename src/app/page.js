@@ -1,6 +1,6 @@
 "use client";
-import Footer from "./component/sections/Footer";
-import TestimonialsSlider from "./component/sections/TestimonialsSlider";
+import Footer from "./sections/Footer";
+import TestimonialsSlider from "./sections/TestimonialsSlider";
 import { useGlobalContext } from "./context/GlobalContext";
 import { useEffect } from "react";
 

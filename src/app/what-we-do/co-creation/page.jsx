@@ -3,10 +3,10 @@ import Hero from "../../component/what-we-do/Hero";
 import HeroImage from "../../../../public/what-we-do/co-creation/hero.png";
 import Philosophy from "../../component/what-we-do/co-creation/Philosophy";
 import Advantage from "../../component/what-we-do/co-creation/Advantage";
-import OurWork from "../../component/sections/OurWork";
-import TestimonialsSlider from "../../component/sections/TestimonialsSlider";
+import OurWork from "../../sections/OurWork";
+import TestimonialsSlider from "../../sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
-import Footer from "../../component/sections/Footer";
+import Footer from "../../sections/Footer";
 
 const page = () => {
   return (

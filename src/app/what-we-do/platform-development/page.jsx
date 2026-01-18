@@ -8,11 +8,11 @@ import Wwd from "../../component/what-we-do/platform-development/Wwd";
 import Automotive from "../../component/what-we-do/platform-development/Automotive";
 import Echosystem from "../../component/what-we-do/platform-development/Echosystem";
 import Wwdt from "../../component/what-we-do/platform-development/Wwdt";
-import OurWork from "../../component/sections/OurWork";
-import TestimonialsSlider from "../../component/sections/TestimonialsSlider";
+import OurWork from "../../sections/OurWork";
+import TestimonialsSlider from "../../sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
-import Footer from "../../component/sections/Footer";
-  
+import Footer from "../../sections/Footer";
+
 const page = () => {
   return (
     <div>

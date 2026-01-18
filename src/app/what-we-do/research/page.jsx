@@ -8,6 +8,7 @@ import OurWork from "../../component/sections/OurWork";
 import TestimonialsSlider from "../../component/sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
 import Footer from "../../component/sections/Footer";
+
 const page = () => {
   return (
     <>

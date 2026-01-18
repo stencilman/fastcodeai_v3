@@ -39,7 +39,8 @@ const Power = () => {
             How We Work With You
           </h2>
           <p className="text-[#9EB3CF] text-lg max-w-2xl mx-auto leading-relaxed">
-          Three ways to accelerate your AI journey—choose the engagement model that fits your business.
+            Three ways to accelerate your AI journey—choose the engagement model
+            that fits your business.
           </p>
         </div>
 
