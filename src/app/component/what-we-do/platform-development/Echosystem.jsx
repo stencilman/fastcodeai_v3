@@ -47,9 +47,9 @@ const Echosystem = () => {
       className="relative w-full bg-[#00081F] py-20 px-4 md:px-8 text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left Side - Technology Logos with Scroll Animation */}
-          <div className="w-full lg:w-1/2 relative overflow-x-hidden">
+          <div className="w-full lg:w-1/2 relative overflow-x-hidden no-scrollbar">
             <div className="flex flex-col gap-4 md:gap-6 relative z-[1]">
               {/* Shadow overlays for edges */}
               <div className="absolute top-[-19px] lg:top-0 left-[-60px] md:left-[-60px] lg:left-[-65px] w-[80px] h-[107%] lg:h-[100%] z-20 pointer-events-none">
@@ -148,17 +148,27 @@ const Echosystem = () => {
           </div>
 
           {/* Right Side - Text Content */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center relative z-10">
-            <h2 className="text-4xl md:text-5xlfont-normal text-white font-aeonik tracking-wide  mb-6">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center relative z-10 md:px-20 text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl font-normal text-white font-aeonik tracking-wide  mb-6">
               Works With Your Entire Ecosystem
             </h2>
-            <p className="text-[#9EB3CF] text-lg md:text-xl font-bwmss01 ">
-              Don&apos;t change how you build. Our platform natively integrates with
-              the frameworks, clouds, and databases your team already loves.
+            <p className="text-[#9EB3CF] text-lg font-bwmss01 ">
+              Don&apos;t change how you build. Our platform natively integrates
+              with the frameworks, clouds, and databases your team already
+              loves.
             </p>
           </div>
         </div>
       </div>
+      <style jsx global>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 };

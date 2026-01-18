@@ -147,7 +147,7 @@ const OurWork = ({ showShadow }) => {
   };
 
   return (
-    <div className="w-full min-h-[120vh] md:min-h-[100vh] pl-[20px] md:pl-[80px] lg:pl-[108px] relative bg-[#00081F] flex flex-col justify-center py-[100px]">
+    <div className="w-full max-w-7xl mx-auto min-h-[120vh] md:min-h-[100vh] pl-[20px] md:pl-[80px] lg:pl-[30px] relative bg-[#00081F] flex flex-col justify-center py-[100px]">
       {showShadow && (
         <>
           <div className="absolute top-[-160px] left-0 w-full h-[150px] blur-[50px] translate-y-[30px] scale-90  rounded-[50%] z-[1] bg-gradient-to-br from-[#1D8283] to-[#033577] bg-gradient-156deg bg-no-repeat bg-[0% 0%] opacity-49 border-0 border-opacity-0 filter blur-[50px]"></div>

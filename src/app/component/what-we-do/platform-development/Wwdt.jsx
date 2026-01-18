@@ -48,8 +48,8 @@ const Wwdt = () => {
   return (
     <section className="relative overflow-hidden bg-[#02091F] py-20 px-4 sm:px-8">
       <ShadowBlob />
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-10 border rounded-[10px] border-[#FFFFFF57] bg-black p-6 sm:p-[44px] lg:flex-row">
-        <div className="space-y-6">
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-10 lg:gap-12 lg:flex-row lg:border lg:rounded-[10px] lg:border-[#FFFFFF57] lg:bg-black lg:p-[44px]">
+        <div className="space-y-6 ">
           <h2 className="text-white text-4xl md:text-5xl  font-aeonik tracking-wide">
             How
             <br className="hidden sm:block" /> We Work{" "}
@@ -69,13 +69,13 @@ const Wwdt = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 border rounded-[10px] border-[#FFFFFF57] bg-black p-6 sm:p-[44px] lg:flex-[1.2] lg:border-0 lg:bg-transparent lg:p-0">
           {phases.map((phase) => (
             <div key={phase.title} className="relative overflow-hidden ">
               <div className="mb-2 text-white text-2xl font-aeonik tracking-wide sm:hidden">
                 {phase.week}
               </div>
-              <div className="grid grid-cols-[170px_1fr] gap-3 sm:gap-0 sm:grid-cols-[210px_180px_1fr]">
+              <div className="grid grid-cols-[170px_1fr] sm:grid-cols-[210px_180px_1fr]">
                 <div
                   className="hidden sm:flex items-center gap-3 px-6 py-5 sm:border-r sm:border-white/5 text-white [clip-path:polygon(100%_0%,_88%_51%,_100%_100%,_0_100%,_0%_50%,_0_1%)]"
                   style={{
@@ -89,13 +89,13 @@ const Wwdt = () => {
                 </div>
 
                 <div
-                  className="flex items-center gap-3 px-6 py-5 text-white sm:border-r sm:border-white/5 [clip-path:polygon(0_0,_90%_0,_100%_50%,_90%_100%,_0_100%)] sm:[clip-path:polygon(0_50%,_15%_0,_100%_0,_87%_50%,_100%_100%,_15%_100%)]"
+                  className="flex md:items-center flex-col md:flex-row gap-3 px-6 py-5 text-white sm:border-r sm:border-white/5 [clip-path:polygon(100%_0,_79%_50%,_100%_100%,_0%_99%,_0%_50%,_0%_0)] sm:[clip-path:polygon(0_50%,_15%_0,_100%_0,_87%_50%,_100%_100%,_15%_100%)]"
                   style={{
                     background:
                       "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
                   }}
                 >
-                  <div className="sm:flex hidden  w-6 md:h-10 h-6 md:w-10 items-center justify-center rounded-md bg-white/5">
+                  <div className="flex  w-6 md:h-10 h-6 md:w-10 items-center justify-center rounded-md bg-white/5">
                     <Image
                       src={phase.icon}
                       alt={phase.title}
@@ -109,7 +109,7 @@ const Wwdt = () => {
                 </div>
 
                 <div
-                  className="px-6 py-5 [clip-path:polygon(0_0,_100%_0,_100%_100%,_0_100%,_8%_50%)] sm:[clip-path:polygon(100%_0%,_100%_51%,_100%_100%,_4%_100%,_0%_50%,_4%_0%)]"
+                  className="px-6 py-5 [clip-path:polygon(100%_0,_100%_51%,_100%_100%,_18%_99%,_0%_50%,_18%_0)] sm:[clip-path:polygon(100%_0%,_100%_51%,_100%_100%,_4%_100%,_0%_50%,_4%_0%)]"
                   style={{
                     background:
                       "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",

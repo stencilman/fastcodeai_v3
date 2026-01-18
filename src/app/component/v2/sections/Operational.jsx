@@ -6,7 +6,7 @@ import Button from "../../Button";
 
 const Operational = ({title, description, buttonText, buttonLink}) => {
   return (
-    <section className="relative w-full py-12 lg:py-24 px-4 md:px-12 lg:px-20 bg-[#00081F] font-aeonik">
+    <section className="relative w-full max-w-7xl mx-auto py-12 lg:py-24 px-4 md:px-12 lg:px-20 bg-[#00081F] font-aeonik">
       <div className=" mx-auto ">
         {/* Main Card Wrapper */}
         <div className="relative w-full rounded-[32px] overflow-hidden border border-white/10 shadow-2xl">
