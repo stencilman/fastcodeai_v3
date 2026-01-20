@@ -7,7 +7,7 @@ import Leader from "../../component/what-we-do/research/Leader";
 import OurWork from "../../sections/OurWork";
 import TestimonialsSlider from "../../sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
-import Footer from "../../component/sections/Footer";
+import Footer from "../../sections/Footer";
 
 const page = () => {
   return (
