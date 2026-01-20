@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../sections/team/Hero";
 import HeroImage from "../../../public/team-members/hero.png";
 import NumbersAndDetail from "../sections/team/NumbersAndDetail";
-import TeamMembers from "../sections/Team/TeamMembers";
+import TeamMembers from "../sections/team/TeamMembers"
 import TestimonialsSlider from "../sections/TestimonialsSlider";
 import Operational from "../component/v2/sections/Operational";
 import Footer from "../sections/Footer";

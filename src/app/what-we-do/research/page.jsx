@@ -4,8 +4,8 @@ import HeroImage from "../../../../public/what-we-do/research/hero.png";
 import Productions from "../../component/what-we-do/research/Productions";
 import Capabilities from "../../component/what-we-do/research/Capabilities";
 import Leader from "../../component/what-we-do/research/Leader";
-import OurWork from "../../component/sections/OurWork";
-import TestimonialsSlider from "../../component/sections/TestimonialsSlider";
+import OurWork from "../../sections/OurWork";
+import TestimonialsSlider from "../../sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
 import Footer from "../../component/sections/Footer";
 
