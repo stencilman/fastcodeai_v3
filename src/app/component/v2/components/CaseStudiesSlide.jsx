@@ -154,7 +154,7 @@ const CaseStudiesSlide = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="flex flex-row items-center justify-between mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-5xl font-medium text-white ">
+          <h2 className="text-3xl md:text-5xl text-white ">
             Our Works
           </h2>
 
