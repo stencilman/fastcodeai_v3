@@ -1,23 +1,23 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Shadow from "../Shadow";
+import Shadow from "../component/Shadow";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-import aramco from "../../../../public/v2/our-clients/aramco.svg";
-import bosch from "../../../../public/v2/our-clients/bosch.svg";
-import dubaiExpo from "../../../../public/v2/our-clients/dubai-expo.svg";
-import embitel from "../../../../public/v2/our-clients/embitel.svg";
-import iis from "../../../../public/v2/our-clients/iis.svg";
-import jetapult from "../../../../public/v2/our-clients/jetapult.svg";
-import liftlab from "../../../../public/v2/our-clients/liftlab.svg";
-import mercedes from "../../../../public/v2/our-clients/mercedes.svg";
-import miai from "../../../../public/v2/our-clients/miai.svg";
-import petrofac from "../../../../public/v2/our-clients/petrofac.svg";
-import seikor from "../../../../public/v2/our-clients/seikor.svg";
-import textiles from "../../../../public/v2/our-clients/textiles.svg";
-import zen from "../../../../public/v2/our-clients/zen.svg";
+import aramco from "../../../public/v2/our-clients/aramco.svg";
+import bosch from "../../../public/v2/our-clients/bosch.svg";
+import dubaiExpo from "../../../public/v2/our-clients/dubai-expo.svg";
+import embitel from "../../../public/v2/our-clients/embitel.svg";
+import iis from "../../../public/v2/our-clients/iis.svg";
+import jetapult from "../../../public/v2/our-clients/jetapult.svg";
+import liftlab from "../../../public/v2/our-clients/liftlab.svg";
+import mercedes from "../../../public/v2/our-clients/mercedes.svg";
+import miai from "../../../public/v2/our-clients/miai.svg";
+import petrofac from "../../../public/v2/our-clients/petrofac.svg";
+import seikor from "../../../public/v2/our-clients/seikor.svg";
+import textiles from "../../../public/v2/our-clients/textiles.svg";
+import zen from "../../../public/v2/our-clients/zen.svg";
 
 // import mbux from "../../../../public//our-clients/mercedes.png";
 // import Bosch from "../../../../public//our-clients/Bosch.png";

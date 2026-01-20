@@ -124,12 +124,12 @@ const teamSections = [
   },
 ];
 
-const TeamMemberCard = ({ member, isActive, onClick }) => {
+const TeamMemberCard = ({ member, isActive, onClick, className = "" }) => {
   return (
     <div
       className={`relative w-[280px] h-[280px] transition-all duration-500 cursor-pointer ${
         isActive ? "z-10 scale-105" : "z-0 grayscale-[30%] opacity-80"
-      }`}
+      } ${className}`}
       onClick={onClick}
     >
       <div className="w-full h-full relative group">
@@ -161,7 +161,7 @@ const TeamMemberCard = ({ member, isActive, onClick }) => {
         >
           <FaLinkedinIn size={14} />
         </a>
-        <div className="absolute bottom-[10px] right-[10px] w-8 h-8 border border-white rounded-full flex items-center justify-center text-white z-30">
+        <div className="absolute bottom-[5px] md:bottom-[10px] right-[5px] md:right-[10px] w-4 md:w-8 h-4 md:h-8 border border-white rounded-full flex items-center justify-center text-white z-30">
           <GoArrowUpRight size={14} />
         </div>
       </div>
@@ -187,22 +187,43 @@ const TeamSection = ({ title, members }) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        {/* Left Side - Images Grid */}
-        <div className="relative w-full flex justify-center lg:block">
-          {/* Mobile View: Single Column (Sequential Order) */}
-          <div className="flex flex-col gap-6 md:hidden">
-            {members.map((member) => (
-              <TeamMemberCard
-                key={member.id}
-                member={member}
-                isActive={activeId === member.id}
-                onClick={() => setActiveId(member.id)}
-              />
-            ))}
-          </div>
+        {/* Mobile View: Interleaved Image and Details */}
+        <div className="flex flex-col gap-8 md:hidden px-4">
+          {members.map((member) => (
+            <div key={member.id} className="flex flex-row gap-4 items-start">
+              {/* Scaled down image for mobile */}
+              <div className="shrink-0">
+                <TeamMemberCard
+                  member={member}
+                  isActive={true} // Always active/colored on mobile
+                  onClick={() => {}}
+                  className="!w-[140px] !h-[140px]"
+                />
+              </div>
 
+              {/* Details next to image */}
+              <div className="flex flex-col pt-2">
+                <h3 className="text-xl font-aeonik tracking-wide mb-1 leading-tight">
+                  {member.name}
+                </h3>
+                <div className="flex flex-col gap-2 mb-2">
+                  <div className="w-6 h-1.5 rounded-full bg-[#77A0FF]"></div>
+                  <span className="text-sm font-bwmss01 text-[#F3F3F3] leading-tight">
+                    {member.role}
+                  </span>
+                </div>
+                <p className="text-gray-400 font-light leading-relaxed text-xs">
+                  {member.bio}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Left Side - Images Grid (Desktop/Tablet) */}
+        <div className="relative w-full hidden md:flex justify-center lg:block">
           {/* Desktop/Tablet View: Staggered Two Columns (Masonry) */}
-          <div className="hidden md:flex flex-row justify-center lg:justify-start gap-6 max-w-[600px] mx-auto lg:mx-0">
+          <div className="flex flex-row justify-center lg:justify-start gap-6 max-w-[600px] mx-auto lg:mx-0">
             {/* First Column */}
             <div className="flex flex-col gap-6">
               {leftColumnMembers.map((member) => (
@@ -229,8 +250,8 @@ const TeamSection = ({ title, members }) => {
           </div>
         </div>
 
-        {/* Right Side - Details List */}
-        <div className="flex flex-col gap-8 pl-0 lg:pl-10 mt-8 lg:mt-0">
+        {/* Right Side - Details List (Desktop/Tablet) */}
+        <div className="hidden md:flex flex-col gap-8 pl-0 lg:pl-10 mt-8 lg:mt-0">
           {members.map((member) => (
             <div
               key={member.id}
@@ -312,8 +333,6 @@ const TeamMembers = () => {
             members={section.members}
           />
         ))}
-
-       
       </div>
     </section>
   );

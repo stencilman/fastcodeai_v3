@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import icon1 from "../../../../public/whychooseus/new/icon1.svg";
-import icon2 from "../../../../public/whychooseus/new/icon2.svg";
-import icon3 from "../../../../public/whychooseus/new/icon3.svg";
-import icon4 from "../../../../public/whychooseus/new/icon4.svg"; // Assuming this is the new icon
+import icon1 from "../../../public/whychooseus/new/icon1.svg";
+import icon2 from "../../../public/whychooseus/new/icon2.svg";
+import icon3 from "../../../public/whychooseus/new/icon3.svg";
+import icon4 from "../../../public/whychooseus/new/icon4.svg"; // Assuming this is the new icon
 import { motion } from "framer-motion";
-import RevealY from "../RevealY";
-import Button from "../Button";
+import RevealY from "../component/RevealY";
+import Button from "../component/Button";
 
 const WhyChooseUs = () => {
   return (
