@@ -9,12 +9,15 @@ import Link from "next/link";
 import Button from "./Button";
 import { Handshake } from "lucide-react";
 import FormModal from "../contact/sections/FormModal";
+import ShadowBlob from "./common/ShadowBlob";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   // const [isActive, setIsActive] = useState(false);
   const { isActive, setIsActive } = useGlobalContext();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+  const pathname = usePathname();
 
   // console.log("isActive", isActive);
   const handleClick = () => {
@@ -38,21 +41,25 @@ const Navbar = () => {
   const scale = scrollPosition < 450 ? 1 : 0;
   const backdropBlur = ` blur(${Math.min(scrollPosition / 4, 20)}px)`;
   const backdropOpacity = Math.min(scrollPosition / 450, 1);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Team", href: "/team" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
   return (
     <>
       <div
         className="bg-transparent w-full fixed z-20"
-        // style={{ background: 'linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)' }}
-        // style={{
-        //   background: `linear-gradient(to top, rgba(0, 0, 0, ${backdropOpacity}) 0%, rgba(0, 0, 0, 0) 100%)`
-        // }}
         style={{
           background: `linear-gradient(to top, rgba(0, 8, 31, ${backdropOpacity}) 0%, rgb(0 0 0 / 57%) 100%)`,
           backdropFilter: `${backdropBlur}`,
           WebkitBackdropFilter: `${backdropBlur}`,
         }}
       >
-        <div className="mx-[20px] md:mx-[50px] lg:mx-[100px]  pt-[30px]  pb-[20px] flex items-center justify-between ">
+        <div className="mx-[20px] md:mx-[50px] lg:mx-[100px] pt-[30px] pb-[20px] flex items-center justify-between ">
           <div className="relative z-[1]">
             <Link href="/">
               {" "}
@@ -66,20 +73,49 @@ const Navbar = () => {
               />
             </Link>
           </div>
+
+          {/* Center Navigation Links - Desktop Only */}
+          <div className="hidden lg:flex items-center gap-8 relative z-[1]">
+            {navLinks.map((link) => {
+              const isActiveLink = pathname === link.href;
+              return (
+                <div key={link.name} className="relative">
+                  {isActiveLink && (
+                    <ShadowBlob
+                      positionClass="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      widthClass="w-[60px]"
+                      heightClass="h-[30px]"
+                      blurClass="blur-[20px]"
+                      opacityClass="opacity-50"
+                      colorClass="bg-[#012DAC]"
+                      className="z-[-1]"
+                    />
+                  )}
+                  <Link
+                    href={link.href}
+                    className={`text-xl transition-all duration-300 relative z-[1] ${
+                      isActiveLink
+                        ? "bg-[#050A18] text-[#F3F3F3] px-4 py-1 rounded-md border border-[#1E293B]"
+                        : "text-[#94A3B8] hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
           <div className="flex items-center gap-[14px] sm:gap-[14px]">
             <div
-              // style={{
-              //   transform: `scale(${scale})`,
-              //   transition: "transform 0.5s",
-              // }}
-              className="relative z-[1] hidden  md:block  "
+              className="relative z-[1] hidden md:block"
             >
               <Button
                 onClick={() => setIsFormModalOpen(true)}
                 name="Get Started"
               />
             </div>
-            <div className="w-fit  md:hidden">
+            <div className="w-fit md:hidden">
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={`relative rounded-[4px] z-[1] flex items-center gap-[7px] p-[9px] text-lg justify-between main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2]  text-white`}
@@ -87,29 +123,10 @@ const Navbar = () => {
                 <Handshake className="w-6 h-6" />
               </button>
             </div>
-            {/* <Link href="/contact">
-          <button
-            className="rounded-[28px] relative z-[1] hidden  sm:flex items-center gap-[7px] bg-gradient-to-br from-[#2DC1C3] to-[#0268F2] text-white p-[15px] text-lg "
-            style={{
-              transform: `scale(${scale})`,
-              transition: "transform 0.5s",
-            }}
-          >
-            <div>Get Started</div>
-            <div>
-              <Image
-                className="inline "
-                src="/arrowRight.svg"
-                alt="arrow"
-                width="16"
-                height="13"
-              />
-            </div>
-          </button>
-          </Link> */}
+            
             <button
               onClick={handleClick}
-              className={`w-[40px] sm:w-[47px] h-[40px] sm:h-[47px] relative z-[3]  ${
+              className={`w-[40px] sm:w-[47px] h-[40px] sm:h-[47px] relative z-[3] lg:hidden ${
                 isActive ? "bg-[#0E1E49]" : "bg-[#F3F3F3]"
               }  rounded-[4px] flex flex-col justify-center items-center`}
             >

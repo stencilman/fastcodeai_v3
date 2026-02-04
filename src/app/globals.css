@@ -4,7 +4,7 @@
 
 .font-aeonik {
   @apply tracking-wide;
-  color: var(--theme-fg);
+  /* color: var(--theme-fg); */
 }
 
 .card-surface {
