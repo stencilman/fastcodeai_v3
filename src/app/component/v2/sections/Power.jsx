@@ -8,21 +8,21 @@ import Image from "next/image";
 const Power = () => {
   const cards = [
     {
-      icon: icon1,
+      icon: icon2,
       title: "Co-Creation",
       description:
         "Your domain expertise + our AI. Shared equity, shared outcomes. Best for: New AI-native products, strategic innovation bets",
       href: "/what-we-do/co-creation",
     },
     {
-      icon: icon2,
+      icon: icon3,
       title: "Platform Deployment",
       description:
         "Proven RAG & data infra solutions. Live in weeks, not years. Best for: Immediate operational impact, proven use cases",
       href: "/what-we-do/platform-development",
     },
     {
-      icon: icon3,
+      icon: icon1,
       title: "Research-as-a-Service",
       description:
         "Frontier R&D capability on demand. No lab required. Best for: Exploratory research, competitive moats, hard problems",
@@ -51,7 +51,7 @@ const Power = () => {
               key={index}
               href={card.href}
               aria-label={`${card.title} details`}
-              className=" p-6 md:p-10 rounded-[18px] text-center block focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 hover:scale-[1.01] transition-transform"
+              className=" p-6 md:p-10 rounded-[18px] text-center block focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 hover:scale-[1.01] border border-[#1D2B4F]  border-color duration-500 hover:border-[#ffffff92] hover:border cursor-pointer transition"
               style={{
                 background:
                   "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
@@ -67,7 +67,7 @@ const Power = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-normal text-white mb-6">
+              <h3 className="text-2xl md:text-3xl font-normal text-white mb-6 font-aeonik ">
                 {card.title}
               </h3>
 

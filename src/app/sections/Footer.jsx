@@ -57,7 +57,16 @@ const Footer = ({ showExtraSpace }) => {
           }}
         >
           <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[160px] lg:pr-[73px] justify-between flex-col md:flex-row">
-            <div className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] bg-gradient-to-br from-[#000E32] to-[#000929] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[100px] md:mb-0">
+            <div
+              className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[100px] md:mb-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom right, #000E32, #000929) padding-box, linear-gradient(108deg, #000E32, #000E32, #6586DC, #000E32) border-box",
+                borderWidth: "1px 1px 0px 0px",
+                borderStyle: "solid",
+                borderColor: "transparent",
+              }}
+            >
               {/* <Image
                 placeholder="blur"
                 src={footerLogo}
@@ -117,13 +126,13 @@ const Footer = ({ showExtraSpace }) => {
                   aria-label="YouTube"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+                  >
                   <div className="w-[56px] h-[56px] rounded-[4px] bg-gradient-to-b from-[#0B1B3F] to-[#081533] border border-[#243A6A] flex items-center justify-center text-white hover:scale-95 active:scale-90 transition-all duration-200 ease-out">
                     <FaYoutube size={22} />
                   </div>
                 </Link>
+                  </div>
               </div>
-            </div>
             <div className="w-[100%] md:w-[58%] ml-0 md:ml-[80px] lg:ml-[120px] mr-0 md:mr-[10px] flex flex-col justify-around">
               {/* Nav */}
               <div className="w-full border-b border-[#AFC0FF] pb-[22px] mt-[20px] md:mt-[52px]">
@@ -135,34 +144,49 @@ const Footer = ({ showExtraSpace }) => {
                       </li>
                     </Link>
                   </MagneticEffect>
+                   <MagneticEffect>
+                    <Link href="/portfolio" className="flink">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                        Portfolio
+                      </li>
+                    </Link>
+                  </MagneticEffect>
                   <MagneticEffect>
+                    <Link href="/team" className="flink">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                        Team
+                      </li>
+                    </Link>
+                  </MagneticEffect>
+                  
+                  {/* <MagneticEffect>
                     <Link href="/about" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
                         About
                       </li>
                     </Link>
-                  </MagneticEffect>
-                  <MagneticEffect>
+                  </MagneticEffect> */}
+                  {/* <MagneticEffect>
                     <Link href="/expertise" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
                         Expertise
                       </li>
                     </Link>
-                  </MagneticEffect>
-                  <MagneticEffect>
+                  </MagneticEffect> */}
+                  {/* <MagneticEffect>
                     <Link href="/career" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
                         Career
                       </li>
                     </Link>
-                  </MagneticEffect>
-                  <MagneticEffect>
+                  </MagneticEffect> */}
+                  {/* <MagneticEffect>
                     <Link href="/blogs" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
                         Blog
                       </li>
                     </Link>
-                  </MagneticEffect>
+                  </MagneticEffect> */}
                   <MagneticEffect>
                     <Link href="/contact" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
@@ -209,7 +233,7 @@ const Footer = ({ showExtraSpace }) => {
               <div className="w-full flex-wrap md:flex-nowrap gap-[20px] md:gap-[0] border-t border-[#AFC0FF] pt-[22px] flex flex-col-reverse md:flex-row justify-between items-center md:items-start pb-10 md:pb-0">
                 <div>
                   <p className="text-[#9EB3CF] font-bwmss01 text-[12px] text-center md:text-left">
-                    © Copyright Fast Code AI 2024. All Rights Reserved
+                    © Copyright Fast Code AI 2026. All Rights Reserved
                   </p>
                 </div>
                 <div className="flex gap-[27px] mb-[10px] md:mb-0 justify-center w-full md:w-auto">

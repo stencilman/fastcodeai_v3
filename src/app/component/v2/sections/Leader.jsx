@@ -56,7 +56,7 @@ const Leader = () => {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-center md:items-center mb-12 gap-6 lg:gap-12 xl:gap-32">
           <h2 className="text-4xl md:text-[50px] font-normal whitespace-nowrap  tracking-wide">
-            The &quot;Visionary Leader&quot;
+            Meet the Founder 
           </h2>
           <p className="text-[#9EB3CF] text-center lg:text-left text-lg font-light leading-relaxed">
             From the labs of NYU to the engineering floors of Apple, Dr. Arjun

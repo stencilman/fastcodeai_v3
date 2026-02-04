@@ -86,6 +86,8 @@ const TestimonialsSlider = () => {
     }
   };
 
+  const SLIDER_DELAY = 15000;
+
   return (
     <section className="bg-[#00081F] py-20 overflow-hidden relative">
       <div className="container mx-auto px-4">
@@ -127,7 +129,7 @@ const TestimonialsSlider = () => {
                     className="h-full bg-white transition-all ease-linear"
                     style={{
                       width: "100%",
-                      animation: "progress 5s linear",
+                      animation: `progress ${SLIDER_DELAY}ms linear`,
                     }}
                   />
                   <style jsx>{`
@@ -161,7 +163,7 @@ const TestimonialsSlider = () => {
                 swiperRef.current = { swiper };
               }}
               autoplay={{
-                delay: 15000,
+                delay: SLIDER_DELAY,
                 disableOnInteraction: false,
               }}
               speed={500}

@@ -58,7 +58,7 @@ const SlideMorphingDialog = ({
     >
       <MorphingDialogTrigger
         className={cn(
-          "group inline-flex w-auto items-center gap-3 rounded-[10px] border border-white/30 bg-[#1A2758]/90 px-6 py-3 text-white transition hover:border-white/60 hover:bg-[#1A2758]",
+          "group relative overflow-hidden inline-flex w-auto items-center gap-3 rounded-[10px] border border-white/30 bg-[#1A2758]/90 px-6 py-3 text-white transition hover:border-white/60 hover:bg-[#1A2758]",
           showNumber &&
             "bg-black hover:bg-black/90 border-transparent pr-4 pl-4",
           triggerClassName
@@ -67,7 +67,7 @@ const SlideMorphingDialog = ({
         <MorphingDialogTitle className="text-sm font-medium tracking-wide text-white flex items-center gap-3">
           {showNumber && (
             <div className="flex items-center gap-3 mr-2">
-              <span className="text-2xl font-light text-[#424242]">
+              <span className="text-2xl font-light text-[#817e7e]">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <span className="w-1 h-1 rounded-full bg-white/60"></span>
@@ -94,6 +94,10 @@ const SlideMorphingDialog = ({
           </svg> */}
           <Info className="w-5 h-5" />
         </span>
+        <div
+          className="absolute bottom-0 left-0 h-[3px] w-full bg-[#888686] origin-left"
+          style={{ transform: "scaleX(var(--progress))" }}
+        />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
         <MorphingDialogContent className="w-[90vw] max-w-[580px] border border-white/15 bg-[#030b17]/95 p-6 text-white shadow-2xl backdrop-blur-md rounded-md relative md:top-[-110px]">

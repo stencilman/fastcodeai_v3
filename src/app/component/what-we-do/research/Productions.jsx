@@ -37,6 +37,8 @@ const Productions = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const mainSwiperRef = useRef(null);
   const progressRefs = useRef([]);
+  const tabsRefs = useRef([]);
+  const tabsContainerRef = useRef(null);
 
   useEffect(() => {
     progressRefs.current = progressRefs.current.slice(0, tabs.length);
@@ -69,6 +71,28 @@ const Productions = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const activeTab = tabsRefs.current[activeIndex];
+    const container = tabsContainerRef.current;
+
+    if (activeTab && container) {
+      const tabRect = activeTab.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const currentScroll = container.scrollLeft;
+      const relativeTabLeft = tabRect.left - containerRect.left;
+      const scrollLeft =
+        currentScroll +
+        relativeTabLeft -
+        container.offsetWidth / 2 +
+        activeTab.offsetWidth / 2;
+
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  }, [activeIndex]);
+
   return (
     <section className="bg-[#00081F] py-16 md:py-24 relative">
       <ShadowBlob />
@@ -81,31 +105,44 @@ const Productions = () => {
           </h2>
           <p className="text-[#9EB3CF] text-base md:text-lg leading-relaxed max-w-[520px] font-bwmss01">
             Your internal team is consumed by bug fixes, maintenance, and
-            shipping features. They don’t have the bandwidth to read the latest
+            shipping features. They don&apos;t have the bandwidth to read the latest
             arXiv papers or experiment with novel architectures.
           </p>
         </div>
 
-        <div className="flex gap-4 mb-8 overflow-x-auto no-scrollbar pb-2">
+        <div
+          ref={tabsContainerRef}
+          className="flex w-full gap-4 mb-8 overflow-x-auto no-scrollbar pb-2"
+        >
           {tabs.map((tab, index) => (
             <div
+              ref={(el) => (tabsRefs.current[index] = el)}
               key={tab.id}
-              className={`shrink-0 cursor-pointer relative rounded-lg px-6 py-3 transition-all duration-300 border ${
+              className={`flex-1 min-w-[200px] cursor-pointer relative rounded-lg px-5 py-3 md:py-5 text-center transition-all duration-300 border ${
                 index === activeIndex
-                  ? "bg-[#0A1329] border-[#1E293B]"
+                  ? "bg-[#000000] border-[#1E293B]"
                   : "bg-transparent border-[#1E293B] hover:border-white/30"
               }`}
               onClick={() => mainSwiperRef.current?.swiper.slideToLoop(index)}
             >
               {index === activeIndex && (
-                <span
-                  ref={(el) => (progressRefs.current[index] = el)}
-                  className="absolute bottom-0 left-0 h-[2px] bg-[#575757] transition-all duration-100 ease-linear"
-                  style={{ width: "0%" }}
-                />
+                <>
+                  <span
+                    ref={(el) => (progressRefs.current[index] = el)}
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#8c8989] transition-all duration-100 ease-linear"
+                    style={{ width: "0%" }}
+                  />
+                  <ShadowBlob
+                    positionClass="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    widthClass="w-[110%]"
+                    heightClass="h-[90px]"
+                    opacityClass="opacity-25"
+                    blurClass="blur-[20px]"
+                  />
+                </>
               )}
               <div
-                className={`text-sm md:text-base font-medium whitespace-nowrap ${
+                className={`relative z-10 text-sm md:text-base font-aeonik whitespace-nowrap ${
                   index === activeIndex ? "text-white" : "text-gray-400"
                 }`}
               >

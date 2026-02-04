@@ -10,16 +10,19 @@ import "./CaseStudiesSlide.css";
 import Link from "next/link";
 import shadow from "../../../../../public/shadow/flat.svg";
 import Button from "../../Button";
+import ShadowBlob from "../../common/ShadowBlob";
 
 const CaseStudiesSlide = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const mainSwiperRef = useRef(null);
   const progressRefs = useRef([]);
+  const tabsContainerRef = useRef(null);
+  const tabsRefs = useRef([]);
 
   const caseStudies = [
     {
       id: 1,
-      title: "Data Platform",
+      title: "Data Intelligence Platform for Automotive",
       description:
         "Our Data Intelligence Platform transforms petabytes of raw enterprise data into actionable AI-ready insights.",
       details:
@@ -32,20 +35,20 @@ const CaseStudiesSlide = () => {
         label: "Connectors for instant source onboarding.",
       },
     },
+    // {
+    //   id: 2,
+    //   title: "Arjun Jain",
+    //   description:
+    //     "Dr. Arjun Jain is the heart and soul of Fast Code AI, turning impossible AI problems into shipped solutions.",
+    //   details:
+    //     "With over 15 years of experience in AI and Machine Learning, Dr. Jain has led teams to deliver breakthrough solutions in computer vision, NLP, and predictive analytics. His leadership ensures that every project at Fast Code AI is built on a foundation of scientific rigor and engineering excellence.",
+    //   image: "/v2/case-studies/case-2.jpg",
+    //   link: "https://www.linkedin.com/in/arjunjain/",
+    //   ctaText: "Connect with him",
+    // },
     {
       id: 2,
-      title: "Arjun Jain",
-      description:
-        "Dr. Arjun Jain is the heart and soul of Fast Code AI, turning impossible AI problems into shipped solutions.",
-      details:
-        "With over 15 years of experience in AI and Machine Learning, Dr. Jain has led teams to deliver breakthrough solutions in computer vision, NLP, and predictive analytics. His leadership ensures that every project at Fast Code AI is built on a foundation of scientific rigor and engineering excellence.",
-      image: "/v2/case-studies/case-2.jpg",
-      link: "https://www.linkedin.com/in/arjunjain/",
-      ctaText: "Connect with him",
-    },
-    {
-      id: 3,
-      title: "ProcessFlow AI",
+      title: "AI Powered Automation & Analytics of Engineering Drawings",
       description:
         "Advanced computer vision digitizes engineering drawings for critical safety analysis in oil and gas.",
       details:
@@ -55,8 +58,8 @@ const CaseStudiesSlide = () => {
       ctaText: "View case study",
     },
     {
-      id: 4,
-      title: "MiAI Law",
+      id: 3,
+      title: "AI Legal Helper",
       description:
         "Engineered hallucination-free RAG with verifiable legal reasoning, achieving 60x faster analysis and 90% cost reduction.",
       details:
@@ -66,8 +69,8 @@ const CaseStudiesSlide = () => {
       ctaText: "View case study",
     },
     {
-      id: 5,
-      title: "Seikor",
+      id: 4,
+      title: "AI Job Management Platform",
       description:
         "Seikor's AI streamlines hiring workflows from job posting to candidate management, making recruitment faster for everyone.",
       details:
@@ -77,7 +80,7 @@ const CaseStudiesSlide = () => {
       ctaText: "View the product",
     },
     {
-      id: 6,
+      id: 5,
       title: "Career",
       description:
         "We've cracked AI challenges for Mercedes, Bosch, and Aramco, but that's just the warm-up. We still have a lot to build.",
@@ -88,8 +91,8 @@ const CaseStudiesSlide = () => {
       ctaText: "Join us",
     },
     {
-      id: 7,
-      title: "Spiral Health",
+      id: 6,
+      title: "AI Based Posture Analysis",
       description:
         "AI-powered posture analysis delivers personalized physical therapy exercises in real-time through smartphones.",
       details:
@@ -99,8 +102,8 @@ const CaseStudiesSlide = () => {
       ctaText: "See Spiral in action",
     },
     {
-      id: 8,
-      title: "Drip Labs",
+      id: 7,
+      title: "E-commerce Automation",
       description:
         "AI-powered photoshoots and Virtual Try-ons, delivering on-brand creatives at half the cost of traditional shoots. ",
       details:
@@ -114,6 +117,7 @@ const CaseStudiesSlide = () => {
   useEffect(() => {
     // Initialize progress refs array
     progressRefs.current = progressRefs.current.slice(0, caseStudies.length);
+    tabsRefs.current = tabsRefs.current.slice(0, caseStudies.length);
 
     const updateProgress = (swiper) => {
       const currentIndex = swiper.realIndex;
@@ -149,6 +153,28 @@ const CaseStudiesSlide = () => {
     }
   }, [caseStudies.length]);
 
+  useEffect(() => {
+    const activeTab = tabsRefs.current[activeIndex];
+    const container = tabsContainerRef.current;
+
+    if (activeTab && container) {
+      const tabRect = activeTab.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const currentScroll = container.scrollLeft;
+      const relativeTabLeft = tabRect.left - containerRect.left;
+      const scrollLeft =
+        currentScroll +
+        relativeTabLeft -
+        container.offsetWidth / 2 +
+        activeTab.offsetWidth / 2;
+
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  }, [activeIndex]);
+
   return (
     <div className="relative bg-[#00081F] py-16">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,29 +203,42 @@ const CaseStudiesSlide = () => {
         </div>
 
         {/* Tabs Navigation */}
-        <div className="flex gap-4 mb-8 overflow-x-auto no-scrollbar pb-2">
+        <div
+          ref={tabsContainerRef}
+          className="flex gap-4 mb-8 overflow-x-auto no-scrollbar pb-2"
+        >
           {caseStudies.map((study, index) => (
             <div
+              ref={(el) => (tabsRefs.current[index] = el)}
               key={study.id}
               className={`shrink-0 cursor-pointer relative rounded-lg px-6 py-3 transition-all duration-300 border ${
                 index === activeIndex
-                  ? "bg-[#0A1329] border-[#1E293B]"
+                  ? "bg-[#000000] border-[#1E293B]"
                   : "bg-transparent border-[#1E293B] hover:border-white/30"
               }`}
               onClick={() => mainSwiperRef.current?.swiper.slideToLoop(index)}
             >
               {/* Progress bar for active tab */}
               {index === activeIndex && (
-                <span
-                  ref={(el) => (progressRefs.current[index] = el)}
-                  // className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#2DC1C3] to-[#0268F2] transition-all duration-100 ease-linear"
-                  className="absolute bottom-0 left-0 h-[2px] bg-[#575757] transition-all duration-100 ease-linear"
-                  style={{ width: "0%" }}
-                ></span>
+                <>
+                  <span
+                    ref={(el) => (progressRefs.current[index] = el)}
+                    // className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#2DC1C3] to-[#0268F2] transition-all duration-100 ease-linear"
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#8c8989] transition-all duration-100 ease-linear"
+                    style={{ width: "0%" }}
+                  ></span>
+                  <ShadowBlob
+                    positionClass="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    widthClass="w-[110%]"
+                    heightClass="h-[90px]"
+                    opacityClass="opacity-25"
+                    blurClass="blur-[20px]"
+                  />
+                </>
               )}
 
               <div
-                className={`text-sm md:text-base font-medium whitespace-nowrap ${
+                className={`relative z-10 text-sm md:text-base font-medium whitespace-nowrap ${
                   index === activeIndex ? "text-white" : "text-gray-400"
                 }`}
               >

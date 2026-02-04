@@ -10,6 +10,16 @@ import numpyLogo from "../../../../../public/echosystem/numpy-logo.svg";
 import mysqlLogo from "../../../../../public/echosystem/mysql-logo.svg";
 import cLogo from "../../../../../public/echosystem/c-logo.svg";
 import swiftLogo from "../../../../../public/echosystem/swift_logo.svg";
+import lockupLogo from "../../../../../public/echosystem/lockup.svg";
+import pandasLogo from "../../../../../public/echosystem/pandas-logo.svg";
+import fastapiLogo from "../../../../../public/echosystem/fastapi-logo.svg";
+import awsLogo from "../../../../../public/echosystem/aws-logo.svg";
+import dockerLogo from "../../../../../public/echosystem/docker-logo.svg";
+import azureLogo from "../../../../../public/echosystem/azure-logo.svg";
+import gCloudLogo from "../../../../../public/echosystem/google-cloud-logo.svg";
+import firebaseLogo from "../../../../../public/echosystem/firebase-logo.svg";
+import mongoLogo from "../../../../../public/echosystem/mongo_logo.svg";
+
 import rightShadow from "../../../../../public/what-we-do/platform-development/right-shadow.svg";
 import leftShadow from "../../../../../public/what-we-do/platform-development/left-shadow.svg";
 
@@ -34,6 +44,15 @@ const Echosystem = () => {
     { src: mysqlLogo, alt: "MySQL" },
     { src: cLogo, alt: "C++" },
     { src: swiftLogo, alt: "Swift" },
+    { src: lockupLogo, alt: "Lockup" },
+    { src: pandasLogo, alt: "Pandas" },
+    { src: fastapiLogo, alt: "FastAPI" },
+    { src: awsLogo, alt: "AWS" },
+    { src: dockerLogo, alt: "Docker" },
+    { src: azureLogo, alt: "Azure" },
+    { src: gCloudLogo, alt: "Google Cloud" },
+    { src: firebaseLogo, alt: "Firebase" },
+    { src: mongoLogo, alt: "MongoDB" },
   ];
 
   // Repeat technologies for infinite scroll effect
