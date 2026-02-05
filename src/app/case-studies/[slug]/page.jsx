@@ -157,7 +157,7 @@ const ClientOverview = ({ description, meta }) => {
       {meta?.length > 0 && (
         <div className="grid gap-6 sm:grid-cols-2">
           {meta.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-4">
+            <div key={idx} className="flex items-center gap-4">
               <span className="flex h-10 w-10 items-center justify-center  text-[#9EB3CF]">
                 <MetaIcon label={item.label} />
               </span>
