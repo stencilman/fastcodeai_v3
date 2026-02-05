@@ -17,7 +17,7 @@ import miai from "../../../../../public/v2/our-clients/miai.svg";
 import petrofac from "../../../../../public/v2/our-clients/petrofac.svg";
 import seikor from "../../../../../public/v2/our-clients/seikor.svg";
 import textiles from "../../../../../public/v2/our-clients/textiles.svg";
-import zen from "../../../../../public/v2/our-clients/zen.svg";
+// import zen from "../../../../../public/v2/our-clients/zen.svg";
 
 // import mbux from "../../../../../public/v2/our-clients/mercedes.png";
 // import fitlab from "../../../../../public/v2/our-clients/fitlab.png";
@@ -98,9 +98,9 @@ const ClientSlide = () => {
     {
       src: textiles,
     },
-    {
-      src: zen,
-    },
+    // {
+    //   src: zen,
+    // },
     {
       src: mercedes,
     },
@@ -116,9 +116,9 @@ const ClientSlide = () => {
     {
       src: textiles,
     },
-    {
-      src: zen,
-    },
+    // {
+    //   src: zen,
+    // },
   ];
 
   return (

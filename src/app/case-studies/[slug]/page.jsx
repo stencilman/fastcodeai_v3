@@ -296,34 +296,54 @@ const CalloutBlock = ({ iconLabel, description, align = "left" }) => (
 );
 
 const VideoBlock = ({
+  src,
+  poster,
   placeholder = "Product walkthrough video coming soon",
-}) => (
-  <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#071336] shadow-[0_20px_80px_rgba(2,11,33,0.45)]">
-    <div className="relative w-full pt-[56.25%]">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[#C6D7F5]">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="11"
-              stroke="currentColor"
-              strokeOpacity="0.5"
-            />
-            <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
-          </svg>
-          <span className="text-sm md:text-base">{placeholder}</span>
+}) => {
+  if (src) {
+    return (
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#071336] shadow-[0_20px_80px_rgba(2,11,33,0.45)]">
+        <video
+          src={src}
+          poster={poster}
+          controls
+          className="h-auto w-full"
+          preload="metadata"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    );
+  }
+
+  return (
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#071336] shadow-[0_20px_80px_rgba(2,11,33,0.45)]">
+      <div className="relative w-full pt-[56.25%]">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[#C6D7F5]">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="11"
+                stroke="currentColor"
+                strokeOpacity="0.5"
+              />
+              <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
+            </svg>
+            <span className="text-sm md:text-base">{placeholder}</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ImageBlock = ({
   src,
@@ -377,7 +397,13 @@ const renderBlock = (block) => {
         />
       );
     case "video":
-      return <VideoBlock placeholder={block.placeholder} />;
+      return (
+        <VideoBlock
+          placeholder={block.placeholder}
+          src={block.src}
+          poster={block.poster}
+        />
+      );
     case "image":
       return (
         <ImageBlock

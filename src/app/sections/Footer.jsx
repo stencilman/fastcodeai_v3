@@ -11,7 +11,22 @@ import textLogo from "../../../public/footer-logo/text.svg";
 import MagneticEffect from "../component/MagneticEffect";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { SiOpenai, SiAnthropic, SiGoogle, SiPerplexity } from "react-icons/si";
+import { SiOpenai, SiClaude, SiGooglegemini, SiPerplexity } from "react-icons/si";
+
+const AI_PROMPT = `As a potential client, I want to clearly understand what I will receive by working with Fastcode AI (fastcode.ai).
+
+Explain, step by step, how a typical engagement works — from the first conversation to systems being live and used in practice.
+
+Describe what you help build, what inputs are required from my side, and what concrete outputs or capabilities I walk away with.
+Explain how AI models, agents, or automation are introduced into existing products or operations, and what problems they meaningfully remove.
+
+Highlight relevant past experience and examples of similar work Fastcode AI has done, and what outcomes were achieved.
+
+Explain how success is measured, how the solution evolves over time, and what ongoing involvement looks like after the initial delivery.
+
+Keep it simple, specific, and grounded in real work — describe the actual experience of working with Fastcode AI, not marketing language`;
+
+const encodedPrompt = encodeURIComponent(AI_PROMPT);
 
 const Footer = ({ showExtraSpace }) => {
   const [active, setActive] = useState(false);
@@ -139,47 +154,59 @@ const Footer = ({ showExtraSpace }) => {
                 <span className="text-white font-aeonik text-[14px] text-center">
                   Request an AI summary of Fast Code AI
                 </span>
-                <div className="flex gap-12 items-center">
+                <div className="flex gap-6 items-center">
                   <Link
-                    href="https://chat.openai.com/"
+                    href={`https://chatgpt.com/?q=${encodedPrompt}`}
                     target="_blank"
                     aria-label="ChatGPT"
                   >
                     <SiOpenai
                       className="text-white hover:text-[#10A37F] transition-colors"
-                      size={30}
+                      size={25}
                     />
                   </Link>
                   <Link
-                    href="https://claude.ai/"
+                    href={`https://claude.ai/new?q=${encodedPrompt}`}
                     target="_blank"
                     aria-label="Claude"
                   >
-                    <SiAnthropic
+                    <SiClaude
                       className="text-white hover:text-[#D97757] transition-colors"
-                      size={30}
+                      size={25}
                     />
                   </Link>
                   <Link
-                    href="https://gemini.google.com/"
+                    href={`https://gemini.google.com/app?text=${encodedPrompt}`}
                     target="_blank"
                     aria-label="Gemini"
                   >
-                    <SiGoogle
+                    <SiGooglegemini
                       className="text-white hover:text-[#4285F4] transition-colors"
-                      size={30}
+                      size={25}
                     />
                   </Link>
                   <Link
-                    href="https://www.perplexity.ai/"
+                    href={`https://grok.com/?q=${encodedPrompt}`}
+                    target="_blank"
+                    aria-label="Grok"
+                  >
+               
+                    <svg className="text-white hover:text-[#007AFF] transition-colors" xmlns="http://www.w3.org/2000/svg" width="30" height="30"  
+fill="currentColor" viewBox="0 0 24 24" >
+<path d="m19.25 5.08-9.52 9.67 6.64-4.96c.33-.24.79-.15.95.23.82 1.99.45 4.39-1.17 6.03-1.63 1.64-3.89 2.01-5.96 1.18l-2.26 1.06c3.24 2.24 7.18 1.69 9.64-.8 1.95-1.97 2.56-4.66 1.99-7.09-.82-3.56.2-4.98 2.29-7.89L22 2.3zM9.72 14.75h.01zM8.35 15.96c-2.33-2.25-1.92-5.72.06-7.73 1.47-1.48 3.87-2.09 5.97-1.2l2.25-1.05c-.41-.3-.93-.62-1.52-.84a7.45 7.45 0 0 0-8.13 1.65c-2.11 2.14-2.78 5.42-1.63 8.22.85 2.09-.54 3.57-1.95 5.07-.5.53-1 1.06-1.4 1.62z"/>
+</svg>
+                  </Link>
+                  <Link
+                    href={`https://www.perplexity.ai/search?q=${encodedPrompt}`}
                     target="_blank"
                     aria-label="Perplexity"
                   >
                     <SiPerplexity
                       className="text-white hover:text-[#22B3A8] transition-colors"
-                      size={30}
+                      size={25}
                     />
                   </Link>
+                 
                 </div>
               </div>
               </div>
