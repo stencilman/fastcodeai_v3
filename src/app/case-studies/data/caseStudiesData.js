@@ -43,7 +43,8 @@ export const caseStudies = [
         blocks: [
           {
             type: "video",
-            placeholder: "Overview video coming soon",
+            src: "/v2/case-studies/videos/ProcessFlow-video.mp4",
+            poster: "/v2/case-studies/case-3.jpg"
           },
         ],
       },
@@ -196,12 +197,13 @@ export const caseStudies = [
       },
       // add image here
       {
-        id: "image",
+        id: "video-demo",
         title: "",
         blocks: [
           {
-            type: "image",
-            src: "/v2/case-studies/MiAI-Law-Demo.jpg",
+            type: "video",
+            src: "/v2/case-studies/videos/Miai-law-demo-video.mp4",
+            poster: "/v2/case-studies/MiAI-Law-Demo.jpg",
           },
         ],
       },

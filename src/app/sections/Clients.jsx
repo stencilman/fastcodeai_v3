@@ -17,7 +17,7 @@ import miai from "../../../public/v2/our-clients/miai.svg";
 import petrofac from "../../../public/v2/our-clients/petrofac.svg";
 import seikor from "../../../public/v2/our-clients/seikor.svg";
 import textiles from "../../../public/v2/our-clients/textiles.svg";
-import zen from "../../../public/v2/our-clients/zen.svg";
+// import zen from "../../../public/v2/our-clients/zen.svg";
 
 // import mbux from "../../../../public//our-clients/mercedes.png";
 // import Bosch from "../../../../public//our-clients/Bosch.png";
@@ -99,9 +99,9 @@ const Clients = () => {
     {
       src: textiles,
     },
-    {
-      src: zen,
-    },
+    // {
+    //   src: zen,
+    // },
     {
       src: mercedes,
     },
@@ -117,9 +117,9 @@ const Clients = () => {
     {
       src: textiles,
     },
-    {
-      src: zen,
-    },
+    // {
+    //   src: zen,
+    // },
   ];
   return (
     <>
