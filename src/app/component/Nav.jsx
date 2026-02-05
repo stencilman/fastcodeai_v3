@@ -11,33 +11,16 @@ const navItems = [
     href: "/",
   },
   {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Expertise",
-    href: "/expertise",
-  },
-
-  {
     title: "Portfolio",
     href: "/portfolio",
-  },
-  {
-    title: "Research",
-    href: "/research",
-  },
-  {
-    title: "Contact Us",
-    href: "/contact",
   },
   {
     title: "Team",
     href: "/team",
   },
   {
-    title: "Career",
-    href: "/career",
+    title: "Contact Us",
+    href: "/contact",
   },
 ];
 

@@ -9,9 +9,10 @@ import footerLogo from "../../../public/f_logo1.png";
 import brainLogo from "../../../public/footer-logo/brain.svg";
 import textLogo from "../../../public/footer-logo/text.svg";
 import MagneticEffect from "../component/MagneticEffect";
+import GrokIcon from "../component/GrokIcon";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { SiOpenai, SiAnthropic, SiGoogle, SiPerplexity } from "react-icons/si";
+import { SiOpenai, SiClaude, SiGooglegemini, SiPerplexity } from "react-icons/si";
 
 const Footer = ({ showExtraSpace }) => {
   const [active, setActive] = useState(false);
@@ -59,7 +60,7 @@ const Footer = ({ showExtraSpace }) => {
         >
           <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[160px] lg:pr-[73px] justify-between flex-col md:flex-row">
             <div
-              className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[100px] md:mb-0"
+              className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[154px] md:mb-0"
               style={{
                 background:
                   "linear-gradient(to bottom right, #000E32, #000929) padding-box, linear-gradient(108deg, #000E32, #000E32, #6586DC, #000E32) border-box",
@@ -139,7 +140,7 @@ const Footer = ({ showExtraSpace }) => {
                 <span className="text-white font-aeonik text-[14px] text-center">
                   Request an AI summary of Fast Code AI
                 </span>
-                <div className="flex gap-12 items-center">
+                <div className="flex gap-4 md:gap-8 items-center justify-center">
                   <Link
                     href="https://chat.openai.com/"
                     target="_blank"
@@ -155,7 +156,7 @@ const Footer = ({ showExtraSpace }) => {
                     target="_blank"
                     aria-label="Claude"
                   >
-                    <SiAnthropic
+                    <SiClaude
                       className="text-white hover:text-[#D97757] transition-colors"
                       size={30}
                     />
@@ -165,7 +166,7 @@ const Footer = ({ showExtraSpace }) => {
                     target="_blank"
                     aria-label="Gemini"
                   >
-                    <SiGoogle
+                    <SiGooglegemini
                       className="text-white hover:text-[#4285F4] transition-colors"
                       size={30}
                     />
@@ -177,6 +178,16 @@ const Footer = ({ showExtraSpace }) => {
                   >
                     <SiPerplexity
                       className="text-white hover:text-[#22B3A8] transition-colors"
+                      size={30}
+                    />
+                  </Link>
+                  <Link
+                    href="https://grok.x.ai/"
+                    target="_blank"
+                    aria-label="Grok"
+                  >
+                    <GrokIcon
+                      className="text-white hover:text-gray-400 transition-colors"
                       size={30}
                     />
                   </Link>
