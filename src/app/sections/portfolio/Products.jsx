@@ -256,7 +256,7 @@ const Products = () => {
 
         {/* Filters */}
         <LayoutGroup>
-          <div className="flex justify-start md:justify-center font-aeonik gap-2 md:gap-4 mb-10 md:mb-16 overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex justify-start font-aeonik gap-2 md:gap-4 mb-10 md:mb-16 overflow-x-auto  flex-nowrap  scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               return (
