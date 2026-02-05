@@ -154,7 +154,7 @@ const ClientSlide = () => {
               return (
                 <div
                   key={i}
-                  className="border border-[#1D2B4F]  border-color duration-500 hover:border-[#ffffff92] hover:border cursor-pointer transition rounded-[18px] min-w-[150px] w-[258px] h-[122px] md:h-[182px] flex items-center justify-center group"
+                  className="border border-[#1D2B4F]    transition rounded-[18px] min-w-[150px] w-[258px] h-[122px] md:h-[182px] flex items-center justify-center group"
                   style={{
                     background:
                       "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
@@ -193,7 +193,7 @@ const ClientSlide = () => {
               return (
                 <div
                   key={i}
-                  className="border border-[#1D2B4F]  border-color duration-500 hover:border-[#ffffff92] hover:border cursor-pointer transition rounded-[18px] min-w-[150px] w-[258px] h-[122px] md:h-[182px] flex items-center justify-center group"
+                  className="border border-[#1D2B4F]   transition rounded-[18px] min-w-[150px] w-[258px] h-[122px] md:h-[182px] flex items-center justify-center group"
                   style={{
                     background:
                       "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",

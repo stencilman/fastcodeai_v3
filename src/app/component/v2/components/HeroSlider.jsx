@@ -75,7 +75,7 @@ const SlideMorphingDialog = ({
           )}
           {category}
         </MorphingDialogTitle>
-        <span className="flex p-2 items-center justify-center rounded-md border border-white/40 transition bg-[#424242]">
+        <span className="">
           {/* <svg
             width="12"
             height="12"
@@ -95,7 +95,7 @@ const SlideMorphingDialog = ({
           <Info className="w-5 h-5" />
         </span>
         <div
-          className="absolute bottom-0 left-0 h-[3px] w-full bg-[#888686] origin-left"
+          className="absolute bottom-0 left-0 h-[3px] w-full bg-[#eee5e5] origin-left"
           style={{ transform: "scaleX(var(--progress))" }}
         />
       </MorphingDialogTrigger>

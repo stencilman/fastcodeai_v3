@@ -26,7 +26,11 @@ const TeamMembers = async () => {
             bio: user.teamBio || "",
             linkedin: user.linkedinProfile,
           }))
-          .sort((a, b) => a.name.localeCompare(b.name));
+          .sort((a, b) => {
+            if (a.name.includes("Arjun Jain")) return -1;
+            if (b.name.includes("Arjun Jain")) return 1;
+            return a.name.localeCompare(b.name);
+          });
       }
     } else {
       console.error(

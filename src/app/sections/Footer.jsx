@@ -11,6 +11,7 @@ import textLogo from "../../../public/footer-logo/text.svg";
 import MagneticEffect from "../component/MagneticEffect";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { SiOpenai, SiAnthropic, SiGoogle, SiPerplexity } from "react-icons/si";
 
 const Footer = ({ showExtraSpace }) => {
   const [active, setActive] = useState(false);
@@ -131,7 +132,56 @@ const Footer = ({ showExtraSpace }) => {
                     <FaYoutube size={22} />
                   </div>
                 </Link>
-                  </div>
+              </div>
+
+              {/* AI Summary Section - Positioned absolute below social icons */}
+              <div className="absolute -bottom-[200px] left-1/2 -translate-x-1/2 w-full p-[15px] rounded-[12px] border border-[#243A6A] bg-gradient-to-b from-[#0B1B3F] to-[#081533] flex flex-col items-center justify-center gap-3 z-[7]">
+                <span className="text-white font-aeonik text-[14px] text-center">
+                  Request an AI summary of Fast Code AI
+                </span>
+                <div className="flex gap-12 items-center">
+                  <Link
+                    href="https://chat.openai.com/"
+                    target="_blank"
+                    aria-label="ChatGPT"
+                  >
+                    <SiOpenai
+                      className="text-white hover:text-[#10A37F] transition-colors"
+                      size={30}
+                    />
+                  </Link>
+                  <Link
+                    href="https://claude.ai/"
+                    target="_blank"
+                    aria-label="Claude"
+                  >
+                    <SiAnthropic
+                      className="text-white hover:text-[#D97757] transition-colors"
+                      size={30}
+                    />
+                  </Link>
+                  <Link
+                    href="https://gemini.google.com/"
+                    target="_blank"
+                    aria-label="Gemini"
+                  >
+                    <SiGoogle
+                      className="text-white hover:text-[#4285F4] transition-colors"
+                      size={30}
+                    />
+                  </Link>
+                  <Link
+                    href="https://www.perplexity.ai/"
+                    target="_blank"
+                    aria-label="Perplexity"
+                  >
+                    <SiPerplexity
+                      className="text-white hover:text-[#22B3A8] transition-colors"
+                      size={30}
+                    />
+                  </Link>
+                </div>
+              </div>
               </div>
             <div className="w-[100%] md:w-[58%] ml-0 md:ml-[80px] lg:ml-[120px] mr-0 md:mr-[10px] flex flex-col justify-around">
               {/* Nav */}

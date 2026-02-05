@@ -224,7 +224,7 @@ const CaseStudiesSlide = () => {
                   <span
                     ref={(el) => (progressRefs.current[index] = el)}
                     // className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#2DC1C3] to-[#0268F2] transition-all duration-100 ease-linear"
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#8c8989] transition-all duration-100 ease-linear"
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#efe8e8] transition-all duration-100 ease-linear"
                     style={{ width: "0%" }}
                   ></span>
                   <ShadowBlob
