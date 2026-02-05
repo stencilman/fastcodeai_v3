@@ -93,8 +93,8 @@ const Enterprise = () => {
                 <p>
                   <span className="text-white font-medium">Data Cleaning:</span>
                   <br />
-                  Automated normalization pipelines that turn "messy" data into
-                  "AI-ready" assets.
+                  Automated normalization pipelines that turn &quot;messy&quot; data into
+                  &quot;AI-ready&quot; assets.
                 </p>
               </div>
             </div>

@@ -59,7 +59,7 @@ const DataIntelligence = () => {
               Data Intelligence Platform
             </h2>
             <p className="text-[#9EB3CF] text-lg font-bwmss01">
-              You're sitting on mountains of data. We help you extract the
+              You&apos;re sitting on mountains of data. We help you extract the
               insights that actually move the needle —faster, cheaper, and at
               scale.
             </p>

@@ -114,7 +114,7 @@ const NumbersAndDetail = () => {
                 The principles that shape everything we do
               </h2>
               <p className="text-[#9EB3CF] font-bwmss01 text-lg max-w-md">
-                These aren't words on a wall. They're how we decide who to hire,
+                These aren&apos;t words on a wall. They&apos;re how we decide who to hire,
                 what projects to take, and how we show up every single day
               </p>
             </div>
@@ -139,7 +139,7 @@ const NumbersAndDetail = () => {
         </div>
         <div>
           <p className="text-[#9EB3CF] font-bwmss01 text-lg max-w-md text-center mx-auto mt-10">
-            These aren't words on a wall. They're how we decide who to hire,
+            These aren&apos;t words on a wall. They&apos;re how we decide who to hire,
             what projects to take, and how we show up every single day
           </p>
         </div>
