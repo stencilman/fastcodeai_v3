@@ -32,7 +32,7 @@ export default function Home() {
       <TestimonialsSlider />
       <Operational
         title="Ready to Operationalize Your AI?"
-        description="Stop building from scratch. Start with a proven infrastructure."
+        description="Fast Code AI - Accelerating Innovation"
         buttonText="Start Building Now"
         buttonLink="/contact"
       />

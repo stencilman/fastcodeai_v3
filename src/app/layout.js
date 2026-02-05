@@ -48,7 +48,7 @@ export const metadata = {
     default: "FastCode AI - Operationalize Your AI",
     template: "%s | FastCode AI",
   },
-  description: "Stop building from scratch. Start with a proven infrastructure. FastCode AI helps you build and scale AI solutions.",
+  description: "Fast Code AI - Accelerating Innovation FastCode AI helps you build and scale AI solutions.",
   keywords: ["AI", "Artificial Intelligence", "Machine Learning", "FastCode", "Infrastructure", "React", "Next.js", "Software Development"],
   authors: [{ name: "FastCode AI" }],
   creator: "FastCode AI",
@@ -57,11 +57,11 @@ export const metadata = {
     locale: "en_US",
     url: "/",
     title: "FastCode AI - Operationalize Your AI",
-    description: "Stop building from scratch. Start with a proven infrastructure.",
+    description: "Fast Code AI - Accelerating Innovation",
     siteName: "FastCode AI",
     images: [
       {
-        url: "/FastCodeAI_color.png",
+        url: "/public/logo1.png",
         width: 1200,
         height: 630,
         alt: "FastCode AI Logo",
@@ -71,14 +71,14 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FastCode AI - Operationalize Your AI",
-    description: "Stop building from scratch. Start with a proven infrastructure.",
-    images: ["/FastCodeAI_color.png"],
+    description: "Fast Code AI - Accelerating Innovation",
+    images: ["/public/logo1.png"],
     creator: "@FastCodeAI",
   },
   icons: {
-    icon: "/FastCodeAI_color.png",
-    shortcut: "/FastCodeAI_color.png",
-    apple: "/FastCodeAI_color.png",
+    icon: "/public/logo1.png",
+    shortcut: "/public/logo1.png",
+    apple: "/public/logo1.png",
   },
 };
 
