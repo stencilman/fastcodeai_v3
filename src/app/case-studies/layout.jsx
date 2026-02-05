@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function CaseStudiesLayout({ children }) {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050B1F] text-white">
+    <div className="relative min-h-screen bg-[#050B1F] text-white">
       {/* <header className="relative z-10 border-b border-white/10 bg-[#010D2C]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10">
           <div>

@@ -480,7 +480,7 @@ export default function CaseStudyDetailPage({ params }) {
 
       <section className="relative z-10  ">
         <div className="mx-auto grid  gap-10 px-6 md:px-24 lg:grid-cols-[220px_minmax(0,1fr)]">
-          <aside className="hidden h-full lg:block">
+          <aside className="hidden lg:block relative">
             <div className="sticky top-[136px] rounded-2xl border border-[#FFFFFF57]  p-6 backdrop-blur-lg shadow-[0_20px_80px_rgba(2,11,33,0.45)]"  
             style={{
                 background:
