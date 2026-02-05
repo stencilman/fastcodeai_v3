@@ -7,6 +7,7 @@ import OurWork from "../../sections/OurWork";
 import TestimonialsSlider from "../../sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
 import Footer from "../../sections/Footer";
+import image2 from "../../../../public/mission/image2.png";
 
 const page = () => {
   return (
@@ -22,7 +23,7 @@ const page = () => {
       <Advantage />
       <OurWork showShadow={false} />
       <TestimonialsSlider/>
-      <Operational title="Have a Vision Worth Building?" description="Let's see if we are a match." buttonText="Start Building Now" buttonLink="/contact" />
+      <Operational title="Have a Vision Worth Building?" description="Let's see if we are a match." buttonText="Start Building Now" buttonLink="/contact" bgImage={image2} bgImageAlt="Co-Creation Background" />
       <Footer showExtraSpace={true} />
     </div>
   );

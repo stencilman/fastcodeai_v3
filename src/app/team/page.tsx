@@ -6,6 +6,7 @@ import TeamMembers from "../sections/team/TeamMembers"
 import TestimonialsSlider from "../sections/TestimonialsSlider";
 import Operational from "../component/v2/sections/Operational";
 import Footer from "../sections/Footer";
+import image2 from "../../../public/mission/image2.png";
 
 const page = () => {
   return (
@@ -25,6 +26,8 @@ const page = () => {
         description="Bridge the gap between academic theory and industrial reality. Build the infrastructure that powers the next generation of AI."
         buttonText="Work With Us"
         buttonLink="/contact"
+        bgImage={image2}
+        bgImageAlt="Team Background"
       />
 
       <Footer showExtraSpace={true} />

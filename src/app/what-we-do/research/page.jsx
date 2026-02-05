@@ -8,6 +8,7 @@ import OurWork from "../../sections/OurWork";
 import TestimonialsSlider from "../../sections/TestimonialsSlider";
 import Operational from "../../component/v2/sections/Operational";
 import Footer from "../../sections/Footer";
+import image2 from "../../../../public/mission/image2.png";
 
 const page = () => {
   return (
@@ -29,6 +30,8 @@ const page = () => {
         description="Let us define the scope."
         buttonText="Start Building Now"
         buttonLink="/contact"
+        bgImage={image2}
+        bgImageAlt="Research Background"
       />
       <Footer showExtraSpace={true} />
     </>

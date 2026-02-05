@@ -4,7 +4,7 @@ import image2 from "../../../../../public/mission/image2.png";
 import dot2 from "../../../../../public/dots/dot_image2.png";
 import Button from "../../Button";
 
-const Operational = ({title, description, buttonText, buttonLink}) => {
+const Operational = ({title, description, buttonText, buttonLink, bgImage = image2, bgImageAlt = "Mission Background"}) => {
   return (
     <section className="relative w-full max-w-7xl mx-auto py-12 lg:py-24 px-4 md:px-12 lg:px-20 bg-[#00081F] font-aeonik">
       <div className=" mx-auto ">
@@ -14,8 +14,8 @@ const Operational = ({title, description, buttonText, buttonLink}) => {
           <div className="absolute inset-0 bg-cusgrad opacity-100 z-0"></div>
           <div className="absolute inset-0 w-full h-full z-0">
             <Image
-              src={image2}
-              alt="Mission Background"
+              src={bgImage}
+              alt={bgImageAlt}
               fill
               className="object-cover object-center opacity-100 mix-blend-luminosity"
               priority
@@ -35,7 +35,7 @@ const Operational = ({title, description, buttonText, buttonLink}) => {
           <div className="relative z-10 flex flex-col items-center justify-center text-center text-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
             {/* Title */}
             <h2 className="text-xl md:text-4xl mb-2 tracking-wide font-normal">
-              Ready to Operationalize Your AI?
+              {title || "Ready to Operationalize Your AI?"}
             </h2>
 
             {/* Main Content Area */}
@@ -47,11 +47,11 @@ const Operational = ({title, description, buttonText, buttonLink}) => {
 
               {/* Description */}
               <p className="text-base md:text-lg text-[#9EB3CF] mb-16 leading-relaxed max-w-4xl mx-auto font-light">
-                Stop building from scratch. Start with a proven infrastructure.
+                {description || "Stop building from scratch. Start with a proven infrastructure."}
               </p>
 
               <div className="w-fit ">
-                <Button name="Start Building Now" to="/contact" />
+                <Button name={buttonText || "Start Building Now"} to={buttonLink || "/contact"} />
               </div>
             </div>
           </div>
