@@ -79,7 +79,7 @@ const Leader = () => {
           </div>
 
           {/* CEO Desk Card - Spans 8 columns - Order 4 (last on mobile) */}
-          <div className="lg:col-span-8 order-4 lg:order-2">
+          <div className="lg:col-span-8 order-4 lg:order-2 pt-8">
             <div className="h-full w-full rounded-3xl bg-[#0C1C46] border border-white/10 p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
               {/* Background Glow Effect */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
