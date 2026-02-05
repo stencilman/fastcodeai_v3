@@ -9,6 +9,7 @@ import footerLogo from "../../../public/f_logo1.png";
 import brainLogo from "../../../public/footer-logo/brain.svg";
 import textLogo from "../../../public/footer-logo/text.svg";
 import MagneticEffect from "../component/MagneticEffect";
+import GrokIcon from "../component/GrokIcon";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { SiOpenai, SiClaude, SiGooglegemini, SiPerplexity } from "react-icons/si";
@@ -74,7 +75,7 @@ const Footer = ({ showExtraSpace }) => {
         >
           <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[160px] lg:pr-[73px] justify-between flex-col md:flex-row">
             <div
-              className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[100px] md:mb-0"
+              className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[154px] md:mb-0"
               style={{
                 background:
                   "linear-gradient(to bottom right, #000E32, #000929) padding-box, linear-gradient(108deg, #000E32, #000E32, #6586DC, #000E32) border-box",
@@ -154,7 +155,7 @@ const Footer = ({ showExtraSpace }) => {
                 <span className="text-white font-aeonik text-[14px] text-center">
                   Request an AI summary of Fast Code AI
                 </span>
-                <div className="flex gap-6 items-center">
+                <div className="flex gap-4 md:gap-8 items-center justify-center">
                   <Link
                     href={`https://chatgpt.com/?q=${encodedPrompt}`}
                     target="_blank"
@@ -186,17 +187,6 @@ const Footer = ({ showExtraSpace }) => {
                     />
                   </Link>
                   <Link
-                    href={`https://grok.com/?q=${encodedPrompt}`}
-                    target="_blank"
-                    aria-label="Grok"
-                  >
-               
-                    <svg className="text-white hover:text-[#007AFF] transition-colors" xmlns="http://www.w3.org/2000/svg" width="30" height="30"  
-fill="currentColor" viewBox="0 0 24 24" >
-<path d="m19.25 5.08-9.52 9.67 6.64-4.96c.33-.24.79-.15.95.23.82 1.99.45 4.39-1.17 6.03-1.63 1.64-3.89 2.01-5.96 1.18l-2.26 1.06c3.24 2.24 7.18 1.69 9.64-.8 1.95-1.97 2.56-4.66 1.99-7.09-.82-3.56.2-4.98 2.29-7.89L22 2.3zM9.72 14.75h.01zM8.35 15.96c-2.33-2.25-1.92-5.72.06-7.73 1.47-1.48 3.87-2.09 5.97-1.2l2.25-1.05c-.41-.3-.93-.62-1.52-.84a7.45 7.45 0 0 0-8.13 1.65c-2.11 2.14-2.78 5.42-1.63 8.22.85 2.09-.54 3.57-1.95 5.07-.5.53-1 1.06-1.4 1.62z"/>
-</svg>
-                  </Link>
-                  <Link
                     href={`https://www.perplexity.ai/search?q=${encodedPrompt}`}
                     target="_blank"
                     aria-label="Perplexity"
@@ -206,7 +196,16 @@ fill="currentColor" viewBox="0 0 24 24" >
                       size={25}
                     />
                   </Link>
-                 
+                  <Link
+                     href={`https://grok.com/?q=${encodedPrompt}`}
+                    target="_blank"
+                    aria-label="Grok"
+                  >
+                    <GrokIcon
+                      className="text-white hover:text-gray-400 transition-colors"
+                      size={30}
+                    />
+                  </Link>
                 </div>
               </div>
               </div>

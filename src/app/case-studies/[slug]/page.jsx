@@ -157,7 +157,7 @@ const ClientOverview = ({ description, meta }) => {
       {meta?.length > 0 && (
         <div className="grid gap-6 sm:grid-cols-2">
           {meta.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-4">
+            <div key={idx} className="flex items-center gap-4">
               <span className="flex h-10 w-10 items-center justify-center  text-[#9EB3CF]">
                 <MetaIcon label={item.label} />
               </span>
@@ -506,7 +506,7 @@ export default function CaseStudyDetailPage({ params }) {
 
       <section className="relative z-10  ">
         <div className="mx-auto grid  gap-10 px-6 md:px-24 lg:grid-cols-[220px_minmax(0,1fr)]">
-          <aside className="hidden h-full lg:block">
+          <aside className="hidden lg:block relative">
             <div className="sticky top-[136px] rounded-2xl border border-[#FFFFFF57]  p-6 backdrop-blur-lg shadow-[0_20px_80px_rgba(2,11,33,0.45)]"  
             style={{
                 background:

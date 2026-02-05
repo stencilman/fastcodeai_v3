@@ -43,7 +43,7 @@ const Automotive = () => {
           <div className="w-full">
             <div className="bg-black/95 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.7)]">
               <p className="text-white text-base font-bwmss01 leading-relaxed">
-                That complexity made our platform robust. Now we're bringing the
+                That complexity made our platform robust. Now we&apos;re bringing the
                 same firepower to you.
               </p>
             </div>
@@ -93,7 +93,7 @@ const Automotive = () => {
           <div className="absolute right-8 lg:right-16 top-[20%] z-10 w-full max-w-[320px] lg:max-w-[360px]">
             <div className="bg-black/95 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.7)]">
               <p className="text-white text-lg font-bwmss01 leading-relaxed">
-                That complexity made our platform robust. Now we're bringing the
+                That complexity made our platform robust. Now we&apos;re bringing the
                 same firepower to you.
               </p>
             </div>
