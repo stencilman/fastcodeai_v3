@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { menuSlide } from "./anim";
 import LinkNav from "./LinkNav";
 import Link from "next/link";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const navItems = [
   {
@@ -31,6 +32,7 @@ const navItems = [
 export default function Nav() {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
+  const { setIsActive } = useGlobalContext();
 
   return (
     <motion.div
@@ -54,6 +56,7 @@ export default function Nav() {
                 data={{ ...data, index }}
                 isActive={selectedIndicator == data.href}
                 setSelectedIndicator={setSelectedIndicator}
+                onClick={() => setIsActive(false)}
               ></LinkNav>
             );
           })}
