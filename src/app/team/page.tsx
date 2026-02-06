@@ -21,16 +21,18 @@ const page = () => {
       <NumbersAndDetail />
       <TeamMembers />
       <TestimonialsSlider />
-      <Operational
-        title="Join the Team"
-        description="Bridge the gap between academic theory and industrial reality. Build the infrastructure that powers the next generation of AI."
-        buttonText="Work With Us"
-        buttonLink="/contact"
-        secondaryButtonText="Linkedin"
-        secondaryButtonLink="https://www.linkedin.com/company/fast-code/posts/?feedView=all"
-        bgImage={image2}
-        bgImageAlt="Team Background"
-      />
+      <div id="join-the-team">
+        <Operational
+          title="Join the Team"
+          description="Bridge the gap between academic theory and industrial reality. Build the infrastructure that powers the next generation of AI."
+          buttonText="Work With Us"
+          buttonLink="/contact"
+          secondaryButtonText="Linkedin"
+          secondaryButtonLink="https://www.linkedin.com/company/fast-code/posts/?feedView=all"
+          bgImage={image2}
+          bgImageAlt="Team Background"
+        />
+      </div>
 
       <Footer showExtraSpace={true} />
     </>

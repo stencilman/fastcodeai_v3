@@ -87,7 +87,7 @@ const CaseStudiesSlide = () => {
       details:
         "Join a team of world-class engineers and researchers solving the hardest problems in AI. We offer a collaborative environment where your work has a direct impact on global enterprises.",
       image: "/v2/case-studies/case-6.jpg",
-      link: "/careers",
+      link: "/team#join-the-team",
       ctaText: "Join us",
     },
     {

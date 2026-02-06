@@ -31,7 +31,7 @@ const JoinTeam = () => {
             <RoundedHover>
               <Link
                 className="p-[15px] relative z-10 flex items-center gap-[7px] "
-                href="/career"
+                href="/team#join-the-team"
               >
                 Explore Positions
                 <svg

@@ -56,7 +56,7 @@ export default function Nav() {
         </div>
         {/* footer */}
         <div className="flex gap-[30px] pl-[50px] pb-[60px] md:pb-[100px] lg:pb-[60px]">
-          {/* <Link href="/career" className="text-lg text-black font-aeonik font-light">Career</Link> */}
+          {/* <Link href="/team#join-the-team" className="text-lg text-black font-aeonik font-light">Careers</Link> */}
           {/* <Link
             href="/blogs"
             className="text-lg text-black font-aeonik font-light"

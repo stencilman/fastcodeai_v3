@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .font-aeonik {
   @apply tracking-wide;
   /* color: var(--theme-fg); */
@@ -181,8 +182,8 @@ body {
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(90deg, #225AEB 0%, #38B8B9 100%);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -218,6 +219,7 @@ body {
 .secondary_cta_button:hover {
   opacity: 0.9;
 }
+
 /* end-secondary_cta_button */
 
 /* outline_cta_button */
@@ -15004,7 +15006,3 @@ figcaption {
   font-display: fallback;
 
 }
-
-
-
-
