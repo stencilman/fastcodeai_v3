@@ -19,6 +19,10 @@ const navItems = [
     href: "/team",
   },
   {
+    title: "Research",
+    href: "/research",
+  },
+  {
     title: "Contact Us",
     href: "/contact",
   },
