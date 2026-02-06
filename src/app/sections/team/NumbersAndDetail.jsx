@@ -49,18 +49,18 @@ const NumbersAndDetail = () => {
       label: "Academic Citations.",
     },
     {
-      icon: icon2,
-      value: "400+",
-      label: "Pre-Built Connectors.",
+      icon: icon3,
+      value: "30+",
+      label: "Published Research Papers.",
     },
     {
-      icon: icon3,
-      value: "80%",
-      label: "Reduction in Data Toil.",
+      icon: icon2,
+      value: "20+",
+      label: "Clients.",
     },
     {
       icon: icon4,
-      value: "10+",
+      value: "5",
       label: "Patents.",
     },
   ];
