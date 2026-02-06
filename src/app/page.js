@@ -12,7 +12,7 @@ import Leader from "./component/v2/sections/Leader";
 import Mission from "./component/v2/sections/Mission";
 import Operational from "./component/v2/sections/Operational";
 import Power from "./component/v2/sections/Power";
-import image2 from "../../../public/mission/image2.png";
+import image2 from "../../public/mission/image2.png";
 export default function Home() {
   const { setIsActive } = useGlobalContext();
 
