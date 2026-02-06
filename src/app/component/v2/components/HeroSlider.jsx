@@ -95,7 +95,7 @@ const SlideMorphingDialog = ({
           <Info className="w-5 h-5" />
         </span>
         <div
-          className="absolute bottom-0 left-0 h-[3px] w-full bg-[#eee5e5] origin-left"
+          className="hidden md:block absolute bottom-0 left-0 h-[3px] w-full bg-[#eee5e5] origin-left"
           style={{ transform: "scaleX(var(--progress))" }}
         />
       </MorphingDialogTrigger>
@@ -332,7 +332,7 @@ const HeroSlider = () => {
                   />
 
                   {/* Progress Indicators */}
-                  <div className="flex w-full gap-2 px-1">
+                  <div className=" flex w-full gap-2 px-1">
                     {slides.map((_, i) => (
                       <div
                         key={i}

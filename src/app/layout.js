@@ -45,7 +45,7 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fastcode.ai'),
   title: {
-    default: "FastCode AI - Operationalize Your AI",
+    default: "Fast Code AI",
     template: "%s | FastCode AI",
   },
   description: "Fast Code AI - Accelerating Innovation FastCode AI helps you build and scale AI solutions.",
@@ -56,7 +56,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "FastCode AI - Operationalize Your AI",
+    title: "Fast Code AI ",
     description: "Fast Code AI - Accelerating Innovation",
     siteName: "FastCode AI",
     images: [
@@ -70,7 +70,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastCode AI - Operationalize Your AI",
+    title: "Fast Code AI",
     description: "Fast Code AI - Accelerating Innovation",
     images: ["/public/logo1.png"],
     creator: "@FastCodeAI",

@@ -23,7 +23,7 @@ const DataIntelligence = () => {
   ];
 
   return (
-    <section className="relative bg-[#00081F]py-24 px-4 sm:px-8 overflow-hidden">
+    <section className="relative bg-[#00081F] py-24 px-4 sm:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Left Side - Metrics Grid */}
