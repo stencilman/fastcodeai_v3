@@ -35,6 +35,11 @@ const Echosystem = () => {
   const x2 = useTransform(scrollYProgress, [0, 1], ["30%", "-80%"]);
   const x3 = useTransform(scrollYProgress, [0, 1], ["-60%", "40%"]);
 
+  // Mobile transforms
+  const xm1 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xm2 = useTransform(scrollYProgress, [0, 1], ["-50%", "0%"]);
+  const xm3 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+
   const technologies = [
     { src: pythonLogo, alt: "Python" },
     { src: cudaLogo, alt: "CUDA" },
@@ -55,10 +60,15 @@ const Echosystem = () => {
     { src: mongoLogo, alt: "MongoDB" },
   ];
 
-  // Repeat technologies for infinite scroll effect
-  const row1 = [...technologies, ...technologies, ...technologies];
-  const row2 = [...technologies, ...technologies, ...technologies];
-  const row3 = [...technologies, ...technologies, ...technologies];
+  // Repeat technologies for infinite scroll effect (Desktop)
+  const desktopRow1 = [...technologies, ...technologies, ...technologies];
+  const desktopRow2 = [...technologies, ...technologies, ...technologies];
+  const desktopRow3 = [...technologies, ...technologies, ...technologies];
+
+  // Single set for mobile (no repeats, shifted for variety)
+  const mobileRow1 = technologies;
+  const mobileRow2 = [...technologies.slice(6), ...technologies.slice(0, 6)];
+  const mobileRow3 = [...technologies.slice(12), ...technologies.slice(0, 12)];
 
   return (
     <section
@@ -92,77 +102,146 @@ const Echosystem = () => {
                 </div>
               </div>
 
-              {/* Row 1 */}
-              <motion.div
-                style={{
-                  x: x1,
-                  transition: { duration: 0.5, type: "spring", stiffness: 100 },
-                }}
-                className="flex gap-4 md:gap-6 w-[300%]"
-              >
-                {row1.map((tech, index) => (
-                  <div
-                    key={`row1-${index}`}
-                    className="relative bg-[#001233] rounded-xl p-4 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center aspect-square min-w-[80px] md:min-w-[100px] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-                  >
-                    <Image
-                      src={tech.src}
-                      alt={tech.alt}
-                      width={60}
-                      height={60}
-                      className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                ))}
-              </motion.div>
+              {/* Desktop View */}
+              <div className="hidden md:flex flex-col gap-6">
+                {/* Row 1 */}
+                <motion.div
+                  style={{
+                    x: x1,
+                    transition: { duration: 0.5, type: "spring", stiffness: 100 },
+                  }}
+                  className="flex gap-4 md:gap-6 w-[300%]"
+                >
+                  {desktopRow1.map((tech, index) => (
+                    <div
+                      key={`row1-${index}`}
+                      className="relative bg-[#001233] rounded-xl p-4 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center aspect-square min-w-[80px] md:min-w-[100px] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
 
-              {/* Row 2 */}
-              <motion.div
-                style={{
-                  x: x2,
-                  transition: { duration: 0.5, type: "spring", stiffness: 100 },
-                }}
-                className="flex gap-4 md:gap-6 ml-[0px] lg:ml-[60px] w-[300%]"
-              >
-                {row2.map((tech, index) => (
-                  <div
-                    key={`row2-${index}`}
-                    className="relative bg-[#001233] rounded-xl p-4 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center aspect-square min-w-[80px] md:min-w-[100px] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-                  >
-                    <Image
-                      src={tech.src}
-                      alt={tech.alt}
-                      width={60}
-                      height={60}
-                      className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                ))}
-              </motion.div>
+                {/* Row 2 */}
+                <motion.div
+                  style={{
+                    x: x2,
+                    transition: { duration: 0.5, type: "spring", stiffness: 100 },
+                  }}
+                  className="flex gap-4 md:gap-6 ml-[0px] lg:ml-[60px] w-[300%]"
+                >
+                  {desktopRow2.map((tech, index) => (
+                    <div
+                      key={`row2-${index}`}
+                      className="relative bg-[#001233] rounded-xl p-4 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center aspect-square min-w-[80px] md:min-w-[100px] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
 
-              {/* Row 3 */}
-              <motion.div
-                style={{
-                  x: x3,
-                  transition: { duration: 0.5, type: "spring", stiffness: 100 },
-                }}
-                className="flex gap-4 md:gap-6 w-[300%]"
-              >
-                {row3.map((tech, index) => (
-                  <div
-                    key={`row3-${index}`}
-                    className="relative bg-[#001233] rounded-xl p-4 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center aspect-square min-w-[80px] md:min-w-[100px] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-                  >
-                    <Image
-                      src={tech.src}
-                      alt={tech.alt}
-                      width={60}
-                      height={60}
-                      className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                ))}
-              </motion.div>
+                {/* Row 3 */}
+                <motion.div
+                  style={{
+                    x: x3,
+                    transition: { duration: 0.5, type: "spring", stiffness: 100 },
+                  }}
+                  className="flex gap-4 md:gap-6 w-[300%]"
+                >
+                  {desktopRow3.map((tech, index) => (
+                    <div
+                      key={`row3-${index}`}
+                      className="relative bg-[#001233] rounded-xl p-4 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center aspect-square min-w-[80px] md:min-w-[100px] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Mobile View */}
+              <div className="flex md:hidden flex-col gap-4">
+                {/* Mobile Row 1 */}
+                <motion.div
+                  style={{ x: xm1 }}
+                  className="flex gap-4 w-max"
+                >
+                  {mobileRow1.map((tech, index) => (
+                    <div
+                      key={`mob-row1-${index}`}
+                      className="relative bg-[#001233] rounded-xl p-4 border border-white/10 flex items-center justify-center aspect-square min-w-[80px]"
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-contain opacity-80"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+
+                {/* Mobile Row 2 */}
+                <motion.div
+                  style={{ x: xm2 }}
+                  className="flex gap-4 w-max"
+                >
+                  {mobileRow2.map((tech, index) => (
+                    <div
+                      key={`mob-row2-${index}`}
+                      className="relative bg-[#001233] rounded-xl p-4 border border-white/10 flex items-center justify-center aspect-square min-w-[80px]"
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-contain opacity-80"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+
+                {/* Mobile Row 3 */}
+                <motion.div
+                  style={{ x: xm3 }}
+                  className="flex gap-4 w-max"
+                >
+                  {mobileRow3.map((tech, index) => (
+                    <div
+                      key={`mob-row3-${index}`}
+                      className="relative bg-[#001233] rounded-xl p-4 border border-white/10 flex items-center justify-center aspect-square min-w-[80px]"
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-contain opacity-80"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
 
