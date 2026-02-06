@@ -1,10 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
-import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
-import Modal from "../component/Modal";
+import React from "react";
 import footerLogo from "../../../public/f_logo1.png";
 import brainLogo from "../../../public/footer-logo/brain.svg";
 import textLogo from "../../../public/footer-logo/text.svg";
@@ -30,50 +27,20 @@ Keep it simple, specific, and grounded in real work — describe the actual expe
 const encodedPrompt = encodeURIComponent(AI_PROMPT);
 
 const Footer = ({ showExtraSpace }) => {
-  const [active, setActive] = useState(false);
-  const scaleAnimation = {
-    initial: { scale: 0, x: "0%", y: "0%" },
-    open: {
-      scale: 1,
-      x: "-50%",
-      y: "-50%",
-      transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-    },
-    close: {
-      scale: 0,
-      x: "0%",
-      y: "0%",
-      transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
-    },
-  };
-  const cursor = useRef(null);
-  const container = useRef(null);
-  useEffect(() => {
-    const mqrque = document.getElementById("marqEffCont");
-
-    mqrque.addEventListener("mousemove", (e) => {
-      const { left, top, width, height } = mqrque.getBoundingClientRect();
-      const x = e.clientX - left;
-      const y = e.clientY - top;
-
-      cursor.current.style.left = `${x}px `;
-      cursor.current.style.top = `${y}px`;
-    });
-  }, []);
   return (
     <>
       {showExtraSpace && (
         <div className="w-full relative h-[10vh] md:h-[20vh] bg-[#00081F]"></div>
       )}
-      <div className="w-full relative h-auto md:h-[90vh] lg:h-[100vh]  ">
+      <div className="w-full relative h-auto">
         <div
-          className="relative z-[5] w-full h-auto md:h-[70vh] border-t border-[#1A2758]"
+          className="relative z-[5] w-full h-auto border-t border-[#1A2758]"
           style={{
             background:
               "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
           }}
         >
-          <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[160px] lg:pr-[73px] justify-between flex-col md:flex-row">
+          <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[160px] lg:pr-[73px] justify-between flex-col md:flex-row md:pb-[120px]">
             <div
               className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[154px] md:mb-0"
               style={{
@@ -333,65 +300,6 @@ const Footer = ({ showExtraSpace }) => {
             </div>
           </div>
         </div>
-
-        {/* Marque Effect */}
-
-        <Link
-          href="/contact"
-          id="marqEffCont"
-          ref={container}
-          // animate={active ? "open" : "close"}
-          onMouseEnter={() => setActive(true)}
-          onMouseLeave={() => setActive(false)}
-          className="sticky bottom-0 left-0 z-[3] bg-[#00081F] h-[20vh] md:h-[23vh] lg:h-[30vh] w-full flex cursor-pointer"
-        >
-          <div className="flex items-center w-full relative overflow-hidden whitespace-nowrap ">
-            <motion.h1
-              initial={{ x: "0" }}
-              animate={{ x: "-100%" }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 12 }}
-              className="text-[15vw] md:text-[9.5vw] leading-none font-medium  tracking-tight text-[#37446A]  w-full  "
-            >
-              {"Let's discuss"}
-            </motion.h1>
-            <motion.h1
-              initial={{ x: "0" }}
-              animate={{ x: "-100%" }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 12 }}
-              className="text-[15vw] md:text-[9.5vw] leading-none font-medium tracking-tight text-[#37446A]  w-full pl-[30px]"
-            >
-              {"Let's discuss"}
-            </motion.h1>
-          </div>
-          {/* custom box-cursor */}
-          <motion.div
-            ref={cursor}
-            variants={scaleAnimation}
-            initial={"initial"}
-            animate={active ? "open" : "close"}
-            className="absolute pointer-events-none z-[999] w-[76px] h-[76px] md:w-[103px] md:h-[103px] cursor-pointer top-0 left-0"
-          >
-            <MagneticEffect>
-              <div
-                className={`w-[103px] h-[103px] bg-gradient-to-br absolute pointer-events-none cursor-pointer ${"from-[#1D8283] to-[#033577]"} bg-gradient-156deg bg-no-repeat bg-[0% 0%]  text-white font-aeonik flex justify-center items-center gap-[20px] flex-col`}
-              >
-                <div className=" text-[18px]">Say Hi!</div>
-                <div className="pr-[24px]">
-                  <Image
-                    className="transform scale-x-[-1.5] "
-                    src="/arrowRight.svg"
-                    width="25"
-                    height="25"
-                    alt=""
-                    style={{
-                      transform: "matrix(0.71, -0.71, 0.71, 0.71, 0, 0)",
-                    }}
-                  />
-                </div>
-              </div>
-            </MagneticEffect>
-          </motion.div>
-        </Link>
       </div>
     </>
   );
