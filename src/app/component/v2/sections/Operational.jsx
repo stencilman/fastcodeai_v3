@@ -4,7 +4,7 @@ import image2 from "../../../../../public/mission/image2.png";
 import dot2 from "../../../../../public/dots/dot_image2.png";
 import Button from "../../Button";
 
-const Operational = ({title, description, buttonText, buttonLink, bgImage = image2, bgImageAlt = "Mission Background"}) => {
+const Operational = ({title, description, buttonText, buttonLink, secondaryButtonText, secondaryButtonLink, bgImage = image2, bgImageAlt = "Mission Background"}) => {
   return (
     <section className="relative w-full max-w-7xl mx-auto py-12 lg:py-24 px-4 md:px-12 lg:px-20 bg-[#00081F] font-aeonik">
       <div className=" mx-auto ">
@@ -50,8 +50,16 @@ const Operational = ({title, description, buttonText, buttonLink, bgImage = imag
                 {description || "Stop building from scratch. Start with a proven infrastructure."}
               </p>
 
-              <div className="w-fit ">
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                 <Button name={buttonText || "Start Building Now"} to={buttonLink || "/contact"} />
+                {secondaryButtonText && secondaryButtonLink && (
+                  <Button 
+                    name={secondaryButtonText} 
+                    to={secondaryButtonLink} 
+                    type="outline"
+                    target="_blank"
+                  />
+                )}
               </div>
             </div>
           </div>

@@ -26,6 +26,8 @@ const page = () => {
         description="Bridge the gap between academic theory and industrial reality. Build the infrastructure that powers the next generation of AI."
         buttonText="Work With Us"
         buttonLink="/contact"
+        secondaryButtonText="Linkedin"
+        secondaryButtonLink="https://www.linkedin.com/company/fast-code/posts/?feedView=all"
         bgImage={image2}
         bgImageAlt="Team Background"
       />

@@ -3,11 +3,13 @@ import Link from "next/link";
 import React from "react";
 
 const Button = ({ to, name, target, type = "primary", onClick }) => {
-  const className = `relative rounded-[4px] z-[1] flex items-center gap-[7px] px-[25px] py-[10px] text-lg justify-between ${
-    type === "secondary"
-      ? "secondary_cta_button"
-      : "main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2] "
-  } text-white`;
+  const typeClass = type === "secondary"
+    ? "secondary_cta_button"
+    : type === "outline"
+      ? "outline_cta_button"
+      : "main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2] ";
+
+  const className = `relative rounded-[4px] z-[1] flex items-center gap-[7px] px-[25px] py-[10px] text-lg justify-between ${typeClass} text-white`;
 
   // If onClick is provided, render as button instead of Link
   if (onClick) {
@@ -36,6 +38,23 @@ const Button = ({ to, name, target, type = "primary", onClick }) => {
                 alt="arrow"
                 width="25"
                 height="25"
+              />
+            </>
+          ) : type === "outline" ? (
+            <>
+              <Image
+                className="button__icon-svg transition-transform duration-300"
+                src="/outline_arrow_right.svg"
+                alt="arrow"
+                width="22"
+                height="22"
+              />
+              <Image
+                className="button__icon-svg--copy absolute"
+                src="/outline_arrow_right.svg"
+                alt="arrow"
+                width="22"
+                height="22"
               />
             </>
           ) : (
@@ -115,6 +134,23 @@ const Button = ({ to, name, target, type = "primary", onClick }) => {
               alt="arrow"
               width="25"
               height="25"
+            />
+          </>
+        ) : type === "outline" ? (
+          <>
+            <Image
+              className="button__icon-svg transition-transform duration-300"
+              src="/outline_arrow_right.svg"
+              alt="arrow"
+              width="22"
+              height="22"
+            />
+            <Image
+              className="button__icon-svg--copy absolute"
+              src="/outline_arrow_right.svg"
+              alt="arrow"
+              width="22"
+              height="22"
             />
           </>
         ) : (
