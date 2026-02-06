@@ -41,7 +41,7 @@ export default function Nav() {
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
           }}
-          className="flex flex-col  text-[#A4A4A4] text-[7vh] leading-[9.5vh] md:text-[5.5vh] md:leading-[7.5vh] lg:text-[7vh] lg:leading-[9vh] "
+          className="flex flex-col gap-2 text-[#A4A4A4] text-[5vh] leading-[6vh] md:text-[5.5vh] md:leading-[7.5vh] lg:text-[7vh] lg:leading-[9vh] "
         >
           {navItems.map((data, index) => {
             return (
@@ -57,12 +57,12 @@ export default function Nav() {
         {/* footer */}
         <div className="flex gap-[30px] pl-[50px] pb-[60px] md:pb-[100px] lg:pb-[60px]">
           {/* <Link href="/career" className="text-lg text-black font-aeonik font-light">Career</Link> */}
-          <Link
+          {/* <Link
             href="/blogs"
             className="text-lg text-black font-aeonik font-light"
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             href="https://in.linkedin.com/company/fast-code"
             target="_blank"

@@ -152,7 +152,7 @@ const Footer = ({ showExtraSpace }) => {
 
               {/* AI Summary Section - Positioned absolute below social icons */}
               <div className="absolute -bottom-[200px] left-1/2 -translate-x-1/2 w-full p-[15px] rounded-[12px] border border-[#243A6A] bg-gradient-to-b from-[#0B1B3F] to-[#081533] flex flex-col items-center justify-center gap-3 z-[7]">
-                <span className="text-white font-aeonik text-[14px] text-center">
+                <span className="text-[#9eb3cf] font-aeonik text-[14px] text-center">
                   Request an AI summary of Fast Code AI
                 </span>
                 <div className="flex gap-4 md:gap-8 items-center justify-center">
@@ -162,7 +162,7 @@ const Footer = ({ showExtraSpace }) => {
                     aria-label="ChatGPT"
                   >
                     <SiOpenai
-                      className="text-white hover:text-[#10A37F] transition-colors"
+                      className="text-[#9eb3cf] hover:text-[#10A37F] transition-colors"
                       size={25}
                     />
                   </Link>
@@ -172,7 +172,7 @@ const Footer = ({ showExtraSpace }) => {
                     aria-label="Claude"
                   >
                     <SiClaude
-                      className="text-white hover:text-[#D97757] transition-colors"
+                      className="text-[#9eb3cf] hover:text-[#D97757] transition-colors"
                       size={25}
                     />
                   </Link>
@@ -182,7 +182,7 @@ const Footer = ({ showExtraSpace }) => {
                     aria-label="Gemini"
                   >
                     <SiGooglegemini
-                      className="text-white hover:text-[#4285F4] transition-colors"
+                      className="text-[#9eb3cf] hover:text-[#4285F4] transition-colors"
                       size={25}
                     />
                   </Link>
@@ -192,7 +192,7 @@ const Footer = ({ showExtraSpace }) => {
                     aria-label="Perplexity"
                   >
                     <SiPerplexity
-                      className="text-white hover:text-[#22B3A8] transition-colors"
+                      className="text-[#9eb3cf] hover:text-[#22B3A8] transition-colors"
                       size={25}
                     />
                   </Link>
@@ -202,7 +202,7 @@ const Footer = ({ showExtraSpace }) => {
                     aria-label="Grok"
                   >
                     <GrokIcon
-                      className="text-white hover:text-gray-400 transition-colors"
+                      className="text-[#9eb3cf] hover:text-gray-400 transition-colors"
                       size={30}
                     />
                   </Link>
