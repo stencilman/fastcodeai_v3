@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/app/component/Button";
+import Button from "../../component/Button";
 import Image from "next/image";
 import React, { useState } from "react";
 

@@ -4,15 +4,13 @@ import { useGlobalContext } from "../context/GlobalContext";
 import Hero from "./sections/Hero";
 import InnovativeProj from "./sections/InnovativeProj";
 import SpecializeIndustries from "./sections/SpecializeIndustries";
-import HowWeDo from "../component/sections/HowWeDo";
-import WhyChooseUs from "../component/sections/WhyChooseUs";
-import OurWork from "../component/sections/OurWork";
-import Clients from "../component/sections/Clients";
-import TestimonialsN from "../component/sections/TestimonialsN";
-import Footer from "../component/sections/Footer";
+import HowWeDo from "../sections/HowWeDo";
+import WhyChooseUs from "../sections/WhyChooseUs";
+import OurWork from "../sections/OurWork";
+import Clients from "../sections/Clients";
+import TestimonialsN from "../sections/TestimonialsN";
+import Footer from "../sections/Footer";
 import Cta from "./sections/Cta";
-import Link from "next/link";
-
 
 const Industries = () => {
     const { setIsActive } = useGlobalContext();
