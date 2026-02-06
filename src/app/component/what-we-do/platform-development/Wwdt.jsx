@@ -83,7 +83,7 @@ const Wwdt = () => {
                       "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
                   }}
                 >
-                  <span className="text-white text-3xl font-aeonik tracking-wide">
+                  <span className="text-white text-2xl font-aeonik tracking-wide">
                     {phase.week}
                   </span>
                 </div>

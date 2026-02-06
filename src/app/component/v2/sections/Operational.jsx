@@ -35,7 +35,7 @@ const Operational = ({title, description, buttonText, buttonLink, secondaryButto
           <div className="relative z-10 flex flex-col items-center justify-center text-center text-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
             {/* Title */}
             <h2 className="text-xl md:text-4xl mb-2 tracking-wide font-normal">
-              {title || "Ready to Operationalize Your AI?"}
+             {title}
             </h2>
 
             {/* Main Content Area */}
@@ -47,11 +47,11 @@ const Operational = ({title, description, buttonText, buttonLink, secondaryButto
 
               {/* Description */}
               <p className="text-base md:text-lg text-[#9EB3CF] mb-16 leading-relaxed max-w-4xl mx-auto font-light">
-                {description || "Stop building from scratch. Start with a proven infrastructure."}
+                {description}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-                <Button name={buttonText || "Start Building Now"} to={buttonLink || "/contact"} />
+                <Button name={buttonText} to={buttonLink} />
                 {secondaryButtonText && secondaryButtonLink && (
                   <Button 
                     name={secondaryButtonText} 

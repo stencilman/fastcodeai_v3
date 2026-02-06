@@ -16,6 +16,12 @@ import automto from "../../../../public/our-work/automto.png";
 import fedLearning from "../../../../public/portfolio/fedLearning/img1-2.png";
 import fitness from "../../../../public/portfolio/fitness/img1-2.png";
 import shadow from "../../../../public/shadow/flat.svg";
+import case1 from "../../../../public/v2/case-studies/case-1.jpg";
+import case3 from "../../../../public/v2/case-studies/case-3.jpg";
+import case4 from "../../../../public/v2/case-studies/case-4.jpg";
+import case5 from "../../../../public/v2/case-studies/case-5.jpg";
+import case7 from "../../../../public/v2/case-studies/case-7.jpg";
+import case8 from "../../../../public/v2/case-studies/case-8.jpg";
 
 const list = [
   {
@@ -118,6 +124,60 @@ const list = [
     to: "/portfolio/banking-insights",
     readTime: "5 Min Read",
   },
+  {
+    category: "Automotive",
+    img: "bg-data-intel",
+    title: "Data Intelligence Platform for Automotive",
+    description:
+      "Transforms petabytes of raw enterprise data into actionable AI-ready insights.",
+    to: "/case-studies/data-intelligence-platform",
+    readTime: "5 Min Read",
+  },
+  {
+    category: "Oil & Gas",
+    img: "bg-processflow",
+    title: "AI Powered Automation & Analytics of Engineering Drawings",
+    description:
+      "Advanced computer vision digitizes engineering drawings for critical safety analysis in oil and gas.",
+    to: "/case-studies/process-flow-ai",
+    readTime: "6 Min Read",
+  },
+  {
+    category: "Legal",
+    img: "bg-miai",
+    title: "AI Legal Helper",
+    description:
+      "Engineered hallucination-free RAG with verifiable legal reasoning, achieving 60x faster analysis.",
+    to: "/case-studies/mi-ai-law",
+    readTime: "4 Min Read",
+  },
+  {
+    category: "Recruitment",
+    img: "bg-seikor",
+    title: "AI Job Management Platform",
+    description:
+      "Seikor's AI streamlines hiring workflows from job posting to candidate management, making recruitment faster for everyone.",
+    to: "https://seikor.com/",
+    readTime: "3 Min Read",
+  },
+  {
+    category: "Healthcare",
+    img: "bg-spiral",
+    title: "AI Based Posture Analysis",
+    description:
+      "AI-powered posture analysis delivers personalized physical therapy exercises in real-time through smartphones.",
+    to: "https://spiral.health/",
+    readTime: "4 Min Read",
+  },
+  {
+    category: "Retail",
+    img: "bg-driplabs",
+    title: "E-commerce Automation",
+    description:
+      "AI-powered photoshoots and Virtual Try-ons, delivering on-brand creatives at half the cost of traditional shoots.",
+    to: "https://www.driplabs.ai/app",
+    readTime: "4 Min Read",
+  },
 ];
 
 const imageByKey = {
@@ -132,6 +192,12 @@ const imageByKey = {
   "bg-dermo": dermos,
   "bg-automto": automto,
   "bg-bnk": bnk,
+  "bg-data-intel": case1,
+  "bg-processflow": case3,
+  "bg-miai": case4,
+  "bg-seikor": case5,
+  "bg-spiral": case7,
+  "bg-driplabs": case8,
 };
 
 const tagsByTo = {
@@ -146,6 +212,12 @@ const tagsByTo = {
   "/portfolio/skin-cancer-detection": ["Healthcare", "Computer Vision"],
   "/portfolio/auto-mto": ["Oil & Gas", "Predictive AI"],
   "/portfolio/banking-insights": ["Finance", "Analytics"],
+  "/case-studies/data-intelligence-platform": ["Automotive", "Data Intelligence"],
+  "/case-studies/process-flow-ai": ["Oil & Gas", "Computer Vision"],
+  "/case-studies/mi-ai-law": ["Legal", "RAG System"],
+  "https://seikor.com/": ["Recruitment", "AI Platform"],
+  "https://spiral.health/": ["Healthcare", "Computer Vision"],
+  "https://www.driplabs.ai/app": ["Retail", "Generative AI"],
 };
 
 const Products = () => {
@@ -184,7 +256,7 @@ const Products = () => {
 
         {/* Filters */}
         <LayoutGroup>
-          <div className="flex justify-start md:justify-center font-aeonik gap-2 md:gap-4 mb-10 md:mb-16 overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex justify-start font-aeonik gap-2 md:gap-4 mb-10 md:mb-16 overflow-x-auto  flex-nowrap  scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               return (

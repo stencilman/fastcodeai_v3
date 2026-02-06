@@ -9,6 +9,7 @@ import nyu from "../../../../../public/leader/nyu/icon2.png";
 import quote from "../../../../../public/leader/quote.svg";
 import arjun from "../../../../../public/arjun_jain.png";
 import Button from "../../Button";
+import CeoDeskSlide from "../components/CeoDeskSlide";
 
 const Leader = () => {
   const logos = [
@@ -79,18 +80,15 @@ const Leader = () => {
           </div>
 
           {/* CEO Desk Card - Spans 8 columns - Order 4 (last on mobile) */}
-          <div className="lg:col-span-8 order-4 lg:order-2 pt-8">
-            <div className="h-full w-full rounded-3xl bg-[#0C1C46] border border-white/10 p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
+          <div className="lg:col-span-8 order-4 lg:order-2 ">
+            <div className="h-full w-full rounded-3xl  relative overflow-hidden flex flex-col justify-center">
               {/* Background Glow Effect */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
 
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                {/* Quote Icon */}
-                <div className="flex-shrink-0">
+                {/* <div className="flex-shrink-0">
                   <Image src={quote} alt="quote" width={170} height={170} />
                 </div>
-
-                {/* Text Content */}
                 <div
                   className="flex-1"
                   //   style={{
@@ -109,7 +107,8 @@ const Leader = () => {
                     predict the future of intelligence—we engineer it, one
                     algorithm at a time.
                   </p>
-                </div>
+                </div> */}
+                <CeoDeskSlide />
               </div>
             </div>
           </div>

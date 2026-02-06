@@ -25,17 +25,6 @@ const localCaseStudies = [
     },
     {
       id: 2,
-      title: "Arjun Jain",
-      description:
-        "Dr. Arjun Jain is the heart and soul of Fast Code AI, turning impossible AI problems into shipped solutions.",
-      details:
-        "With over 15 years of experience in AI and Machine Learning, Dr. Jain has led teams to deliver breakthrough solutions in computer vision, NLP, and predictive analytics. His leadership ensures that every project at Fast Code AI is built on a foundation of scientific rigor and engineering excellence.",
-      image: "/v2/case-studies/case-2.jpg",
-      link: "https://www.linkedin.com/in/arjunjain/",
-      ctaText: "Connect with him",
-    },
-    {
-      id: 3,
       title: "ProcessFlow AI",
       description:
         "Advanced computer vision digitizes engineering drawings for critical safety analysis in oil and gas.",
@@ -46,7 +35,7 @@ const localCaseStudies = [
       ctaText: "View case study",
     },
     {
-      id: 4,
+      id: 3,
       title: "MiAI Law",
       description:
         "Engineered hallucination-free RAG with verifiable legal reasoning, achieving 60x faster analysis and 90% cost reduction.",
@@ -57,7 +46,7 @@ const localCaseStudies = [
       ctaText: "View case study",
     },
     {
-      id: 5,
+      id: 4,
       title: "Seikor",
       description:
         "Seikor's AI streamlines hiring workflows from job posting to candidate management, making recruitment faster for everyone.",
@@ -68,7 +57,7 @@ const localCaseStudies = [
       ctaText: "View the product",
     },
     {
-      id: 6,
+      id: 5,
       title: "Career",
       description:
         "We've cracked AI challenges for Mercedes, Bosch, and Aramco, but that's just the warm-up. We still have a lot to build.",
@@ -79,7 +68,7 @@ const localCaseStudies = [
       ctaText: "Join us",
     },
     {
-      id: 7,
+      id: 6,
       title: "Spiral Health",
       description:
         "AI-powered posture analysis delivers personalized physical therapy exercises in real-time through smartphones.",
@@ -90,7 +79,7 @@ const localCaseStudies = [
       ctaText: "See Spiral in action",
     },
     {
-      id: 8,
+      id: 7,
       title: "Drip Labs",
       description:
         "AI-powered photoshoots and Virtual Try-ons, delivering on-brand creatives at half the cost of traditional shoots. ",

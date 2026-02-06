@@ -36,9 +36,50 @@ const bwmss01 = localFont({
   variable: "--font-bwmss01",
 });
 
+export const viewport = {
+  themeColor: '#00081f',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata = {
-  title: "Theme Starter",
-  description: "FastCode theme starter for new Next.js projects.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fastcode.ai'),
+  title: {
+    default: "Fast Code AI",
+    template: "%s | FastCode AI",
+  },
+  description: "Fast Code AI - Accelerating Innovation FastCode AI helps you build and scale AI solutions.",
+  keywords: ["AI", "Artificial Intelligence", "Machine Learning", "FastCode", "Infrastructure", "React", "Next.js", "Software Development"],
+  authors: [{ name: "FastCode AI" }],
+  creator: "FastCode AI",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    title: "Fast Code AI ",
+    description: "Fast Code AI - Accelerating Innovation",
+    siteName: "FastCode AI",
+    images: [
+      {
+        url: "/public/logo1.png",
+        width: 1200,
+        height: 630,
+        alt: "FastCode AI Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fast Code AI",
+    description: "Fast Code AI - Accelerating Innovation",
+    images: ["/public/logo1.png"],
+    creator: "@FastCodeAI",
+  },
+  icons: {
+    icon: "/public/logo1.png",
+    shortcut: "/public/logo1.png",
+    apple: "/public/logo1.png",
+  },
 };
 
 export default function RootLayout({ children }) {
