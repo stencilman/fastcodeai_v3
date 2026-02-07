@@ -154,7 +154,7 @@ const SlideMorphingDialog = ({
   );
 };
 
-const VideoController = ({ src, isActive, className, preload = "none" }) => {
+const VideoController = ({ src, isActive, className, preload = "none", poster }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -180,6 +180,7 @@ const VideoController = ({ src, isActive, className, preload = "none" }) => {
       loop
       playsInline
       preload={preload}
+      poster={poster}
       className={className}
     />
   );
@@ -208,6 +209,8 @@ const HeroSlider = () => {
       id: 1,
       bgVideo: "/v2/hero/odo.mp4",
       mobileVideo: "/v2/hero/mobile/odo.mp4",
+      bgPoster: "/v2/hero/poster/odo.jpg",
+      mobilePoster: "/v2/hero/mobile/poster/odo.jpg",
       title: "Frontier AI. Enterprise Scale. Delivered.",
       subtitle:
         "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
@@ -226,6 +229,8 @@ const HeroSlider = () => {
       id: 2,
       bgVideo: "/v2/hero/roadside-assist.mp4",
       mobileVideo: "/v2/hero/mobile/roadside-assist.mp4",
+      bgPoster: "/v2/hero/poster/roadside-assist.jpg",
+      mobilePoster: "/v2/hero/mobile/poster/roadside-assist.jpg",
       title: "Frontier AI. Enterprise Scale. Delivered.",
       // subtitle: "With Cutting-Edge AI\nResearch Solutions",
       subtitle:
@@ -245,6 +250,8 @@ const HeroSlider = () => {
       id: 3,
       bgVideo: "/v2/hero/mbux.mp4",
       mobileVideo: "/v2/hero/mobile/mbux.mp4",
+      bgPoster: "/v2/hero/poster/mbux.jpg",
+      mobilePoster: "/v2/hero/mobile/poster/mbux.jpg",
       title: "Frontier AI. Enterprise Scale. Delivered.",
       subtitle:
         "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
@@ -263,6 +270,8 @@ const HeroSlider = () => {
       id: 4,
       bgVideo: "/v2/hero/pose-estimation.mp4",
       mobileVideo: "/v2/hero/mobile/pose-estimation.mp4",
+      bgPoster: "/v2/hero/poster/pose-estimation.jpg",
+      mobilePoster: "/v2/hero/mobile/poster/pose-estimation.jpg",
       title: "Frontier AI. Enterprise Scale. Delivered.",
       subtitle:
         "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
@@ -312,6 +321,7 @@ const HeroSlider = () => {
                     src={slide.bgVideo}
                     isActive={isActive}
                     preload={index === 0 ? "auto" : "none"}
+                    poster={slide.bgPoster}
                     className="hidden md:block h-full w-full object-cover"
                   />
                   {/* Gradient Overlay */}
@@ -341,6 +351,7 @@ const HeroSlider = () => {
                           src={slide.mobileVideo}
                           isActive={isActive}
                           preload={index === 0 ? "auto" : "none"}
+                          poster={slide.mobilePoster}
                           className="h-full w-full object-cover"
                         />
                       </div>

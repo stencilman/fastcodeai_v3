@@ -75,7 +75,7 @@ const Navbar = () => {
             <Link href="/">
               {" "}
               <Image
-                priority="true"
+                priority
                 className="w-[190px] sm:w-[290px]"
                 src="/logo1.svg"
                 alt="logo"

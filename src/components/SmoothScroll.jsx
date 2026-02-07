@@ -1,10 +1,15 @@
 "use client";
 
-import { ReactLenis } from "@studio-freight/react-lenis";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
+const ReactLenis = dynamic(
+  () => import("@studio-freight/react-lenis").then((mod) => mod.ReactLenis),
+  { ssr: false }
+);
+
 function SmoothScroll({ children }) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => {

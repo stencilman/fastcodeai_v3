@@ -18,22 +18,26 @@ const aeonik = localFont({
     },
   ],
   variable: "--font-aeonik",
+  display: "swap",
+  preload: true,
 });
 
 const bwmss01 = localFont({
   src: [
     {
-      path: "../../public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf",
+      path: "../../public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf",
+      path: "../../public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.woff2",
       weight: "700",
       style: "normal",
     },
   ],
   variable: "--font-bwmss01",
+  display: "swap",
+  preload: true,
 });
 
 export const viewport = {
