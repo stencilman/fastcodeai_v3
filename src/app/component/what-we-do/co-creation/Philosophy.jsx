@@ -55,6 +55,8 @@ const Philosophy = () => {
                   src={card.image}
                   alt={card.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  placeholder="blur"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

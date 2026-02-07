@@ -74,6 +74,7 @@ const Leader = () => {
                 fill
                 className="object-cover "
                 sizes="(max-width: 1024px) 100vw, 33vw"
+                placeholder="blur"
                 priority
               />
             </div>
@@ -107,6 +108,7 @@ const Leader = () => {
                     <Image
                       src={logo.src}
                       alt={logo.alt}
+                      placeholder="blur"
                       className="max-h-20 w-auto object-contain brightness-0 invert"
                     />
                   </div>

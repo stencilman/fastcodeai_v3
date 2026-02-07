@@ -173,7 +173,7 @@ const Productions = () => {
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 80vw"
-                        priority
+                        placeholder="blur"
                       />
                     </div>
 

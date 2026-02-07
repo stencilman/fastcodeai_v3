@@ -321,6 +321,8 @@ const Products = () => {
                       src={product.image}
                       alt={product.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      placeholder="blur"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
