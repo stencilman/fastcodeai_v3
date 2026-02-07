@@ -27,14 +27,22 @@ const Navbar = () => {
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
+  
   useEffect(() => {
-    setIsActive(false);
-  }, [setIsActive]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener("scroll", onScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 

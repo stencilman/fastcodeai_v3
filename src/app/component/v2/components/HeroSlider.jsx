@@ -152,6 +152,36 @@ const SlideMorphingDialog = ({
   );
 };
 
+const VideoController = ({ src, isActive, className }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isActive) {
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Auto-play was prevented
+          });
+        }
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isActive]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      muted
+      loop
+      playsInline
+      className={className}
+    />
+  );
+};
+
 const HeroSlider = () => {
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -275,12 +305,9 @@ const HeroSlider = () => {
               <>
                 {/* Background video */}
                 <div className="absolute inset-0">
-                  <video
+                  <VideoController
                     src={slide.bgVideo}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                    isActive={isActive}
                     className="hidden md:block h-full w-full object-cover"
                   />
                   {/* Gradient Overlay */}
@@ -306,12 +333,9 @@ const HeroSlider = () => {
                     {/* Mobile inline video card (separate from background) */}
                     <div className="md:hidden mt-8 w-full">
                       <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                        <video
+                        <VideoController
                           src={slide.mobileVideo}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
+                          isActive={isActive}
                           className="h-full w-full object-cover"
                         />
                       </div>

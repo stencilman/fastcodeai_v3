@@ -1,41 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
+import Swiper from "swiper";
+import { Navigation, Autoplay, Keyboard, Controller } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const TestimonialsN = () => {
-  const [swiperLoaded, setSwiperLoaded] = useState(false);
-
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://unpkg.com/swiper@8/swiper-bundle.min.js";
-    script.async = true;
-    script.onload = () => setSwiperLoaded(true);
-    document.body.appendChild(script);
-
-    const link = document.createElement("link");
-    link.href = "https://unpkg.com/swiper@8/swiper-bundle.min.css";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-    return () => {
-      // console.log("slider compo unmount");
-      document.body.removeChild(script);
-      document.head.removeChild(link);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!swiperLoaded) return;
-    // console.log("swiperLoaded", swiperLoaded);
     document
       .querySelectorAll(".cs-cards-container, .cs-nav-container")
       .forEach((element) => {
         element.removeAttribute("role");
       });
-    if (!swiperLoaded) return;
 
-    var navSwiper = new Swiper(".cs-nav-swiper", {
+    const navSwiper = new Swiper(".cs-nav-swiper", {
+      modules: [Controller],
       loop: true,
       slidesPerView: "auto",
       centeredSlides: true,
@@ -44,7 +25,10 @@ const TestimonialsN = () => {
     });
 
     const swiperEl = document.querySelector(".cs-cards-swiper");
+    if (!swiperEl) return;
+
     const swiper = new Swiper(swiperEl, {
+      modules: [Navigation, Autoplay, Keyboard, Controller],
       grabCursor: true,
       watchSlidesProgress: true,
       loop: true,
@@ -107,16 +91,28 @@ const TestimonialsN = () => {
     // Pause autoplay on hover
     document.querySelectorAll(".cs-nav-slide").forEach((slide) => {
       slide.addEventListener("mouseenter", () => {
-        swiper.autoplay.stop();
+        if (swiper.autoplay && typeof swiper.autoplay.stop === 'function') {
+            swiper.autoplay.stop();
+        }
       });
       slide.addEventListener("mouseleave", () => {
-        swiper.autoplay.start();
+         if (swiper.autoplay && typeof swiper.autoplay.start === 'function') {
+            swiper.autoplay.start();
+        }
       });
     });
 
-    swiper.controller.control = navSwiper;
-    navSwiper.controller.control = swiper;
-  }, [swiperLoaded]);
+    if (swiper.controller && navSwiper.controller) {
+        swiper.controller.control = navSwiper;
+        navSwiper.controller.control = swiper;
+    }
+
+    return () => {
+        if (swiper) swiper.destroy();
+        if (navSwiper) navSwiper.destroy();
+    };
+  }, []);
+
   return (
     <>
       {/* Slide Contaner */}
@@ -237,6 +233,7 @@ const TestimonialsN = () => {
                           strokeWidth="1.33"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                     </div> */}
@@ -340,6 +337,7 @@ const TestimonialsN = () => {
                           stroke="#B1B3F6"
                           strokeWidth="1.33"
                           strokeLinecap="round"
+                          strokeLinejoin="round"
                           strokeLinejoin="round"
                         />
                       </svg>
@@ -445,6 +443,7 @@ const TestimonialsN = () => {
                           strokeWidth="1.33"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                     </div> */}
@@ -548,6 +547,7 @@ const TestimonialsN = () => {
                           stroke="#B1B3F6"
                           strokeWidth="1.33"
                           strokeLinecap="round"
+                          strokeLinejoin="round"
                           strokeLinejoin="round"
                         />
                       </svg>
@@ -662,6 +662,7 @@ const TestimonialsN = () => {
                           stroke="#B1B3F6"
                           strokeWidth="1.33"
                           strokeLinecap="round"
+                          strokeLinejoin="round"
                           strokeLinejoin="round"
                         />
                       </svg>
