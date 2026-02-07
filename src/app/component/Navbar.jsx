@@ -3,14 +3,16 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
-import Nav from "./Nav";
+import dynamic from "next/dynamic";
 import { useGlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
 import Button from "./Button";
 import { Handshake } from "lucide-react";
-import FormModal from "../contact/sections/FormModal";
 import ShadowBlob from "./common/ShadowBlob";
 import { usePathname } from "next/navigation";
+
+const Nav = dynamic(() => import("./Nav"), { ssr: false });
+const FormModal = dynamic(() => import("../contact/sections/FormModal"), { ssr: false });
 
 const Navbar = () => {
   // const [isActive, setIsActive] = useState(false);

@@ -14,8 +14,10 @@ import {
   MorphingDialogContainer,
 } from "../../morphing-dialog";
 import { cn } from "../../../../lib/utils";
+import dynamic from "next/dynamic";
 import Button from "../../Button";
-import FormModal from "../../../contact/sections/FormModal";
+
+const FormModal = dynamic(() => import("../../../contact/sections/FormModal"), { ssr: false });
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -152,7 +154,7 @@ const SlideMorphingDialog = ({
   );
 };
 
-const VideoController = ({ src, isActive, className }) => {
+const VideoController = ({ src, isActive, className, preload = "none" }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -177,6 +179,7 @@ const VideoController = ({ src, isActive, className }) => {
       muted
       loop
       playsInline
+      preload={preload}
       className={className}
     />
   );
@@ -308,6 +311,7 @@ const HeroSlider = () => {
                   <VideoController
                     src={slide.bgVideo}
                     isActive={isActive}
+                    preload={index === 0 ? "auto" : "none"}
                     className="hidden md:block h-full w-full object-cover"
                   />
                   {/* Gradient Overlay */}
@@ -336,6 +340,7 @@ const HeroSlider = () => {
                         <VideoController
                           src={slide.mobileVideo}
                           isActive={isActive}
+                          preload={index === 0 ? "auto" : "none"}
                           className="h-full w-full object-cover"
                         />
                       </div>

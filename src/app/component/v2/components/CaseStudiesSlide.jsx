@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./CaseStudiesSlide.css";
-import Link from "next/link";
 import Button from "../../Button";
 import ShadowBlob from "../../common/ShadowBlob";
 
