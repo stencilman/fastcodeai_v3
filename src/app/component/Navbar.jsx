@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import Nav from "./Nav";
 import { useGlobalContext } from "../context/GlobalContext";
 import dynamic from "next/dynamic";
 import Link from "next/link";
