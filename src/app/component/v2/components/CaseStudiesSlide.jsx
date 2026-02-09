@@ -175,7 +175,7 @@ const CaseStudiesSlide = () => {
   }, [activeIndex]);
 
   return (
-    <div className="relative bg-[#00081F] py-16">
+    <div className="relative bg-[#00081F] py-16 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="flex flex-row items-center justify-between mb-8 md:mb-12">
