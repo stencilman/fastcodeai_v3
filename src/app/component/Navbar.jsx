@@ -1,5 +1,4 @@
 "use client";
-import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
@@ -164,7 +163,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+        {isActive && <Nav />}
 
         {/* <style jsx>{`
         .backdrop-blur {

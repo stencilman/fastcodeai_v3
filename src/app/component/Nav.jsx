@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { menuSlide } from "./anim";
 import LinkNav from "./LinkNav";
 import Link from "next/link";
 import { useGlobalContext } from "../context/GlobalContext";
@@ -35,11 +33,7 @@ export default function Nav() {
   const { setIsActive } = useGlobalContext();
 
   return (
-    <motion.div
-      variants={menuSlide}
-      initial="initial"
-      animate="enter"
-      exit="exit"
+    <div
       className="h-[100dvh]  z-[2] w-[100%] sm:w-[50%] md:w-[55%] lg:w-[35%] rounded-l-3xl bg-[#FFFFFF] fixed right-0 top-0 text-white"
     >
       <div className="box-border h-full pt-[3rem] md:pt-[6rem] lg:pt-[3rem] flex flex-col justify-between">
@@ -67,7 +61,7 @@ export default function Nav() {
           {/* <Link
             href="/blogs"
             className="text-lg text-black font-aeonik font-light"
-          >
+            >
             Blog
           </Link> */}
           <Link
@@ -79,6 +73,6 @@ export default function Nav() {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -1,0 +1,86 @@
+/********* Page Transition Animation *********/
+
+.page-transition {
+  opacity: 0;
+  background: #020B2A;
+  transform: translateY(40px);
+  filter: blur(12px)
+}
+
+/********* End Page Transition Animation *********/
+
+/* MOVING BORDER  */
+.moving-border-wrapper {
+  background: #1A2758;
+  position: relative;
+  overflow: hidden;
+}
+
+.moving-border-wrapper::before {
+  background: transparent linear-gradient(360deg, #385ABF 0%, #13224F 0%, #6586DC 51%, #020F3B 100%) 0% 0% no-repeat padding-box;
+
+  @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
+}
+
+.moving-border-content {
+
+  @apply absolute w-[calc(100%-2px)] h-[calc(100%-2px)] top-[1px] left-[1px] rounded-[18px];
+}
+
+/* END-MOVING  BORDER  */
+
+/* scroll anim */
+
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+
+  33.3% {
+    opacity: 1;
+    transform: translateY(calc(0.6rem * 3.8));
+  }
+
+  66.6% {
+    opacity: 1;
+    transform: translateY(calc(0.6rem * 5.2));
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(calc(0.6rem * 8)) scale(0.5);
+  }
+}
+
+.chevronScroll {
+  @apply absolute w-[calc(0.6rem*2)] h-[calc(0.6rem*0.6)];
+  transform: scale(0.3);
+  animation: move-chevron 3s ease-out infinite;
+}
+
+.chevronScroll:first-child {
+  animation-delay: 1s;
+}
+
+.chevronScroll:nth-child(2) {
+  animation-delay: 2s;
+
+}
+
+.chevronScroll::before,
+.chevronScroll::after {
+  @apply absolute top-0 h-full w-1/2 bg-[#d9dee3];
+  content: '';
+}
+
+.chevronScroll::before {
+  @apply left-0;
+  transform: skewY(30deg);
+}
+
+.chevronScroll::after {
+  @apply right-0;
+  transform: skewY(-30deg);
+}
+
+/* end scroll anim */

@@ -1,4 +1,9 @@
 import "./globals.css";
+import "./styles/theme.css";
+import "./styles/base.css";
+import "./styles/animations.css";
+import "./styles/components.css";
+import "./styles/vendor.css";
 import localFont from "next/font/local";
 import Navbar from "./component/Navbar";
 import SmoothScroll from "../components/SmoothScroll";
