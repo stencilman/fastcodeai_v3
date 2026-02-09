@@ -123,14 +123,10 @@ const CaseStudiesSlide = () => {
       progressRefs.current.forEach((ref, index) => {
         if (ref) {
           if (index === currentIndex) {
-            ref.style.width = `${
-              100 -
-              ((swiper.autoplay.running ? swiper.autoplay.timeLeft : 5000) /
-                5000) *
-                100
-            }%`;
+            const progress = 1 - ((swiper.autoplay.running ? swiper.autoplay.timeLeft : 5000) / 5000);
+            ref.style.transform = `scaleX(${progress})`;
           } else {
-            ref.style.width = index < currentIndex ? "100%" : "0%";
+            ref.style.transform = index < currentIndex ? "scaleX(1)" : "scaleX(0)";
           }
         }
       });
@@ -223,8 +219,8 @@ const CaseStudiesSlide = () => {
                   <span
                     ref={(el) => (progressRefs.current[index] = el)}
                     // className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#2DC1C3] to-[#0268F2] transition-all duration-100 ease-linear"
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#efe8e8] transition-all duration-100 ease-linear"
-                    style={{ width: "0%" }}
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#efe8e8] origin-left"
+                    style={{ width: "100%", transform: "scaleX(0)" }}
                   ></span>
                   <ShadowBlob
                     positionClass="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
