@@ -1,28 +1,20 @@
-"use client";
-import Footer from "./sections/Footer";
-import TestimonialsSlider from "./sections/TestimonialsSlider";
-import { useGlobalContext } from "./context/GlobalContext";
-import { useEffect } from "react";
-
-// V2
+import dynamic from "next/dynamic";
 import Hero from "./component/v2/sections/Hero";
-import IndustryLeaders from "./component/v2/sections/IndustryLeaders";
-import CaseStudies from "./component/v2/sections/CaseStudies";
-import Leader from "./component/v2/sections/Leader";
-import Mission from "./component/v2/sections/Mission";
-import Operational from "./component/v2/sections/Operational";
-import Power from "./component/v2/sections/Power";
+import HomeClient from "./HomeClient";
 import image2 from "../../public/mission/image2.png";
+
+const IndustryLeaders = dynamic(() => import("./component/v2/sections/IndustryLeaders"));
+const CaseStudies = dynamic(() => import("./component/v2/sections/CaseStudies"));
+const Power = dynamic(() => import("./component/v2/sections/Power"));
+const Mission = dynamic(() => import("./component/v2/sections/Mission"));
+const Leader = dynamic(() => import("./component/v2/sections/Leader"));
+const TestimonialsSlider = dynamic(() => import("./sections/TestimonialsSlider"));
+const Operational = dynamic(() => import("./component/v2/sections/Operational"));
+const Footer = dynamic(() => import("./sections/Footer"));
+
 export default function Home() {
-  const { setIsActive } = useGlobalContext();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsActive(false);
-  }, [setIsActive]);
-
   return (
-    <>
+    <HomeClient>
       <Hero />
       <IndustryLeaders />
       <CaseStudies />
@@ -38,8 +30,7 @@ export default function Home() {
         bgImage={image2}
         bgImageAlt="Operational Background"
       />
-
       <Footer showExtraSpace={true} />
-    </>
+    </HomeClient>
   );
 }

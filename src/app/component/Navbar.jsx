@@ -3,14 +3,16 @@ import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import Nav from "./Nav";
 import { useGlobalContext } from "../context/GlobalContext";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Button from "./Button";
 import { Handshake } from "lucide-react";
-import FormModal from "../contact/sections/FormModal";
 import ShadowBlob from "./common/ShadowBlob";
 import { usePathname } from "next/navigation";
+
+const Nav = dynamic(() => import("./Nav"), { ssr: false });
+const FormModal = dynamic(() => import("../contact/sections/FormModal"), { ssr: false });
 
 const Navbar = () => {
   // const [isActive, setIsActive] = useState(false);
@@ -73,7 +75,7 @@ const Navbar = () => {
             <Link href="/">
               {" "}
               <Image
-                priority="true"
+                priority
                 className="w-[190px] sm:w-[290px]"
                 src="/logo1.svg"
                 alt="logo"

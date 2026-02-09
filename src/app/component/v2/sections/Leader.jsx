@@ -6,7 +6,6 @@ import iis from "../../../../../public/leader/iis/icon2.png";
 import iit from "../../../../../public/leader/iit/icon2.png";
 import max from "../../../../../public/leader/max/icon2.png";
 import nyu from "../../../../../public/leader/nyu/icon2.png";
-import quote from "../../../../../public/leader/quote.svg";
 import arjun from "../../../../../public/arjun_jain.png";
 import Button from "../../Button";
 import CeoDeskSlide from "../components/CeoDeskSlide";
@@ -74,6 +73,8 @@ const Leader = () => {
                 src={arjun}
                 alt="Dr. Arjun Jain"
                 fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                placeholder="blur"
                 className="object-cover object-top"
               />
             </div>
@@ -142,6 +143,7 @@ const Leader = () => {
                     <Image
                       src={logo.src}
                       alt={logo.alt}
+                      placeholder="blur"
                       className="max-h-28 w-auto object-contain brightness-0 invert"
                     />
                   </div>

@@ -12,6 +12,7 @@ const Hero = ({ HeroImage, title, description, buttonText, buttonLink }) => {
           src={HeroImage}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, 65vw"
           className="object-cover object-top md:object-center"
           priority
         />

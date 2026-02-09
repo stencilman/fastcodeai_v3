@@ -22,6 +22,7 @@ const TeamMemberCard = ({ member, isActive, onClick, className = "" }) => {
             src={member.image}
             alt={member.name}
             fill
+            sizes="(max-width: 768px) 140px, 280px"
             className="object-cover"
           />
           {/* Blue overlay for inactive */}

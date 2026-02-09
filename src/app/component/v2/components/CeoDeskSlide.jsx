@@ -8,7 +8,7 @@ const CeoDeskSlide = () => {
       {/* Elfsight LinkedIn Feed | AJ */}
       <Script
         src="https://elfsightcdn.com/platform.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <div
         className="elfsight-app-59dac44d-bcd1-4235-94f8-372ba5392844"

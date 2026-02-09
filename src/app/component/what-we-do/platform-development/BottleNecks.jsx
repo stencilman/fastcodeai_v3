@@ -62,6 +62,8 @@ const BottleNecks = () => {
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 100vw"
+                    placeholder="blur"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>

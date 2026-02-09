@@ -7,8 +7,6 @@ import { Autoplay, Controller } from "swiper/modules";
 import "swiper/css";
 // import "swiper/css/auto-height"; // Commented out to avoid error if file doesn't exist, will try if needed.
 import Button from "../component/Button";
-import shadow from "../../../public/shadow/tstmonls.svg";
-import shadow2 from "../../../public/shadow/flat.svg";
 
 const testimonials = [
   {
@@ -113,6 +111,7 @@ const TestimonialsSlider = () => {
                   src={item.logo}
                   alt={item.id}
                   fill
+                  sizes="(max-width: 768px) 80px, 128px"
                   className={`object-contain transition-all duration-300 ${
                     activeIndex === index
                       ? "opacity-100"
@@ -180,6 +179,7 @@ const TestimonialsSlider = () => {
                           src={item.image}
                           alt={item.name}
                           fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
                           className="object-cover"
                         />
                         {/* Blue tint overlay if needed based on screenshot description "Dark background" usually images match. 
@@ -244,13 +244,11 @@ const TestimonialsSlider = () => {
               ))}
             </Swiper>
           </div>
-          <div className="absolute top-[80px] left-0 w-full h-full z-[-1]">
-            <Image
-              src={shadow}
-              alt="Shadow"
-              fill
-              className="object-contain scale-[120%] blur-3xl"
-            />
+          <div
+            className="absolute top-[80px] left-0 w-full h-full z-[-1] flex items-center justify-center pointer-events-none"
+            aria-hidden="true"
+          >
+            <div className="w-[120%] h-[60%] rounded-[50%] bg-[#012dac] blur-3xl opacity-40" />
           </div>
         </div>
       </div>

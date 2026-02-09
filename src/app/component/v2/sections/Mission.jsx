@@ -16,8 +16,9 @@ const Mission = () => {
               src={image2}
               alt="Mission Background"
               fill
+              sizes="(max-width: 768px) 100vw, 80vw"
+              placeholder="blur"
               className="object-cover object-center opacity-100 mix-blend-luminosity"
-              priority
             />
             {/* Overlay to ensure text readability */}
             <div className="absolute inset-0 bg-[#020F3B]/60 mix-blend-multiply"></div>
@@ -25,8 +26,9 @@ const Mission = () => {
               src={dot2}
               alt="Mission Dots"
               fill
+              sizes="(max-width: 768px) 100vw, 80vw"
+              placeholder="blur"
               className="object-contain object-center opacity-100 z-10"
-              priority
             />
           </div>
 

@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,8 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./CaseStudiesSlide.css";
-import Link from "next/link";
-import shadow from "../../../../../public/shadow/flat.svg";
 import Button from "../../Button";
 import ShadowBlob from "../../common/ShadowBlob";
 
@@ -336,14 +335,10 @@ const CaseStudiesSlide = () => {
           </Swiper>
         </div>
       </div>
-      <div className="absolute top-[250px] translate-x-[-50%] left-1/2  ">
-        <Image
-          src={shadow}
-          alt="Shadow"
-          fill
-          className="  scale-[100%] blur-[100px]"
-        />
-      </div>
+      <div
+        className="absolute top-[250px] left-1/2 -translate-x-1/2 w-[1000px] h-[300px] rounded-[50%] bg-[#012dac] blur-[100px] opacity-40 pointer-events-none"
+        aria-hidden="true"
+      />
 
       {/* Utilities */}
       <style jsx global>{`

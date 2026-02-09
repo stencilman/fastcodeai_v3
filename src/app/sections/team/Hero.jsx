@@ -22,6 +22,7 @@ const Hero = ({ HeroImage = null, HeroVideo = null, title, description, buttonTe
             src={HeroImage}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, 65vw"
             className="object-cover object-top md:object-center"
             priority
           />

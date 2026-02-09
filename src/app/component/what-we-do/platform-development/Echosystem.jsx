@@ -88,6 +88,7 @@ const Echosystem = () => {
                     alt="Left shadow"
                     className="object-cover"
                     fill
+                    sizes="80px"
                   />
                 </div>
               </div>
@@ -98,6 +99,7 @@ const Echosystem = () => {
                     alt="Right shadow"
                     className="object-cover"
                     fill
+                    sizes="120px"
                   />
                 </div>
               </div>
