@@ -2,7 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import { AnimatePresence } from "framer-motion";
+import Nav from "./Nav";
 import { useGlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
 import Button from "./Button";
@@ -165,7 +166,9 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        {isActive && <Nav />}
+        <AnimatePresence mode="wait">
+          {isActive && <Nav />}
+        </AnimatePresence>
 
         {/* <style jsx>{`
         .backdrop-blur {
