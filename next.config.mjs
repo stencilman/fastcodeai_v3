@@ -2,6 +2,7 @@
 const nextConfig = {
   compress: true,
   experimental: {
+    optimizeCss: true,
     optimizePackageImports: [
       "framer-motion",
       "lucide-react",
