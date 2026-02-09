@@ -280,7 +280,7 @@ const CaseStudiesSlide = () => {
                               alt={study.title}
                               fill
                               className="object-cover"
-                              sizes="(max-width: 768px) 85vw, 50vw"
+                              sizes="(max-width: 768px) calc(100vw - 96px), (max-width: 1200px) 50vw, 33vw"
                             />
                           </div>
                         </div>

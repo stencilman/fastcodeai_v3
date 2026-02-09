@@ -155,7 +155,7 @@ const SlideMorphingDialog = ({
   );
 };
 
-const VideoController = ({ src, isActive, className, preload = "none", poster }) => {
+const VideoController = ({ src, isActive, className, preload = "none", poster, sizes = "100vw" }) => {
   const videoRef = useRef(null);
   const [hasPlayed, setHasPlayed] = useState(false);
 
@@ -188,7 +188,7 @@ const VideoController = ({ src, isActive, className, preload = "none", poster })
             fill
             className="object-cover"
             priority={preload === "auto"}
-            sizes="100vw"
+            sizes={sizes}
           />
         )}
       </div>
@@ -364,18 +364,19 @@ const HeroSlider = () => {
                       />
                     </div>
 
-                    {/* Mobile inline video card (separate from background) */}
-                    <div className="md:hidden mt-8 w-full">
-                      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                        <VideoController
-                          src={slide.mobileVideo}
-                          isActive={isActive}
-                          preload={index === 0 ? "auto" : "none"}
-                          poster={slide.mobilePoster}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
+                  {/* Mobile inline video card (separate from background) */}
+                  <div className="md:hidden mt-8 w-full">
+                    <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
+                      <VideoController
+                        src={slide.mobileVideo}
+                        isActive={isActive}
+                        preload={index === 0 ? "auto" : "none"}
+                        poster={slide.mobilePoster}
+                        className="h-full w-full object-cover"
+                        sizes="(max-width: 768px) 95vw, 100vw"
+                      />
                     </div>
+                  </div>
                   </div>
                 </div>
 
