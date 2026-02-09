@@ -204,7 +204,7 @@ const CaseStudiesSlide = () => {
         {/* Tabs Navigation */}
         <div
           ref={tabsContainerRef}
-          className="flex gap-4 mb-8 overflow-x-auto no-scrollbar pb-2"
+          className="flex gap-4 mb-8 overflow-y-hidden overflow-x-auto no-scrollbar pb-2"
         >
           {caseStudies.map((study, index) => (
             <div
@@ -280,7 +280,7 @@ const CaseStudiesSlide = () => {
                               alt={study.title}
                               fill
                               className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 50vw"
+                              sizes="(max-width: 768px) 85vw, 50vw"
                             />
                           </div>
                         </div>

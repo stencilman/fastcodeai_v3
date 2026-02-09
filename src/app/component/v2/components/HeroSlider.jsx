@@ -1,5 +1,6 @@
 "use client";
 import React, { useMemo, useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules";
 import Link from "next/link";
@@ -156,6 +157,7 @@ const SlideMorphingDialog = ({
 
 const VideoController = ({ src, isActive, className, preload = "none", poster }) => {
   const videoRef = useRef(null);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -173,16 +175,34 @@ const VideoController = ({ src, isActive, className, preload = "none", poster })
   }, [isActive]);
 
   return (
-    <video
-      ref={videoRef}
-      src={src}
-      muted
-      loop
-      playsInline
-      preload={preload}
-      poster={poster}
-      className={className}
-    />
+    <div className={`relative ${className}`}>
+      <div
+        className={`absolute inset-0 z-10 transition-opacity duration-700 ${
+          hasPlayed ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        {poster && (
+          <Image
+            src={poster}
+            alt="Video poster"
+            fill
+            className="object-cover"
+            priority={preload === "auto"}
+            sizes="100vw"
+          />
+        )}
+      </div>
+      <video
+        ref={videoRef}
+        src={src}
+        muted
+        loop
+        playsInline
+        preload={preload}
+        className="h-full w-full object-cover"
+        onPlaying={() => setHasPlayed(true)}
+      />
+    </div>
   );
 };
 
