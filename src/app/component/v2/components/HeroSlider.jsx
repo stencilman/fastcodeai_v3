@@ -20,8 +20,8 @@ import Button from "../../Button";
 
 const FormModal = dynamic(() => import("../../../contact/sections/FormModal"), { ssr: false });
 // Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/effect-fade";
+import "swiper/css";
+import "swiper/css/effect-fade";
 import { Info } from "lucide-react";
 
 const dialogTransition = {

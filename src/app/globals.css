@@ -1,10 +1,5 @@
 @tailwind base;
 
-@import 'swiper/css';
-@import 'swiper/css/effect-fade';
-@import 'swiper/css/navigation';
-@import 'swiper/css/autoplay';
-
 /* Theme Variables */
 .font-aeonik {
   @apply tracking-wide;
