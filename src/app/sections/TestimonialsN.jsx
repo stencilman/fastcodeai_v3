@@ -5,6 +5,7 @@ import Image from "next/image";
 import Swiper from "swiper";
 import { Navigation, Autoplay, Keyboard, Controller } from "swiper/modules";
 import "../styles/swiper-core.css";
+import "./TestimonialsN.css";
 import "swiper/css/navigation";
 
 const TestimonialsN = () => {
