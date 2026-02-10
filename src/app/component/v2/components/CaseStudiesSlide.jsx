@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Controller } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import "swiper/css";
+import "../../../styles/swiper-core.css";
 import "swiper/css/navigation";
 // import "swiper/css/autoplay";
 import "./CaseStudiesSlide.css";
