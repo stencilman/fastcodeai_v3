@@ -5,10 +5,6 @@
   @apply tracking-wide;
 }
 
-.card-surface {
-  background: var(--theme-card-bg);
-  border-color: var(--theme-card-border);
-}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -117,27 +113,7 @@ button,
 @tailwind components;
 
 /* Animations */
-.page-transition {
-  opacity: 0;
-  background: #020B2A;
-  transform: translateY(40px);
-  filter: blur(12px)
-}
 
-.moving-border-wrapper {
-  background: #1A2758;
-  position: relative;
-  overflow: hidden;
-}
-
-.moving-border-wrapper::before {
-  background: transparent linear-gradient(360deg, #385ABF 0%, #13224F 0%, #6586DC 51%, #020F3B 100%) 0% 0% no-repeat padding-box;
-  @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
-}
-
-.moving-border-content {
-  @apply absolute w-[calc(100%-2px)] h-[calc(100%-2px)] top-[1px] left-[1px] rounded-[18px];
-}
 
 
 /* Components */
@@ -259,40 +235,34 @@ button,
   transform-origin: bottom left;
 }
 
+.moving-border-wrapper {
+  background: #1A2758;
+  position: relative;
+  overflow: hidden;
+}
 
-.cs-cards-slide {
-  box-shadow: 0px 51px 78px rgba(17, 7, 53, 0.05), 0px 21.3066px 35.4944px rgba(17, 7, 53, 0.0359427), 0px 11.3915px 18.9418px rgba(17, 7, 53, 0.0298054), 0px 6.38599px 9.8801px rgba(17, 7, 53, 0.025), 0px 3.39155px 4.58665px rgba(17, 7, 53, 0.0201946), 0px 1.4113px 1.55262px rgba(17, 7, 53, 0.0140573), inset 0px 1px 0px rgba(41, 56, 78, 0.05);
+.moving-border-wrapper::before {
+  background: transparent linear-gradient(360deg, #385ABF 0%, #13224F 0%, #6586DC 51%, #020F3B 100%) 0% 0% no-repeat padding-box;
+  @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
+}
+
+.moving-border-content {
+  @apply absolute w-[calc(100%-2px)] h-[calc(100%-2px)] top-[1px] left-[1px] rounded-[18px];
+}
+
+.card-surface {
+  background: var(--theme-card-bg);
+  border-color: var(--theme-card-border);
+}
+
+.page-transition {
+  opacity: 0;
+  background: #020B2A;
+  transform: translateY(40px);
+  filter: blur(12px)
 }
 
 
-.cs-nav-slide.swiper-slide-active .cs-nav-slide-line {
-  height: 4px;
-}
-
-.cs-nav-slide.swiper-slide-active .cs-nav-logo {
-  filter: grayscale(0);
-  -webkit-filter: grayscale(0);
-  opacity: 100;
-  transform: scale(1);
-}
-
-.cs-slider-nav-overlay {
-  pointer-events: none;
-}
-
-
-/* Webflow Lite */
-
-.w-embed:before,
-.w-embed:after {
-  content: " ";
-  grid-area: 1/1/2/2;
-  display: table;
-}
-
-.w-embed:after {
-  clear: both;
-}
 
 
 
