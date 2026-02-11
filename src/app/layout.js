@@ -19,14 +19,15 @@ const aeonik = localFont({
     },
   ],
   variable: "--font-aeonik",
-  display: "swap",
+  display: "optional",
   preload: true,
 });
 
 const bwmss01 = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-bwmss01",
-  display: "swap",
+  display: "optional",
+  preload: false,
 });
 
 export const viewport = {
