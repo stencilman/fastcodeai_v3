@@ -266,6 +266,42 @@ button,
   transition-property: transform, height;
 }
 
+/* Swiper Critical CSS for LCP Stability */
+.swiper {
+  width: 100%;
+  height: 100%;
+  /* Ensure it doesn't collapse before JS loads */
+  display: block; 
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-vertical > .swiper-wrapper {
+  flex-direction: column;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+
 @tailwind utilities;
 
 @layer utilities {
