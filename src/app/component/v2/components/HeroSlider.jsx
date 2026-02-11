@@ -189,6 +189,7 @@ const VideoController = ({ src, isActive, className, preload = "none", poster, s
             className="object-cover"
             priority={preload === "auto"}
             sizes={sizes}
+            {...(preload === "auto" ? { fetchPriority: "high" } : {})}
           />
         )}
       </div>
