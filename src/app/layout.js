@@ -1,5 +1,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "./component/Navbar";
 import SmoothScroll from "../components/SmoothScroll";
 import { GlobalProvider } from "./context/GlobalContext";
@@ -22,22 +23,10 @@ const aeonik = localFont({
   preload: true,
 });
 
-const bwmss01 = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+const bwmss01 = Plus_Jakarta_Sans({
+  subsets: ["latin"],
   variable: "--font-bwmss01",
   display: "swap",
-  preload: true,
 });
 
 export const viewport = {
