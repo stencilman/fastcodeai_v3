@@ -1,8 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
+  // experimental: {
+  //   optimizeCss: true,
+  //   optimizePackageImports: [
+  //     "framer-motion",
+  //     "lucide-react",
+  //     "react-icons",
+  //     "react-icons/fa",
+  //     "react-icons/fa6",
+  //     "react-icons/si",
+  //     "swiper",
+  //     "@react-pdf-viewer/core",
+  //     "lottie-react",
+  //     "gsap",
+  //   ],
+  // },
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: [
       "framer-motion",
       "lucide-react",
