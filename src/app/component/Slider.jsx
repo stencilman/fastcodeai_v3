@@ -1,9 +1,9 @@
 // components/Slider.js
 import React, { useRef, useEffect } from "react";
 import Swiper from "swiper";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/effect-coverflow";
+// import "swiper/css/pagination";
 
 const Slider = () => {
   const swiperRef = useRef(null);

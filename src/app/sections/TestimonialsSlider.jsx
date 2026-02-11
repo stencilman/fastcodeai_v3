@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Controller } from "swiper/modules";
-import "swiper/css";
+// import "swiper/css";
 import Button from "../component/Button";
 
 const testimonials = [

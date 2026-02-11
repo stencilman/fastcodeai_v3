@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import "swiper/css";
+// import "swiper/css";
 import production1 from "../../../../../public/what-we-do/research/production/production1.png";
 import production2 from "../../../../../public/what-we-do/research/production/production2.png";
 import production3 from "../../../../../public/what-we-do/research/production/production3.png";
