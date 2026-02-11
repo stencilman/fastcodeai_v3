@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 // import "swiper/css";
 // import "swiper/css/navigation";
 // import "swiper/css/autoplay";
-import "./CaseStudiesSlide.css";
+// import "./CaseStudiesSlide.css";
 import Button from "../../Button";
 import ShadowBlob from "../../common/ShadowBlob";
 
