@@ -6,7 +6,7 @@ import Swiper from "swiper";
 import { Navigation, Autoplay, Keyboard, Controller } from "swiper/modules";
 import "swiper/css";
 import "./TestimonialsN.css";
-import "swiper/css/navigation";
+// import "swiper/css/navigation";
 
 const TestimonialsN = () => {
   useEffect(() => {
