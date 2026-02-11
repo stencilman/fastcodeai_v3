@@ -255,6 +255,17 @@ button,
 
 
 
+
+/* Swiper AutoHeight */
+.swiper-autoheight,
+.swiper-autoheight .swiper-slide {
+  height: auto;
+}
+.swiper-autoheight .swiper-wrapper {
+  align-items: flex-start;
+  transition-property: transform, height;
+}
+
 @tailwind utilities;
 
 @layer utilities {

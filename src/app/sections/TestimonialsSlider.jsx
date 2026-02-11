@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Controller } from "swiper/modules";
-import "../styles/swiper-core.css";
-// import "swiper/css/auto-height"; // Commented out to avoid error if file doesn't exist, will try if needed.
+import "swiper/css";
 import Button from "../component/Button";
 
 const testimonials = [
