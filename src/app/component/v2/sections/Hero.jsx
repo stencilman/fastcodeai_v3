@@ -7,12 +7,9 @@ const HeroSlider = dynamic(() => import("../components/HeroSlider"), {
   ssr: false,
 });
 
-const TRANSPARENT_PIXEL =
-  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-
 const Hero = () => {
   const {
-    props: { srcSet: desktopSrcSet },
+    props: { srcSet: desktopSrcSet, src: desktopSrc },
   } = getImageProps({
     src: "/v2/hero/poster/roadside-assist.jpg",
     alt: "",
@@ -21,7 +18,7 @@ const Hero = () => {
   });
 
   const {
-    props: { srcSet: mobileSrcSet },
+    props: { srcSet: mobileSrcSet, src: mobileSrc },
   } = getImageProps({
     src: "/v2/hero/mobile/poster/roadside-assist.jpg",
     alt: "",
@@ -67,8 +64,8 @@ const Hero = () => {
               <img
                 alt="Video poster"
                 fetchPriority="high"
-                decoding="async"
-                src={TRANSPARENT_PIXEL}
+                decoding="sync"
+                src={desktopSrc}
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ color: "transparent" }}
               />
@@ -123,8 +120,8 @@ const Hero = () => {
                     <img
                       alt="Video poster"
                       fetchPriority="high"
-                      decoding="async"
-                      src={TRANSPARENT_PIXEL}
+                      decoding="sync"
+                      src={mobileSrc}
                       className="absolute inset-0 w-full h-full object-cover"
                       style={{ color: "transparent" }}
                     />
