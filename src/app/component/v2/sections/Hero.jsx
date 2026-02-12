@@ -7,6 +7,9 @@ const HeroSlider = dynamic(() => import("../components/HeroSlider"), {
   ssr: false,
 });
 
+const TRANSPARENT_PIXEL =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 const Hero = () => {
   const {
     props: { srcSet: desktopSrcSet },
@@ -35,7 +38,6 @@ const Hero = () => {
         media="(min-width: 768px)"
         imageSrcSet={desktopSrcSet}
         imageSizes="100vw"
-        fetchPriority="high"
       />
       <link
         rel="preload"
@@ -43,7 +45,6 @@ const Hero = () => {
         media="(max-width: 767px)"
         imageSrcSet={mobileSrcSet}
         imageSizes="calc(100vw - 2rem)"
-        fetchPriority="high"
       />
       <div className="relative w-full h-[100dvh] md:h-screen">
         {/* Static SSR-only overlay for instant LCP — no JS required to paint.
@@ -55,15 +56,21 @@ const Hero = () => {
         >
           {/* Desktop background poster */}
           <div className="hidden md:block absolute inset-0">
-            <Image
-              src="/v2/hero/poster/roadside-assist.jpg"
-              alt="roadside assist"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              loading="eager"
-              fetchPriority="high"
-            />
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcSet={desktopSrcSet}
+                sizes="100vw"
+              />
+              <img
+                alt="Video poster"
+                fetchPriority="high"
+                decoding="async"
+                src={TRANSPARENT_PIXEL}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ color: "transparent" }}
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[#00081F] via-[#00081F]/80 to-transparent" />
           </div>
 
@@ -105,15 +112,21 @@ const Hero = () => {
               {/* Mobile poster card */}
               <div className="md:hidden mt-8 w-full">
                 <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                  <Image
-                    src="/v2/hero/mobile/poster/roadside-assist.jpg"
-                    alt="roadside assist"
-                    fill
-                    className="object-cover"
-                    sizes="calc(100vw - 2rem)"
-                    loading="eager"
-                    fetchPriority="high"
-                  />
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={mobileSrcSet}
+                      sizes="calc(100vw - 2rem)"
+                    />
+                    <img
+                      alt="Video poster"
+                      fetchPriority="high"
+                      decoding="async"
+                      src={TRANSPARENT_PIXEL}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{ color: "transparent" }}
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
