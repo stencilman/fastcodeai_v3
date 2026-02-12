@@ -5,7 +5,6 @@
   @apply tracking-wide;
 }
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,7 +15,13 @@
   --theme-border: rgba(255, 255, 255, 0.18);
   --theme-accent: #23f0c3;
   --theme-card: rgba(255, 255, 255, 0.06);
-  --theme-card-bg: linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%);
+  --theme-card-bg: linear-gradient(
+    360deg,
+    #13224f 0%,
+    #13224f 0%,
+    #0c1c46 51%,
+    #020f3b 100%
+  );
   --theme-card-border: rgba(255, 255, 255, 0.12);
 }
 
@@ -46,7 +51,13 @@ html[data-theme="dark"] {
   --theme-border: rgba(255, 255, 255, 0.18);
   --theme-accent: #23f0c3;
   --theme-card: rgba(255, 255, 255, 0.06);
-  --theme-card-bg: linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%);
+  --theme-card-bg: linear-gradient(
+    360deg,
+    #13224f 0%,
+    #13224f 0%,
+    #0c1c46 51%,
+    #020f3b 100%
+  );
   --theme-card-border: rgba(255, 255, 255, 0.12);
 }
 
@@ -103,8 +114,8 @@ fieldset {
 }
 
 button,
-[type=button],
-[type=reset] {
+[type="button"],
+[type="reset"] {
   cursor: pointer;
   -webkit-appearance: button;
   border: 0;
@@ -114,14 +125,12 @@ button,
 
 /* Animations */
 
-
-
 /* Components */
 .main_cta_button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
 .button__icon-wrapper {
@@ -159,10 +168,10 @@ button,
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
   background-color: transparent;
   position: relative;
-  background: linear-gradient(113.03deg, #225AEB 14.91%, #37B8B9 85.09%);
+  background: linear-gradient(113.03deg, #225aeb 14.91%, #37b8b9 85.09%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -173,8 +182,10 @@ button,
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(90deg, #225AEB 0%, #38B8B9 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: linear-gradient(90deg, #225aeb 0%, #38b8b9 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -201,10 +212,10 @@ button,
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: all .3s;
+  transition: all 0.3s;
   position: relative;
-  background: linear-gradient(360deg, #13224F 0%, #0C1C46 51%, #020F3B 100%);
-  border: 1px solid #1A2758;
+  background: linear-gradient(360deg, #13224f 0%, #0c1c46 51%, #020f3b 100%);
+  border: 1px solid #1a2758;
 }
 
 .outline_cta_button:hover {
@@ -236,13 +247,15 @@ button,
 }
 
 .moving-border-wrapper {
-  background: #1A2758;
+  background: #1a2758;
   position: relative;
   overflow: hidden;
 }
 
 .moving-border-wrapper::before {
-  background: transparent linear-gradient(360deg, #385ABF 0%, #13224F 0%, #6586DC 51%, #020F3B 100%) 0% 0% no-repeat padding-box;
+  background: transparent
+    linear-gradient(360deg, #385abf 0%, #13224f 0%, #6586dc 51%, #020f3b 100%)
+    0% 0% no-repeat padding-box;
   @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
 }
 
@@ -250,11 +263,54 @@ button,
   @apply absolute w-[calc(100%-2px)] h-[calc(100%-2px)] top-[1px] left-[1px] rounded-[18px];
 }
 
+/* TestimonialsN Styles (merged to eliminate separate CSS bundle) */
+.cs-cards-slide {
+  box-shadow:
+    0px 51px 78px rgba(17, 7, 53, 0.05),
+    0px 21.3066px 35.4944px rgba(17, 7, 53, 0.0359427),
+    0px 11.3915px 18.9418px rgba(17, 7, 53, 0.0298054),
+    0px 6.38599px 9.8801px rgba(17, 7, 53, 0.025),
+    0px 3.39155px 4.58665px rgba(17, 7, 53, 0.0201946),
+    0px 1.4113px 1.55262px rgba(17, 7, 53, 0.0140573),
+    inset 0px 1px 0px rgba(41, 56, 78, 0.05);
+}
 
+.cs-nav-slide.swiper-slide-active .cs-nav-slide-line {
+  height: 4px;
+}
 
+.cs-nav-slide.swiper-slide-active .cs-nav-logo {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  opacity: 100;
+  transform: scale(1);
+}
 
+.cs-slider-nav-overlay {
+  pointer-events: none;
+}
 
+.w-embed:before,
+.w-embed:after {
+  content: " ";
+  grid-area: 1/1/2/2;
+  display: table;
+}
 
+.w-embed:after {
+  clear: both;
+}
+
+.w-dyn-empty {
+  padding: 10px;
+  background-color: #dddddd;
+}
+
+.w-dyn-hide,
+.w-dyn-bind-empty,
+.w-condition-invisible {
+  display: none !important;
+}
 
 /* Swiper AutoHeight */
 .swiper-autoheight,
@@ -271,7 +327,7 @@ button,
   width: 100%;
   height: 100%;
   /* Ensure it doesn't collapse before JS loads */
-  display: block; 
+  display: block;
   position: relative;
   overflow: hidden;
   list-style: none;
@@ -342,16 +398,32 @@ button,
   background: rgba(0, 0, 0, 0.15);
 }
 .swiper-3d .swiper-slide-shadow-left {
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
 }
 .swiper-3d .swiper-slide-shadow-right {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
 }
 .swiper-3d .swiper-slide-shadow-top {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
 }
 .swiper-3d .swiper-slide-shadow-bottom {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 /* Swiper Pagination */
@@ -374,8 +446,14 @@ button,
   width: 100%;
 }
 .swiper-pagination-bullet {
-  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
   display: inline-block;
   border-radius: 50%;
   background: var(--swiper-pagination-bullet-inactive-color, #000);
@@ -406,12 +484,14 @@ button.swiper-pagination-bullet {
   transform: translate3d(0px, -50%, 0px);
 }
 .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-pagination-vertical.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: var(--swiper-pagination-bullet-vertical-gap, 6px) 0;
   display: block;
 }
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
 }
 
@@ -468,7 +548,7 @@ button.swiper-pagination-bullet {
 }
 
 .nav-button:hover {
-  background-color: #2D3748;
+  background-color: #2d3748;
 }
 
 /* Progress animation */

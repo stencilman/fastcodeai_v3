@@ -5,7 +5,6 @@ import Image from "next/image";
 import Swiper from "swiper";
 import { Navigation, Autoplay, Keyboard, Controller } from "swiper/modules";
 // import "swiper/css";
-import "./TestimonialsN.css";
 // import "swiper/css/navigation";
 
 const TestimonialsN = () => {
@@ -92,25 +91,25 @@ const TestimonialsN = () => {
     // Pause autoplay on hover
     document.querySelectorAll(".cs-nav-slide").forEach((slide) => {
       slide.addEventListener("mouseenter", () => {
-        if (swiper.autoplay && typeof swiper.autoplay.stop === 'function') {
-            swiper.autoplay.stop();
+        if (swiper.autoplay && typeof swiper.autoplay.stop === "function") {
+          swiper.autoplay.stop();
         }
       });
       slide.addEventListener("mouseleave", () => {
-         if (swiper.autoplay && typeof swiper.autoplay.start === 'function') {
-            swiper.autoplay.start();
+        if (swiper.autoplay && typeof swiper.autoplay.start === "function") {
+          swiper.autoplay.start();
         }
       });
     });
 
     if (swiper.controller && navSwiper.controller) {
-        swiper.controller.control = navSwiper;
-        navSwiper.controller.control = swiper;
+      swiper.controller.control = navSwiper;
+      navSwiper.controller.control = swiper;
     }
 
     return () => {
-        if (swiper) swiper.destroy();
-        if (navSwiper) navSwiper.destroy();
+      if (swiper) swiper.destroy();
+      if (navSwiper) navSwiper.destroy();
     };
   }, []);
 

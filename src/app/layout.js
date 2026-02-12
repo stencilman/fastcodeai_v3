@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "./component/Navbar";
 import SmoothScroll from "../components/SmoothScroll";
 import { GlobalProvider } from "./context/GlobalContext";
+import CriticalCSS from "../components/CriticalCSS";
 
 const aeonik = localFont({
   src: [
@@ -31,19 +32,31 @@ const bwmss01 = Plus_Jakarta_Sans({
 });
 
 export const viewport = {
-  themeColor: '#00081f',
-  width: 'device-width',
+  themeColor: "#00081f",
+  width: "device-width",
   initialScale: 1,
 };
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fastcode.ai'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.fastcode.ai",
+  ),
   title: {
     default: "Fast Code AI",
     template: "%s | FastCode AI",
   },
-  description: "Fast Code AI - Accelerating Innovation FastCode AI helps you build and scale AI solutions.",
-  keywords: ["AI", "Artificial Intelligence", "Machine Learning", "FastCode", "Infrastructure", "React", "Next.js", "Software Development"],
+  description:
+    "Fast Code AI - Accelerating Innovation FastCode AI helps you build and scale AI solutions.",
+  keywords: [
+    "AI",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "FastCode",
+    "Infrastructure",
+    "React",
+    "Next.js",
+    "Software Development",
+  ],
   authors: [{ name: "FastCode AI" }],
   creator: "FastCode AI",
   openGraph: {
@@ -79,6 +92,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark">
+      <head>
+        <CriticalCSS />
+      </head>
       <body className={`${aeonik.variable} ${bwmss01.variable}`}>
         <GlobalProvider>
           <SmoothScroll>

@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { useGlobalContext } from "../context/GlobalContext";
 import Hero from "./sections/Hero";
 import InnovativeProj from "./sections/InnovativeProj";
@@ -8,34 +9,36 @@ import HowWeDo from "../sections/HowWeDo";
 import WhyChooseUs from "../sections/WhyChooseUs";
 import OurWork from "../sections/OurWork";
 import Clients from "../sections/Clients";
-import TestimonialsN from "../sections/TestimonialsN";
+const TestimonialsN = dynamic(() => import("../sections/TestimonialsN"));
 import Footer from "../sections/Footer";
 import Cta from "./sections/Cta";
 
 const Industries = () => {
-    const { setIsActive } = useGlobalContext();
+  const { setIsActive } = useGlobalContext();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsActive(false);
+  }, []);
+  return (
+    <>
+      <Hero />
+      <InnovativeProj />
+      <SpecializeIndustries />
+      <HowWeDo />
+      <WhyChooseUs />
+      <OurWork showShadow={true} />
+      <Clients />
+      <TestimonialsN />
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        setIsActive(false)
-    }, [])
-    return (
-        <>
-            <Hero />
-            <InnovativeProj/>
-            <SpecializeIndustries/>
-            <HowWeDo/>
-            <WhyChooseUs/>
-            <OurWork showShadow={true} />
-            <Clients/>
-            <TestimonialsN/>
-           
-            <Cta title="Do you Have a Project in Mind?" quote="Give us Some Detail on Your Project and Let us Help"/>
-            
-            <Footer showExtraSpace={true}/>
-        </>
-    )
-}
+      <Cta
+        title="Do you Have a Project in Mind?"
+        quote="Give us Some Detail on Your Project and Let us Help"
+      />
 
-export default Industries
+      <Footer showExtraSpace={true} />
+    </>
+  );
+};
+
+export default Industries;
