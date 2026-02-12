@@ -129,6 +129,7 @@ const Navbar = () => {
             <div className="w-fit md:hidden">
               <button
                 onClick={() => setIsFormModalOpen(true)}
+                aria-label="Get Started"
                 className={`relative rounded-[4px] z-[1] flex items-center gap-[7px] p-[9px] text-lg justify-between main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2]  text-white`}
               >
                 <Handshake className="w-6 h-6" />
@@ -137,6 +138,7 @@ const Navbar = () => {
             
             <button
               onClick={handleClick}
+              aria-label={isActive ? "Close menu" : "Open menu"}
               className={`w-[40px] sm:w-[47px] h-[40px] sm:h-[47px] relative z-[3] lg:hidden ${
                 isActive ? "bg-[#0E1E49]" : "bg-[#F3F3F3]"
               }  rounded-[4px] flex flex-col justify-center items-center`}
