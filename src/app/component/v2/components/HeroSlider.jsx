@@ -18,7 +18,9 @@ import { cn } from "../../../../lib/utils";
 import dynamic from "next/dynamic";
 import Button from "../../Button";
 
-const FormModal = dynamic(() => import("../../../contact/sections/FormModal"), { ssr: false });
+const FormModal = dynamic(() => import("../../../contact/sections/FormModal"), {
+  ssr: false,
+});
 // Import Swiper styles
 // import "swiper/css";
 // import "swiper/css/effect-fade";
@@ -64,7 +66,7 @@ const SlideMorphingDialog = ({
           "group relative overflow-hidden inline-flex w-auto items-center gap-3 rounded-[10px] border border-white/30 bg-[#1A2758]/90 px-6 py-3 text-white transition hover:border-white/60 hover:bg-[#1A2758]",
           showNumber &&
             "bg-black hover:bg-black/90 border-transparent pr-4 pl-4",
-          triggerClassName
+          triggerClassName,
         )}
       >
         <MorphingDialogTitle className="text-sm font-medium tracking-wide text-white flex items-center gap-3">
@@ -155,7 +157,14 @@ const SlideMorphingDialog = ({
   );
 };
 
-const VideoController = ({ src, isActive, className, preload = "none", poster, sizes = "100vw" }) => {
+const VideoController = ({
+  src,
+  isActive,
+  className,
+  preload = "none",
+  poster,
+  sizes = "100vw",
+}) => {
   const videoRef = useRef(null);
   const [hasPlayed, setHasPlayed] = useState(false);
   // Only load poster/video for the first slide (preload="auto") immediately.
@@ -324,64 +333,19 @@ const HeroSlider = () => {
     },
   ];
 
-  const firstSlide = slides[0];
+  // Hide the static SSR overlay (in Hero.jsx) once Swiper is ready
+  useEffect(() => {
+    if (swiperReady) {
+      const overlay = document.getElementById("hero-static-overlay");
+      if (overlay) {
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      }
+    }
+  }, [swiperReady]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[100dvh] md:h-screen">
-      {/* Static first-slide overlay for instant LCP — renders in SSR HTML
-          without Swiper's opacity:0, so the browser can paint immediately. */}
-      <div
-        className={`absolute inset-0 z-[2] bg-[#00081F] transition-opacity duration-500 ${
-          swiperReady ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
-        aria-hidden={swiperReady}
-      >
-        {/* Desktop background poster */}
-        <div className="hidden md:block absolute inset-0">
-          <Image
-            src={firstSlide.bgPoster}
-            alt="Video poster"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00081F] via-[#00081F]/80 to-transparent" />
-        </div>
-
-        {/* Static first-slide content */}
-        <div className="relative z-10 flex flex-col md:justify-center h-full md:h-[100vh] pt-[120px] md:pt-0 pb-28 md:pb-0 px-4 md:px-16 lg:px-28">
-          <div className="max-w-[700px] text-left">
-            <h1 className="text-3xl md:text-5xl text-white font-bold font-aeonik tracking-wide mb-6">
-              {firstSlide.title}
-            </h1>
-            <p className="text-lg text-white mb-8 font-bwmss01 whitespace-pre-line">
-              {firstSlide.subtitle}
-            </p>
-            <div className="w-fit">
-              <Button
-                onClick={() => setIsFormModalOpen(true)}
-                name={firstSlide.ctaText}
-              />
-            </div>
-
-            {/* Mobile poster card */}
-            <div className="md:hidden mt-8 w-full">
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                <Image
-                  src={firstSlide.mobilePoster}
-                  alt="Video poster"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div ref={containerRef} className="absolute inset-0">
       <Swiper
         modules={[EffectFade, Autoplay]}
         effect="fade"
@@ -437,19 +401,19 @@ const HeroSlider = () => {
                       />
                     </div>
 
-                  {/* Mobile inline video card (separate from background) */}
-                  <div className="md:hidden mt-8 w-full">
-                    <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                      <VideoController
-                        src={slide.mobileVideo}
-                        isActive={isActive}
-                        preload={index === 0 ? "auto" : "none"}
-                        poster={slide.mobilePoster}
-                        className="h-full w-full object-cover"
-                        sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
-                      />
+                    {/* Mobile inline video card (separate from background) */}
+                    <div className="md:hidden mt-8 w-full">
+                      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
+                        <VideoController
+                          src={slide.mobileVideo}
+                          isActive={isActive}
+                          preload={index === 0 ? "auto" : "none"}
+                          poster={slide.mobilePoster}
+                          className="h-full w-full object-cover"
+                          sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
+                        />
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
 
@@ -479,8 +443,8 @@ const HeroSlider = () => {
                               i === activeSlideIndex
                                 ? "scaleX(var(--progress))"
                                 : i < activeSlideIndex
-                                ? "scaleX(1)"
-                                : "scaleX(0)",
+                                  ? "scaleX(1)"
+                                  : "scaleX(0)",
                             transition:
                               i === activeSlideIndex
                                 ? "none"
