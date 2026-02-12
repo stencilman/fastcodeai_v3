@@ -35,6 +35,7 @@ const Hero = () => {
       <link
         rel="preload"
         as="image"
+        fetchPriority="high"
         media="(min-width: 768px)"
         imageSrcSet={desktopSrcSet}
         imageSizes="100vw"
@@ -42,6 +43,7 @@ const Hero = () => {
       <link
         rel="preload"
         as="image"
+        fetchPriority="high"
         media="(max-width: 767px)"
         imageSrcSet={mobileSrcSet}
         imageSizes="calc(100vw - 2rem)"
