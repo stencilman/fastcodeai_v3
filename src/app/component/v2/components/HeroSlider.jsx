@@ -211,6 +211,7 @@ const HeroSlider = () => {
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [swiperReady, setSwiperReady] = useState(false);
   const swiperRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -311,8 +312,64 @@ const HeroSlider = () => {
     },
   ];
 
+  const firstSlide = slides[0];
+
   return (
     <div ref={containerRef} className="relative w-full h-[100dvh] md:h-screen">
+      {/* Static first-slide overlay for instant LCP — renders in SSR HTML
+          without Swiper's opacity:0, so the browser can paint immediately. */}
+      <div
+        className={`absolute inset-0 z-[2] bg-[#00081F] transition-opacity duration-500 ${
+          swiperReady ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+        aria-hidden={swiperReady}
+      >
+        {/* Desktop background poster */}
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src={firstSlide.bgPoster}
+            alt="Video poster"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00081F] via-[#00081F]/80 to-transparent" />
+        </div>
+
+        {/* Static first-slide content */}
+        <div className="relative z-10 flex flex-col md:justify-center h-full md:h-[100vh] pt-[120px] md:pt-0 pb-28 md:pb-0 px-4 md:px-16 lg:px-28">
+          <div className="max-w-[700px] text-left">
+            <h1 className="text-3xl md:text-5xl text-white font-bold font-aeonik tracking-wide mb-6">
+              {firstSlide.title}
+            </h1>
+            <p className="text-lg text-white mb-8 font-bwmss01 whitespace-pre-line">
+              {firstSlide.subtitle}
+            </p>
+            <div className="w-fit">
+              <Button
+                onClick={() => setIsFormModalOpen(true)}
+                name={firstSlide.ctaText}
+              />
+            </div>
+
+            {/* Mobile poster card */}
+            <div className="md:hidden mt-8 w-full">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
+                <Image
+                  src={firstSlide.mobilePoster}
+                  alt="Video poster"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 95vw, 100vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Swiper
         modules={[EffectFade, Autoplay]}
         effect="fade"
@@ -323,7 +380,10 @@ const HeroSlider = () => {
         }}
         loop={true}
         className="w-full h-full"
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+          setSwiperReady(true);
+        }}
         onSlideChange={(swiper) => setActiveSlideIndex(swiper.realIndex)}
         onAutoplayTimeLeft={(s, time, progress) => {
           containerRef.current?.style.setProperty("--progress", 1 - progress);
