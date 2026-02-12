@@ -158,6 +158,16 @@ const SlideMorphingDialog = ({
 const VideoController = ({ src, isActive, className, preload = "none", poster, sizes = "100vw" }) => {
   const videoRef = useRef(null);
   const [hasPlayed, setHasPlayed] = useState(false);
+  // Only load poster/video for the first slide (preload="auto") immediately.
+  // Other slides defer loading until they become active, preventing unnecessary
+  // image downloads that Swiper's absolute stacking would otherwise trigger.
+  const [shouldLoad, setShouldLoad] = useState(preload === "auto");
+
+  useEffect(() => {
+    if (isActive && !shouldLoad) {
+      setShouldLoad(true);
+    }
+  }, [isActive, shouldLoad]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -172,7 +182,7 @@ const VideoController = ({ src, isActive, className, preload = "none", poster, s
         videoRef.current.pause();
       }
     }
-  }, [isActive]);
+  }, [isActive, shouldLoad]);
 
   return (
     <div className={`relative ${className}`}>
@@ -181,7 +191,7 @@ const VideoController = ({ src, isActive, className, preload = "none", poster, s
           hasPlayed ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
-        {poster && (
+        {poster && shouldLoad && (
           <Image
             src={poster}
             alt="Video poster"
@@ -193,16 +203,18 @@ const VideoController = ({ src, isActive, className, preload = "none", poster, s
           />
         )}
       </div>
-      <video
-        ref={videoRef}
-        src={src}
-        muted
-        loop
-        playsInline
-        preload={preload}
-        className="h-full w-full object-cover"
-        onPlaying={() => setHasPlayed(true)}
-      />
+      {shouldLoad ? (
+        <video
+          ref={videoRef}
+          src={src}
+          muted
+          loop
+          playsInline
+          preload={preload}
+          className="h-full w-full object-cover"
+          onPlaying={() => setHasPlayed(true)}
+        />
+      ) : null}
     </div>
   );
 };
@@ -362,7 +374,7 @@ const HeroSlider = () => {
                   fill
                   className="object-cover"
                   priority
-                  sizes="(max-width: 768px) 95vw, 100vw"
+                  sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
                 />
               </div>
             </div>
@@ -434,7 +446,7 @@ const HeroSlider = () => {
                         preload={index === 0 ? "auto" : "none"}
                         poster={slide.mobilePoster}
                         className="h-full w-full object-cover"
-                        sizes="(max-width: 768px) 95vw, 100vw"
+                        sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
                       />
                     </div>
                   </div>
