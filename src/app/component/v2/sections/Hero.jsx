@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
@@ -7,9 +7,45 @@ const HeroSlider = dynamic(() => import("../components/HeroSlider"), {
   ssr: false,
 });
 
+const TRANSPARENT_PIXEL =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 const Hero = () => {
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({
+    src: "/v2/hero/poster/roadside-assist.jpg",
+    alt: "",
+    fill: true,
+    sizes: "100vw",
+  });
+
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({
+    src: "/v2/hero/mobile/poster/roadside-assist.jpg",
+    alt: "",
+    fill: true,
+    sizes: "calc(100vw - 2rem)",
+  });
+
   return (
     <section className="relative bg-[#00081F]">
+      {/* Viewport-aware preloads — only the matching image is fetched */}
+      <link
+        rel="preload"
+        as="image"
+        media="(min-width: 768px)"
+        imageSrcSet={desktopSrcSet}
+        imageSizes="100vw"
+      />
+      <link
+        rel="preload"
+        as="image"
+        media="(max-width: 767px)"
+        imageSrcSet={mobileSrcSet}
+        imageSizes="calc(100vw - 2rem)"
+      />
       <div className="relative w-full h-[100dvh] md:h-screen">
         {/* Static SSR-only overlay for instant LCP — no JS required to paint.
             HeroSlider hides this via DOM once Swiper is ready. */}
@@ -20,14 +56,21 @@ const Hero = () => {
         >
           {/* Desktop background poster */}
           <div className="hidden md:block absolute inset-0">
-            <Image
-              src="/v2/hero/poster/roadside-assist.jpg"
-              alt="Video poster"
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-            />
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcSet={desktopSrcSet}
+                sizes="100vw"
+              />
+              <img
+                alt="Video poster"
+                fetchPriority="high"
+                decoding="async"
+                src={TRANSPARENT_PIXEL}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ color: "transparent" }}
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[#00081F] via-[#00081F]/80 to-transparent" />
           </div>
 
@@ -69,14 +112,21 @@ const Hero = () => {
               {/* Mobile poster card */}
               <div className="md:hidden mt-8 w-full">
                 <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                  <Image
-                    src="/v2/hero/mobile/poster/roadside-assist.jpg"
-                    alt="Video poster"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
-                  />
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={mobileSrcSet}
+                      sizes="calc(100vw - 2rem)"
+                    />
+                    <img
+                      alt="Video poster"
+                      fetchPriority="high"
+                      decoding="async"
+                      src={TRANSPARENT_PIXEL}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{ color: "transparent" }}
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
