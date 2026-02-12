@@ -248,28 +248,8 @@ const HeroSlider = () => {
   }, [isDialogOpen]);
 
   const slides = [
-    {
+      {
       id: 1,
-      bgVideo: "/v2/hero/odo.mp4",
-      mobileVideo: "/v2/hero/mobile/odo.mp4",
-      bgPoster: "/v2/hero/poster/odo.jpg",
-      mobilePoster: "/v2/hero/mobile/poster/odo.jpg",
-      title: "Frontier AI. Enterprise Scale. Delivered.",
-      subtitle:
-        "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
-      ctaText: "Discuss your AI Roadmap",
-      ctaLink: "/contact",
-      category: "ODO Research Paper",
-      detail: {
-        title: "Our latest breakthrough in AI-powered body reshaping:",
-        description:
-          "Fastcode AI introduces Odo, a cutting-edge diffusion model that transforms human body shapes while perfectly preserving identity, clothing, and background. Built on the first large-scale dataset of 18K+ images, achieving 45% lower reconstruction error than existing methods.",
-        ctaText: "Experience the demo",
-        ctaLink: "https://research.fastcode.ai/odo",
-      },
-    },
-    {
-      id: 2,
       bgVideo: "/v2/hero/roadside-assist.mp4",
       mobileVideo: "/v2/hero/mobile/roadside-assist.mp4",
       bgPoster: "/v2/hero/poster/roadside-assist.jpg",
@@ -289,6 +269,27 @@ const HeroSlider = () => {
         ctaLink: "/VRU-Pose-SSD Article-May-2021.pdf",
       },
     },
+    {
+      id: 2,
+      bgVideo: "/v2/hero/odo.mp4",
+      mobileVideo: "/v2/hero/mobile/odo.mp4",
+      bgPoster: "/v2/hero/poster/odo.jpg",
+      mobilePoster: "/v2/hero/mobile/poster/odo.jpg",
+      title: "Frontier AI. Enterprise Scale. Delivered.",
+      subtitle:
+        "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
+      ctaText: "Discuss your AI Roadmap",
+      ctaLink: "/contact",
+      category: "ODO Research Paper",
+      detail: {
+        title: "Our latest breakthrough in AI-powered body reshaping:",
+        description:
+          "Fastcode AI introduces Odo, a cutting-edge diffusion model that transforms human body shapes while perfectly preserving identity, clothing, and background. Built on the first large-scale dataset of 18K+ images, achieving 45% lower reconstruction error than existing methods.",
+        ctaText: "Experience the demo",
+        ctaLink: "https://research.fastcode.ai/odo",
+      },
+    },
+  
     {
       id: 3,
       bgVideo: "/v2/hero/mbux.mp4",
