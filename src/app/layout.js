@@ -28,7 +28,7 @@ const bwmss01 = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-bwmss01",
   display: "optional",
-  preload: false,
+  preload: true,
 });
 
 export const viewport = {
@@ -93,6 +93,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark">
       <head>
+        <link rel="preconnect" href="https://vercel.live" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
         <CriticalCSS />
       </head>
       <body className={`${aeonik.variable} ${bwmss01.variable}`}>
