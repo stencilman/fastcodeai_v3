@@ -11,7 +11,7 @@ const Hero = () => {
   const {
     props: { srcSet: desktopSrcSet, src: desktopSrc },
   } = getImageProps({
-    src: "/v2/hero/poster/roadside-assist.webp",
+    src: "/v2/hero/poster/roadside-assist.avif",
     alt: "",
     fill: true,
     sizes: "100vw",
@@ -20,7 +20,7 @@ const Hero = () => {
   const {
     props: { srcSet: mobileSrcSet, src: mobileSrc },
   } = getImageProps({
-    src: "/v2/hero/mobile/poster/roadside-assist.webp",
+    src: "/v2/hero/mobile/poster/roadside-assist.avif",
     alt: "",
     fill: true,
     sizes: "calc(100vw - 2rem)",
