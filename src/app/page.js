@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <HomeClient>
       {/* <Hero /> */}
-      <IndustryLeaders />
+      {/* <IndustryLeaders /> */}
       <CaseStudies />
       <Power />
       <Mission />
