@@ -23,7 +23,7 @@ const MOBILE_POSTER = "/v2/hero/mobile/poster/roadside-assist.avif";
 /* ── Component ───────────────────────────────────────────────────── */
 const Hero = () => {
   const {
-    props: { srcSet: desktopSrcSet, src: desktopSrc },
+    props: { srcSet: desktopSrcSet },
   } = getImageProps({
     src: DESKTOP_POSTER,
     alt: "",
@@ -32,7 +32,7 @@ const Hero = () => {
   });
 
   const {
-    props: { srcSet: mobileSrcSet, src: mobileSrc },
+    props: { srcSet: mobileSrcSet },
   } = getImageProps({
     src: MOBILE_POSTER,
     alt: "",
@@ -70,21 +70,14 @@ const Hero = () => {
         >
           {/* Desktop background poster */}
           <div className="hidden md:block absolute inset-0">
-            <picture>
-              <source
-                media="(min-width: 768px)"
-                srcSet={desktopSrcSet}
-                sizes="100vw"
-              />
-              <img
-                alt="Video poster"
-                fetchPriority="high"
-                decoding="sync"
-                src={desktopSrc}
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ color: "transparent" }}
-              />
-            </picture>
+            <Image
+              alt="Video poster"
+              src={DESKTOP_POSTER}
+              fill
+              loading="eager"
+              sizes="100vw"
+              className="object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-[#00081F] via-[#00081F]/80 to-transparent" />
           </div>
 
@@ -125,21 +118,14 @@ const Hero = () => {
               {/* Mobile poster card */}
               <div className="md:hidden mt-8 w-full">
                 <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                  <picture>
-                    <source
-                      media="(max-width: 767px)"
-                      srcSet={mobileSrcSet}
-                      sizes="calc(100vw - 2rem)"
-                    />
-                    <img
-                      alt="Video poster"
-                      fetchPriority="high"
-                      decoding="sync"
-                      src={mobileSrc}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      style={{ color: "transparent" }}
-                    />
-                  </picture>
+                  <Image
+                    alt="Video poster"
+                    src={MOBILE_POSTER}
+                    fill
+                    loading="eager"
+                    sizes="calc(100vw - 2rem)"
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
