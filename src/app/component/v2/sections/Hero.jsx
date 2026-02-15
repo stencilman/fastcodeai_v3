@@ -71,8 +71,9 @@ const Hero = () => {
           {/* Desktop background poster */}
           <div className="hidden md:block absolute inset-0">
             <Image
-              alt="Video poster"
+              alt="poster"
               src={DESKTOP_POSTER}
+              priority={true}
               fill
               loading="eager"
               sizes="100vw"
@@ -119,8 +120,9 @@ const Hero = () => {
               <div className="md:hidden mt-8 w-full">
                 <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
                   <Image
-                    alt="Video poster"
+                    alt="poster"
                     src={MOBILE_POSTER}
+                    priority={true}
                     fill
                     loading="eager"
                     sizes="calc(100vw - 2rem)"
