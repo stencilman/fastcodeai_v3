@@ -7,11 +7,25 @@ const HeroSlider = dynamic(() => import("../components/HeroSlider"), {
   ssr: false,
 });
 
+/* ── First-slide content (duplicated for SSR overlay) ────────────── */
+const FIRST_SLIDE = {
+  title: "Frontier AI. Enterprise Scale. Delivered.",
+  subtitle:
+    "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
+  ctaText: "Discuss your AI Roadmap",
+  ctaLink: "/contact",
+};
+
+/* ── Poster paths for responsive preload ─────────────────────────── */
+const DESKTOP_POSTER = "/v2/hero/poster/roadside-assist.avif";
+const MOBILE_POSTER = "/v2/hero/mobile/poster/roadside-assist.avif";
+
+/* ── Component ───────────────────────────────────────────────────── */
 const Hero = () => {
   const {
     props: { srcSet: desktopSrcSet, src: desktopSrc },
   } = getImageProps({
-    src: "/v2/hero/poster/roadside-assist.avif",
+    src: DESKTOP_POSTER,
     alt: "",
     fill: true,
     sizes: "100vw",
@@ -20,7 +34,7 @@ const Hero = () => {
   const {
     props: { srcSet: mobileSrcSet, src: mobileSrc },
   } = getImageProps({
-    src: "/v2/hero/mobile/poster/roadside-assist.avif",
+    src: MOBILE_POSTER,
     alt: "",
     fill: true,
     sizes: "calc(100vw - 2rem)",
@@ -45,6 +59,7 @@ const Hero = () => {
         imageSrcSet={mobileSrcSet}
         imageSizes="calc(100vw - 2rem)"
       />
+
       <div className="relative w-full h-[100dvh] md:h-screen">
         {/* Static SSR-only overlay for instant LCP — no JS required to paint.
             HeroSlider hides this via DOM once Swiper is ready. */}
@@ -61,7 +76,7 @@ const Hero = () => {
                 srcSet={desktopSrcSet}
                 sizes="100vw"
               />
-              <Image
+              <img
                 alt="Video poster"
                 fetchPriority="high"
                 decoding="sync"
@@ -77,18 +92,17 @@ const Hero = () => {
           <div className="relative z-10 flex flex-col md:justify-center h-full md:h-[100vh] pt-[120px] md:pt-0 pb-28 md:pb-0 px-4 md:px-16 lg:px-28">
             <div className="max-w-[700px] text-left">
               <h1 className="text-3xl md:text-5xl text-white font-bold font-aeonik tracking-wide mb-6">
-                Frontier AI. Enterprise Scale. Delivered.
+                {FIRST_SLIDE.title}
               </h1>
               <p className="text-lg text-white mb-8 font-bwmss01 whitespace-pre-line">
-                We help organisations harness AI to transform how they innovate,
-                operate, and compete - from research to real-world deployment.
+                {FIRST_SLIDE.subtitle}
               </p>
               <div className="w-fit">
                 <Link
-                  href="/contact"
+                  href={FIRST_SLIDE.ctaLink}
                   className="relative rounded-[4px] z-[1] flex items-center gap-[7px] px-[25px] py-[10px] text-lg justify-between main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2] text-white"
                 >
-                  <div>Discuss your AI Roadmap</div>
+                  <div>{FIRST_SLIDE.ctaText}</div>
                   <div className="flex items-center justify-center relative">
                     <Image
                       className="button__icon-svg transition-transform duration-300"
@@ -117,7 +131,7 @@ const Hero = () => {
                       srcSet={mobileSrcSet}
                       sizes="calc(100vw - 2rem)"
                     />
-                    <Image
+                    <img
                       alt="Video poster"
                       fetchPriority="high"
                       decoding="sync"
