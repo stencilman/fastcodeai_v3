@@ -5,6 +5,7 @@ import Navbar from "./component/Navbar";
 import SmoothScroll from "../components/SmoothScroll";
 import { GlobalProvider } from "./context/GlobalContext";
 import CriticalCSS from "../components/CriticalCSS";
+import LCPTracker from "../components/LCPTracker";
 
 const aeonik = localFont({
   src: [
@@ -98,6 +99,7 @@ export default function RootLayout({ children }) {
         <CriticalCSS />
       </head>
       <body className={`${aeonik.variable} ${bwmss01.variable}`}>
+        <LCPTracker />
         <GlobalProvider>
           <SmoothScroll>
             <Navbar />
