@@ -20,6 +20,7 @@ import { createPortal } from "react-dom";
 import { cn } from "../../lib/utils";
 import { XIcon } from "lucide-react";
 import useClickOutside from "../../hooks/useClickOutside";
+import Image from "next/image";
 
 export type MorphingDialogContextType = {
   isOpen: boolean;
@@ -381,7 +382,7 @@ function MorphingDialogImage({
   className,
   style,
 }: MorphingDialogImageProps) {
-  return <img src={src} alt={alt} className={cn(className)} style={style} />;
+  return <Image src={src} alt={alt} className={cn(className)} style={style} />;
 }
 
 export type MorphingDialogCloseProps = {

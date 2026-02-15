@@ -61,7 +61,7 @@ const Hero = () => {
                 srcSet={desktopSrcSet}
                 sizes="100vw"
               />
-              <img
+              <Image
                 alt="Video poster"
                 fetchPriority="high"
                 decoding="sync"
@@ -117,7 +117,7 @@ const Hero = () => {
                       srcSet={mobileSrcSet}
                       sizes="calc(100vw - 2rem)"
                     />
-                    <img
+                    <Image
                       alt="Video poster"
                       fetchPriority="high"
                       decoding="sync"
