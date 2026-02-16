@@ -80,6 +80,10 @@ body {
   transition-duration: 200ms;
 }
 
+video {
+  content-visibility: auto;
+}
+
 img {
   border: 0;
 }

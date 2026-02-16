@@ -247,6 +247,74 @@ const SlideMorphingDialog = ({
    Handles lazy-loading + poster-to-video crossfade per slide.
    ═══════════════════════════════════════════════════════════════════ */
 
+// const VideoController = ({
+//   src,
+//   isActive,
+//   className,
+//   preload = "none",
+//   poster,
+//   sizes = "100vw",
+// }) => {
+//   const videoRef = useRef(null);
+//   const isFirstSlide = preload === "auto";
+//   const [hasPlayed, setHasPlayed] = useState(false);
+//   const [shouldLoad, setShouldLoad] = useState(isFirstSlide);
+
+//   // Lazily load non-first slides when they become active
+//   useEffect(() => {
+//     if (isActive && !shouldLoad) setShouldLoad(true);
+//   }, [isActive, shouldLoad]);
+
+//   // Play / pause based on active state
+//   useEffect(() => {
+//     const video = videoRef.current;
+//     if (!video) return;
+
+//     if (isActive) {
+//       video.play().catch(() => {});
+//     } else {
+//       video.pause();
+//     }
+//   }, [isActive, shouldLoad]);
+
+//   const handlePlaying = useCallback(() => setHasPlayed(true), []);
+
+//   return (
+//     <div className={`relative ${className}`}>
+//       {/* Poster overlay — fades out once video starts */}
+//       <div
+//         className={`absolute inset-0 z-10 transition-opacity duration-700 ${
+//           hasPlayed ? "opacity-0 pointer-events-none" : "opacity-100"
+//         }`}
+//       >
+//         {poster && shouldLoad && (
+//           <Image
+//             src={poster}
+//             alt="Video poster"
+//             fill
+//             className="object-cover"
+//             priority={isFirstSlide}
+//             sizes={sizes}
+//             {...(isFirstSlide ? { fetchPriority: "high" } : {})}
+//           />
+//         )}
+//       </div>
+
+//       {shouldLoad && (
+//         <video
+//           ref={videoRef}
+//           src={src}
+//           muted
+//           loop
+//           playsInline
+//           preload={preload}
+//           className="h-full w-full object-cover"
+//           onPlaying={handlePlaying}
+//         />
+//       )}
+//     </div>
+//   );
+// };
 const VideoController = ({
   src,
   isActive,
@@ -256,66 +324,65 @@ const VideoController = ({
   sizes = "100vw",
 }) => {
   const videoRef = useRef(null);
-  const isFirstSlide = preload === "auto";
-  const [hasPlayed, setHasPlayed] = useState(false);
-  const [shouldLoad, setShouldLoad] = useState(isFirstSlide);
+  const [showVideo, setShowVideo] = useState(false);
 
-  // Lazily load non-first slides when they become active
+  const isFirst = preload === "auto";
+
+  /* ---------------------------
+     Mount video AFTER paint
+  ---------------------------- */
   useEffect(() => {
-    if (isActive && !shouldLoad) setShouldLoad(true);
-  }, [isActive, shouldLoad]);
+    if (!isActive) return;
 
-  // Play / pause based on active state
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const load = () => setShowVideo(true);
 
-    if (isActive) {
-      video.play().catch(() => {});
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(load);
     } else {
-      video.pause();
+      setTimeout(load, 120);
     }
-  }, [isActive, shouldLoad]);
+  }, [isActive]);
 
-  const handlePlaying = useCallback(() => setHasPlayed(true), []);
+  /* ---------------------------
+     Play only when visible
+  ---------------------------- */
+  useEffect(() => {
+    if (!showVideo) return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.play().catch(() => {});
+  }, [showVideo]);
 
   return (
     <div className={`relative ${className}`}>
-      {/* Poster overlay — fades out once video starts */}
-      <div
-        className={`absolute inset-0 z-10 transition-opacity duration-700 ${
-          hasPlayed ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
-      >
-        {poster && shouldLoad && (
-          <Image
-            src={poster}
-            alt="Video poster"
-            fill
-            className="object-cover"
-            priority={isFirstSlide}
-            sizes={sizes}
-            {...(isFirstSlide ? { fetchPriority: "high" } : {})}
-          />
-        )}
-      </div>
 
-      {shouldLoad && (
+      {/* LCP Poster — MUST render instantly */}
+      {poster && (
+        <Image
+          src={poster}
+          alt=""
+          fill
+          priority={isFirst}
+          sizes={sizes}
+          className="object-cover"
+        />
+      )}
+
+      {/* Video mounts AFTER LCP */}
+      {showVideo && (
         <video
           ref={videoRef}
           src={src}
           muted
           loop
           playsInline
-          preload={preload}
-          className="h-full w-full object-cover"
-          onPlaying={handlePlaying}
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       )}
     </div>
   );
 };
-
 /* ═══════════════════════════════════════════════════════════════════
    ProgressBar (mobile)
    ═══════════════════════════════════════════════════════════════════ */
