@@ -17,8 +17,10 @@ const FIRST_SLIDE = {
 };
 
 /* ── Poster paths for responsive preload ─────────────────────────── */
-const DESKTOP_POSTER = "/v2/hero/poster/roadside-assist.avif";
-const MOBILE_POSTER = "/v2/hero/mobile/poster/roadside-assist.avif";
+// const DESKTOP_POSTER = "/v2/hero/poster/roadside-assist.avif";
+const DESKTOP_POSTER = "/v2/case-studies/MiAI-Law-Demo.jpg";
+// const MOBILE_POSTER = "/v2/hero/mobile/poster/roadside-assist.avif";
+const MOBILE_POSTER = "/v2/case-studies/MiAI-Law-Demo.jpg";
 
 /* ── Component ───────────────────────────────────────────────────── */
 const Hero = () => {
