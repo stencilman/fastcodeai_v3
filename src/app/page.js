@@ -15,9 +15,9 @@ const Footer = dynamic(() => import("./sections/Footer"));
 export default function Home() {
   return (
     <HomeClient>
-      <Hero />
-      <IndustryLeaders />
+      {/* <Hero /> */}
       <CaseStudies />
+      <IndustryLeaders />
       <Power />
       <Mission />
       <Leader />
