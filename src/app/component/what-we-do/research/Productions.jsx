@@ -48,10 +48,13 @@ const Productions = () => {
       progressRefs.current.forEach((ref, index) => {
         if (!ref) return;
         if (index === currentIndex) {
-          const progress = 1 - ((swiper.autoplay.running ? swiper.autoplay.timeLeft : 5000) / 5000);
+          const progress =
+            1 -
+            (swiper.autoplay.running ? swiper.autoplay.timeLeft : 5000) / 5000;
           ref.style.transform = `scaleX(${progress})`;
         } else {
-          ref.style.transform = index < currentIndex ? "scaleX(1)" : "scaleX(0)";
+          ref.style.transform =
+            index < currentIndex ? "scaleX(1)" : "scaleX(0)";
         }
       });
     };
@@ -101,8 +104,8 @@ const Productions = () => {
           </h2>
           <p className="text-[#9EB3CF] text-base md:text-lg leading-relaxed max-w-[520px] font-bwmss01">
             Your internal team is consumed by bug fixes, maintenance, and
-            shipping features. They don&apos;t have the bandwidth to read the latest
-            arXiv papers or experiment with novel architectures.
+            shipping features. They don&apos;t have the bandwidth to read the
+            latest arXiv papers or experiment with novel architectures.
           </p>
         </div>
 

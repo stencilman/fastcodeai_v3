@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
 const HeroSlider = dynamic(() => import("../components/HeroSlider"), {
   ssr: false,
+  loading: () => null,
 });
 
 /* ── First-slide content (duplicated for SSR overlay) ────────────── */
@@ -24,6 +26,12 @@ const MOBILE_POSTER = "/v2/case-studies/MiAI-Law-Demo.jpg";
 
 /* ── Component ───────────────────────────────────────────────────── */
 const Hero = () => {
+  const [showSlider, setShowSlider] = useState(false);
+
+  useEffect(() => {
+    requestIdleCallback(() => setShowSlider(true));
+  }, []);
+
   const {
     props: { srcSet: desktopSrcSet },
   } = getImageProps({
@@ -68,7 +76,7 @@ const Hero = () => {
         <div
           id="hero-static-overlay"
           className="absolute inset-0 z-[2] bg-[#00081F]"
-          style={{ transition: "opacity 500ms" }}
+          style={{ transition: "none" }}
         >
           {/* Desktop background poster */}
           <div className="hidden md:block absolute inset-0">
@@ -136,10 +144,11 @@ const Hero = () => {
           </div>
         </div>
 
-        <HeroSlider />
+        {showSlider && <HeroSlider />}
       </div>
     </section>
   );
 };
 
 export default Hero;
+

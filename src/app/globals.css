@@ -73,6 +73,7 @@ input:-webkit-autofill:active {
 }
 
 body {
+  font-display: swap;
   background-color: var(--theme-bg);
   color: var(--theme-fg);
   transition-property: all;
@@ -81,6 +82,10 @@ body {
 }
 
 video {
+  content-visibility: auto;
+}
+
+#hero-static-overlay img {
   content-visibility: auto;
 }
 

@@ -94,6 +94,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark">
       <head>
+        {/* <link
+          rel="preload"
+          href="/fonts/Aeonik.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        /> */}
         <link rel="preconnect" href="https://vercel.live" />
         <link rel="dns-prefetch" href="https://vercel.live" />
         <CriticalCSS />

@@ -123,10 +123,14 @@ const CaseStudiesSlide = () => {
       progressRefs.current.forEach((ref, index) => {
         if (ref) {
           if (index === currentIndex) {
-            const progress = 1 - ((swiper.autoplay.running ? swiper.autoplay.timeLeft : 5000) / 5000);
+            const progress =
+              1 -
+              (swiper.autoplay.running ? swiper.autoplay.timeLeft : 5000) /
+                5000;
             ref.style.transform = `scaleX(${progress})`;
           } else {
-            ref.style.transform = index < currentIndex ? "scaleX(1)" : "scaleX(0)";
+            ref.style.transform =
+              index < currentIndex ? "scaleX(1)" : "scaleX(0)";
           }
         }
       });
@@ -175,9 +179,7 @@ const CaseStudiesSlide = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="flex flex-row items-center justify-between mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-5xl text-white ">
-            Our Works
-          </h2>
+          <h2 className="text-3xl md:text-5xl text-white ">Our Works</h2>
 
           <div className="flex items-center gap-4">
             <button
