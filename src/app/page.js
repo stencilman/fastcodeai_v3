@@ -15,13 +15,13 @@ const Footer = dynamic(() => import("./sections/Footer"));
 export default function Home() {
   return (
     <HomeClient>
-      <Hero />
+      {/* <Hero /> */}
       <IndustryLeaders />
-      <CaseStudies />
+      {/* <CaseStudies /> */}
       <Power />
       <Mission />
       <Leader />
-      <TestimonialsSlider />
+      {/* <TestimonialsSlider /> */}
       <Operational
         title="Ready to Operationalize Your AI?"
         description="Fast Code AI - Accelerating Innovation"
