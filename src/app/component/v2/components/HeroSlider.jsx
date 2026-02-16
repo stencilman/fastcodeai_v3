@@ -535,12 +535,12 @@ const HeroSlider = () => {
                 />
 
                 {/* Mobile bottom bar */}
-                <MobileBottomBar
+                {/* <MobileBottomBar
                   slide={slide}
                   index={index}
                   activeIndex={activeSlideIndex}
                   onDialogOpenChange={setIsDialogOpen}
-                />
+                /> */}
               </>
             )}
           </SwiperSlide>
@@ -551,11 +551,11 @@ const HeroSlider = () => {
       <FormModal isOpen={isFormModalOpen} onClose={closeFormModal} />
 
       {/* Desktop right-side navigation */}
-      <DesktopNav
+      {/* <DesktopNav
         activeIndex={activeSlideIndex}
         onSlideChange={goToSlide}
         onDialogOpenChange={setIsDialogOpen}
-      />
+      /> */}
     </div>
   );
 };
