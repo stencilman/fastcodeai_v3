@@ -315,74 +315,7 @@ const SlideMorphingDialog = ({
 //     </div>
 //   );
 // };
-const VideoController = ({
-  src,
-  isActive,
-  className,
-  preload = "none",
-  poster,
-  sizes = "100vw",
-}) => {
-  const videoRef = useRef(null);
-  const [showVideo, setShowVideo] = useState(false);
 
-  const isFirst = preload === "auto";
-
-  /* ---------------------------
-     Mount video AFTER paint
-  ---------------------------- */
-  useEffect(() => {
-    if (!isActive) return;
-
-    const load = () => setShowVideo(true);
-
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(load);
-    } else {
-      setTimeout(load, 120);
-    }
-  }, [isActive]);
-
-  /* ---------------------------
-     Play only when visible
-  ---------------------------- */
-  useEffect(() => {
-    if (!showVideo) return;
-    const v = videoRef.current;
-    if (!v) return;
-    v.play().catch(() => {});
-  }, [showVideo]);
-
-  return (
-    <div className={`relative ${className}`}>
-
-      {/* LCP Poster — MUST render instantly */}
-      {poster && (
-        <Image
-          src={poster}
-          alt=""
-          fill
-          priority={isFirst}
-          sizes={sizes}
-          className="object-cover"
-        />
-      )}
-
-      {/* Video mounts AFTER LCP */}
-      {showVideo && (
-        <video
-          ref={videoRef}
-          src={src}
-          muted
-          loop
-          playsInline
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      )}
-    </div>
-  );
-};
 /* ═══════════════════════════════════════════════════════════════════
    ProgressBar (mobile)
    ═══════════════════════════════════════════════════════════════════ */
@@ -491,14 +424,14 @@ const SlideContent = ({ slide, index, isActive, onCtaClick }) => (
       {/* Mobile inline video card */}
       <div className="md:hidden mt-8 w-full">
         <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-          <VideoController
+          {/* <VideoController
             src={slide.mobileVideo}
             isActive={isActive}
             preload={index === 0 ? "auto" : "none"}
             poster={slide.mobilePoster}
             className="h-full w-full object-cover"
             sizes="(max-width: 768px) calc(100vw - 2rem), 700px"
-          />
+          /> */}
         </div>
       </div>
     </div>
@@ -583,13 +516,13 @@ const HeroSlider = () => {
               <>
                 {/* Desktop background video + gradient */}
                 <div className="absolute inset-0">
-                  <VideoController
+                  {/* <VideoController
                     src={slide.bgVideo}
                     isActive={isActive}
                     preload={index === 0 ? "auto" : "none"}
                     poster={slide.bgPoster}
                     className="hidden md:block h-full w-full object-cover"
-                  />
+                  /> */}
                   <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#00081F] via-[#00081F]/80 to-transparent" />
                 </div>
 
