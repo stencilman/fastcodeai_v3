@@ -23,17 +23,39 @@ const CtaToContacts = () => {
   };
   const cursor_scrl = useRef(null);
   const container_scrl = useRef(null);
+  const marqueeRectRef = useRef(null);
+
   useEffect(() => {
-    const mqrque = document.getElementById("marqEffCont");
+    const marquee = document.getElementById("marqEffCont");
 
-    mqrque.addEventListener("mousemove", (e) => {
-      const { left, top, width, height } = mqrque.getBoundingClientRect();
-      const x = e.clientX - left;
-      const y = e.clientY - top;
+    if (!marquee || !cursor_scrl.current) return;
 
-      cursor_scrl.current.style.left = `${x}px `;
+    const updateRect = () => {
+      marqueeRectRef.current = marquee.getBoundingClientRect();
+    };
+
+    updateRect();
+
+    const handleMove = (e) => {
+      const rect = marqueeRectRef.current;
+      if (!rect) return;
+
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      cursor_scrl.current.style.left = `${x}px`;
       cursor_scrl.current.style.top = `${y}px`;
-    });
+    };
+
+    const handleResize = updateRect;
+
+    marquee.addEventListener("mousemove", handleMove);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      marquee.removeEventListener("mousemove", handleMove);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
   return (
     <Link

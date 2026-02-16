@@ -160,12 +160,13 @@ const CaseStudiesSlide = () => {
       const tabRect = activeTab.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
       const currentScroll = container.scrollLeft;
+
       const relativeTabLeft = tabRect.left - containerRect.left;
       const scrollLeft =
         currentScroll +
         relativeTabLeft -
-        container.offsetWidth / 2 +
-        activeTab.offsetWidth / 2;
+        containerRect.width / 2 +
+        tabRect.width / 2;
 
       container.scrollTo({
         left: scrollLeft,
