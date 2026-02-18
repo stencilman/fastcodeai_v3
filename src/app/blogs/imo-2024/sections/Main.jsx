@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Button from "@/app/component/Button";
+import Button from "../../../component/Button";
 import BlogArticleLayout from "../../components/BlogArticleLayout";
 
 const RECOMMENDED_SLUGS = ["silu", "dvdb", "pinns-hom-lid"];
