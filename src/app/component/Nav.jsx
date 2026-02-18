@@ -29,6 +29,11 @@ const navItems = [
     title: "Research",
     href: "/research",
   },
+  
+  {
+    title: "Blogs",
+    href: "/blogs",
+  },
   {
     title: "Contact Us",
     href: "/contact",

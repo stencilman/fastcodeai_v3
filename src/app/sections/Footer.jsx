@@ -182,28 +182,28 @@ const Footer = ({ showExtraSpace }) => {
                 <ul className="flex flex-wrap lg:flex-nowrap gap-[10px] lg:gap-0 justify-center md:justify-around w-full text-white font-aeonik text-[19px] pl-0">
                   <MagneticEffect>
                     <Link href="/" className="flink">
-                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out text-[#9EBFC3]">
                         Home
                       </li>
                     </Link>
                   </MagneticEffect>
                    <MagneticEffect>
                     <Link href="/portfolio" className="flink">
-                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out text-[#9EBFC3]">
                         Portfolio
                       </li>
                     </Link>
                   </MagneticEffect>
                   <MagneticEffect>
                     <Link href="/team" className="flink">
-                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out text-[#9EBFC3]">
                         Team
                       </li>
                     </Link>
                   </MagneticEffect>
                   <MagneticEffect>
                     <Link href="/research" className="flink">
-                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out text-[#9EBFC3]">
                         Research
                       </li>
                     </Link>
@@ -230,16 +230,16 @@ const Footer = ({ showExtraSpace }) => {
                       </li>
                     </Link>
                   </MagneticEffect> */}
-                  {/* <MagneticEffect>
+                  <MagneticEffect>
                     <Link href="/blogs" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
                         Blog
                       </li>
                     </Link>
-                  </MagneticEffect> */}
+                  </MagneticEffect>
                   <MagneticEffect>
                     <Link href="/contact" className="flink">
-                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
+                      <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out text-[#9EBFC3]">
                         Contact Us
                       </li>
                     </Link>

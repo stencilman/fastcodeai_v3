@@ -12,7 +12,9 @@ import ShadowBlob from "./common/ShadowBlob";
 import { usePathname } from "next/navigation";
 
 const Nav = dynamic(() => import("./Nav"), { ssr: false });
-const FormModal = dynamic(() => import("../contact/sections/FormModal"), { ssr: false });
+const FormModal = dynamic(() => import("../contact/sections/FormModal"), {
+  ssr: false,
+});
 
 const Navbar = () => {
   // const [isActive, setIsActive] = useState(false);
@@ -29,7 +31,7 @@ const Navbar = () => {
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
-  
+
   useEffect(() => {
     let ticking = false;
     const onScroll = () => {
@@ -41,7 +43,7 @@ const Navbar = () => {
         ticking = true;
       }
     };
-    
+
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -57,6 +59,7 @@ const Navbar = () => {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Team", href: "/team" },
     { name: "Research", href: "/research" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -86,7 +89,7 @@ const Navbar = () => {
           </div>
 
           {/* Center Navigation Links - Desktop Only */}
-          <div className="hidden lg:flex items-center gap-8 relative z-[1]">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6 relative z-[1]">
             {navLinks.map((link) => {
               const isActiveLink = pathname === link.href;
               return (
@@ -118,15 +121,13 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-[14px] sm:gap-[14px]">
-            <div
-              className="relative z-[1] hidden md:block"
-            >
+            <div className="relative z-[1] hidden xl:block">
               <Button
                 onClick={() => setIsFormModalOpen(true)}
                 name="Get Started"
               />
             </div>
-            <div className="w-fit md:hidden">
+            <div className="w-fit xl:hidden">
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={`relative rounded-[4px] z-[1] flex items-center gap-[7px] p-[9px] text-lg justify-between main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2]  text-white`}
@@ -134,7 +135,7 @@ const Navbar = () => {
                 <Handshake className="w-6 h-6" />
               </button>
             </div>
-            
+
             <button
               onClick={handleClick}
               className={`w-[40px] sm:w-[47px] h-[40px] sm:h-[47px] relative z-[3] lg:hidden ${
@@ -166,9 +167,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <AnimatePresence mode="wait">
-          {isActive && <Nav />}
-        </AnimatePresence>
+        <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
 
         {/* <style jsx>{`
         .backdrop-blur {
