@@ -1,33 +1,43 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-
-const ReactLenis = dynamic(
-  () => import("@studio-freight/react-lenis").then((mod) => mod.ReactLenis),
-  { ssr: false }
-);
 
 function SmoothScroll({ children }) {
   const [isMobile, setIsMobile] = useState(true);
+  const [LenisComponent, setLenisComponent] = useState(null);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
-    // Check initially
+
+    // Initial check
     checkMobile();
-    
-    // Check on resize
+
+    // Listen for resize
     window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+
+    let mounted = true;
+
+    // Dynamically import ReactLenis only on the client
+    import("@studio-freight/react-lenis").then((mod) => {
+      if (mounted) {
+        setLenisComponent(() => mod.ReactLenis);
+      }
+    });
+
+    return () => {
+      mounted = false;
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
-  if (isMobile) {
+  // While on mobile or while Lenis is still loading, just render the children directly.
+  if (isMobile || !LenisComponent) {
     return <>{children}</>;
   }
 
+  const ReactLenis = LenisComponent;
   return <ReactLenis root>{children}</ReactLenis>;
 }
 
