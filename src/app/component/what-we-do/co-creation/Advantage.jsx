@@ -5,7 +5,7 @@ import CheckIcon from "../../../../../public/what-we-do/co-creation/check_icon.s
 import Image from "next/image";
 
 const Advantage = () => {
-  const [activeTab, setActiveTab] = useState("traditional");
+  const [activeTab, setActiveTab] = useState("coCreation");
 
   const data = [
     {
@@ -39,6 +39,16 @@ const Advantage = () => {
       {/* Tabs */}
       <div className="flex justify-between gap-4">
         <button
+          onClick={() => setActiveTab("coCreation")}
+          className={`flex-1 py-4 px-2 text-center rounded-lg border text-sm font-medium transition-colors ${
+            activeTab === "coCreation"
+              ? "border-[#4FB4C8] text-white bg-[#4FB4C8]/10"
+              : "border-gray-700 text-gray-400"
+          }`}
+        >
+          Co-Creation <br /> with Us
+        </button>
+        <button
           onClick={() => setActiveTab("traditional")}
           className={`flex-1 py-4 px-2 text-center rounded-lg border text-sm font-medium transition-colors ${
             activeTab === "traditional"
@@ -57,16 +67,6 @@ const Advantage = () => {
           }`}
         >
           In-House <br /> Hiring
-        </button>
-        <button
-          onClick={() => setActiveTab("coCreation")}
-          className={`flex-1 py-4 px-2 text-center rounded-lg border text-sm font-medium transition-colors ${
-            activeTab === "coCreation"
-              ? "border-[#4FB4C8] text-white bg-[#4FB4C8]/10"
-              : "border-gray-700 text-gray-400"
-          }`}
-        >
-          Co-Creation <br /> with Us
         </button>
       </div>
 
@@ -139,20 +139,20 @@ const Advantage = () => {
 
         {/* Desktop View */}
         <div className="hidden lg:block relative w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] rounded-[18px]">
-          <div className="min-w-[900px] grid grid-cols-[1.3fr_1fr_1fr_1.3fr] auto-rows-auto">
+          <div className="min-w-[900px] grid grid-cols-[1.3fr_1.3fr_1fr_1fr] auto-rows-auto">
             {/* Highlighted Background Column */}
-            <div className="col-start-4 row-start-1 row-span-5 bg-gradient-to-b from-[#4FB4C8] to-[#2563EB] rounded-2xl -my-6 shadow-2xl z-0"></div>
+            <div className="col-start-2 row-start-1 row-span-5 bg-gradient-to-b from-[#4FB4C8] to-[#2563EB] rounded-2xl -my-6 shadow-2xl z-0"></div>
 
             {/* Header Row */}
             <div className="border-b border-gray-700/50 p-6 pl-0"></div>
+            <div className="p-6 text-xl md:text-2xl font-medium flex items-end relative z-10 pl-8 col-start-2 row-start-1 font-aeonik">
+              Co-Creation <br /> with Us
+            </div>
             <div className="border-b border-gray-700/50 p-6 text-xl md:text-2xl font-medium flex items-end font-aeonik">
               Traditional <br /> Dev Shop
             </div>
             <div className="border-b border-gray-700/50 p-6 text-xl md:text-2xl font-medium flex items-end font-aeonik">
               In-House <br /> Hiring
-            </div>
-            <div className="p-6 text-xl md:text-2xl font-medium flex items-end relative z-10 pl-8 col-start-4 row-start-1 font-aeonik">
-              Co-Creation <br /> with Us
             </div>
 
             {/* Data Rows */}
@@ -160,6 +160,19 @@ const Advantage = () => {
               <React.Fragment key={i}>
                 <div className="border-b border-gray-700/50 p-6 pl-0 text-xl md:text-2xl font-medium flex items-center font-aeonik">
                   {row.label}
+                </div>
+
+                <div
+                  className="p-6 flex items-center gap-3 text-white text-lg font-medium relative z-10 pl-8 col-start-2 font-aeonik"
+                  style={{ gridRow: i + 2 }}
+                >
+                  <Image
+                    src={CheckIcon}
+                    alt={row.label}
+                    width={24}
+                    height={24}
+                  />{" "}
+                  {row.coCreation}
                 </div>
 
                 <div className="border-b border-gray-700/50 p-6 flex items-center gap-3 text-gray-300 text-lg font-aeonik">
@@ -170,19 +183,6 @@ const Advantage = () => {
                 <div className="border-b border-gray-700/50 p-6 flex items-center gap-3 text-gray-300 text-lg font-aeonik">
                   <XCircle className="w-6 h-6 fill-white text-[#020F3B] flex-shrink-0" />
                   {row.inHouse}
-                </div>
-
-                <div
-                  className="p-6 flex items-center gap-3 text-white text-lg font-medium relative z-10 pl-8 col-start-4 font-aeonik"
-                  style={{ gridRow: i + 2 }}
-                >
-                  <Image
-                    src={CheckIcon}
-                    alt={row.label}
-                    width={24}
-                    height={24}
-                  />{" "}
-                  {row.coCreation}
                 </div>
               </React.Fragment>
             ))}

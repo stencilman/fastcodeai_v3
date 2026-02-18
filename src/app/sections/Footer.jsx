@@ -233,7 +233,7 @@ const Footer = ({ showExtraSpace }) => {
                   <MagneticEffect>
                     <Link href="/blogs" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">
-                        Blog
+                        Blogs
                       </li>
                     </Link>
                   </MagneticEffect>
