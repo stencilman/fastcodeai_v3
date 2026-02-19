@@ -2,14 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Button = ({ to, name, target, type = "primary", onClick }) => {
-  const typeClass = type === "secondary"
-    ? "secondary_cta_button"
-    : type === "outline"
-      ? "outline_cta_button"
-      : "main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2] ";
+const Button = ({
+  to,
+  name,
+  target,
+  type = "primary",
+  onClick,
+  className: extraClassName = "",
+}) => {
+  const typeClass =
+    type === "secondary"
+      ? "secondary_cta_button"
+      : type === "outline"
+        ? "outline_cta_button"
+        : "main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2] ";
 
-  const className = `relative rounded-[4px] z-[1] flex items-center gap-[7px] px-[25px] py-[10px] text-lg justify-between ${typeClass} text-white`;
+  const className = `relative rounded-[4px] z-[1] flex items-center gap-[7px] px-[25px] py-[10px] text-lg justify-between ${typeClass} text-white ${extraClassName}`;
 
   // If onClick is provided, render as button instead of Link
   if (onClick) {

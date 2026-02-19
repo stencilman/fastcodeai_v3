@@ -11,7 +11,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-[#122A5B]",
     comments: "10",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "Explore how the SwiGLU activation function has become a key component in modern large language models and why it outperforms traditional alternatives.",
   },
   {
     slug: "silu",
@@ -25,7 +27,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-silu",
     comments: "13",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "A deep dive into the SiLU activation function and its role in enabling smoother gradient flows for advanced neural network architectures.",
   },
   {
     slug: "hardware-limitation",
@@ -40,7 +44,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-hardware-limitation",
     comments: "0",
-    description: "",
+    category: "Engineering",
+    description:
+      "How we overcame GPU constraints and budget limitations to successfully train large-scale diffusion models at a startup.",
   },
   {
     slug: "dd-neural-network",
@@ -55,7 +61,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-dd-neural-network",
     comments: "0",
-    description: "",
+    category: "Research",
+    description:
+      "Understanding the double descent phenomenon that challenges the classical bias-variance tradeoff in modern neural networks.",
   },
   {
     slug: "yann-lecun-delhi",
@@ -70,7 +78,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "",
     comments: "0",
-    description: "",
+    category: "AI Industry",
+    description:
+      "Key takeaways from Yann LeCun's talk in Delhi on the limitations of LLMs and his vision for the next generation of AI systems.",
   },
   {
     slug: "claude",
@@ -84,7 +94,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-claude",
     comments: "0",
-    description: "",
+    category: "AI Industry",
+    description:
+      "Exploring Anthropic's Claude and what its computer-use capabilities mean for the future of autonomous AI agents.",
   },
   {
     slug: "omat-2024",
@@ -98,7 +110,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-omat",
     comments: "0",
-    description: "",
+    category: "Research",
+    description:
+      "How Meta's OMat24 is leveraging AI to accelerate materials science discovery and what it means for the future of research.",
   },
   {
     slug: "ai-milestone",
@@ -113,7 +127,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-aiMilestone",
     comments: "0",
-    description: "",
+    category: "AI Industry",
+    description:
+      "A look at the historic moment when neural network pioneers received Nobel recognition and what it means for the AI community.",
   },
   {
     slug: "sequence-parallelism",
@@ -128,7 +144,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-sequence",
     comments: "0",
-    description: "",
+    category: "Engineering",
+    description:
+      "An in-depth look at sequence parallelism techniques using scatter and gather patterns for efficient distributed training.",
   },
   {
     slug: "structural-biology",
@@ -142,12 +160,13 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-structural_biology",
     comments: "0",
-    description: "",
+    category: "Research",
+    description:
+      "How AlphaFold2 revolutionized protein structure prediction and opened new frontiers in biochemistry and drug discovery.",
   },
   {
     slug: "growth-journey",
-    title:
-      "Our Journey of Growth: Building a Team Ready to Shape the Future",
+    title: "Our Journey of Growth: Building a Team Ready to Shape the Future",
     href: "/blogs/growth-journey",
     authorName: "Arjun Jain",
     authorImg: "/arjun.jpg",
@@ -157,7 +176,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-journey",
     comments: "0",
-    description: "",
+    category: "Company",
+    description:
+      "A reflection on FastCode AI's growth journey and how we built a team passionate about shaping the future of AI.",
   },
   {
     slug: "nvdias-cublas",
@@ -172,7 +193,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-nvdiaHero",
     comments: "0",
-    description: "",
+    category: "Engineering",
+    description:
+      "Our journey to writing a custom CUDA matrix multiplication kernel that achieves 93% of NVIDIA's highly optimized cuBLAS performance.",
   },
   {
     slug: "ssh-vscode",
@@ -186,7 +209,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-multiHopHero",
     comments: "0",
-    description: "",
+    category: "DevOps",
+    description:
+      "A practical guide to setting up multi-hop SSH connections in VS Code for seamless remote development workflows.",
   },
   {
     slug: "cyphyss-2024",
@@ -201,7 +226,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-cyphyssHero",
     comments: "0",
-    description: "",
+    category: "Events",
+    description:
+      "Highlights from CyPhySS 2024 and insights into the latest developments in autonomous vehicle technology.",
   },
   {
     slug: "imo-2024",
@@ -215,7 +242,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-imoHero",
     comments: "0",
-    description: "",
+    category: "Events",
+    description:
+      "Celebrating Team India's remarkable performance at the International Mathematical Olympiad 2024.",
   },
   {
     slug: "kans",
@@ -229,7 +258,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-kans",
     comments: "12",
-    description: "",
+    category: "Research",
+    description:
+      "Breaking down Kolmogorov-Arnold Networks and understanding how they offer a fresh perspective on neural network architecture design.",
   },
   {
     slug: "vision-transformers",
@@ -244,7 +275,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-visionTransformers",
     comments: "42",
-    description: "",
+    category: "Computer Vision",
+    description:
+      "How register tokens help Vision Transformers reduce background noise artifacts and improve feature map quality.",
   },
   {
     slug: "pinns-hom-lid",
@@ -259,12 +292,13 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-pinnslid",
     comments: "43",
-    description: "",
+    category: "Scientific Computing",
+    description:
+      "A hands-on tutorial on using Physics-Informed Neural Networks to model the classic lid-driven cavity flow problem.",
   },
   {
     slug: "thesis-reality",
-    title:
-      "From Thesis to Reality: The Evolution of GenAI in Creative Content",
+    title: "From Thesis to Reality: The Evolution of GenAI in Creative Content",
     href: "/blogs/thesis-reality",
     authorName: "Arjun Jain",
     authorImg: "/arjun.jpg",
@@ -274,7 +308,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-thesis",
     comments: "21",
-    description: "",
+    category: "Generative AI",
+    description:
+      "Tracing the evolution of generative AI from academic research to real-world creative content production.",
   },
   {
     slug: "pinns-hom2d",
@@ -289,7 +325,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-pinns2d",
     comments: "11",
-    description: "",
+    category: "Scientific Computing",
+    description:
+      "Step-by-step guide to applying PINNs for modeling heat transfer and stress in 2D plate structures.",
   },
   {
     slug: "pinns",
@@ -303,7 +341,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-pinns",
     comments: "21",
-    description: "",
+    category: "Scientific Computing",
+    description:
+      "An introduction to Physics-Informed Neural Networks and how they embed physical laws directly into the learning process.",
   },
   {
     slug: "dvdb",
@@ -318,7 +358,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-dvdb",
     comments: "21",
-    description: "",
+    category: "Engineering",
+    description:
+      "Introducing DVDB, a lightweight vector database built in Dart for mobile-first AI-powered applications.",
   },
   {
     slug: "solving-complex-problem",
@@ -332,7 +374,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-complexProbHero",
     comments: "23",
-    description: "",
+    category: "Engineering",
+    description:
+      "A practical approach to tackling complex engineering problems by breaking them down into simpler, manageable components.",
   },
   {
     slug: "gan",
@@ -347,7 +391,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-gansHero",
     comments: "33",
-    description: "",
+    category: "Generative AI",
+    description:
+      "A beginner-friendly guide to understanding and training Generative Adversarial Networks from scratch.",
   },
   {
     slug: "ai-dangers-and-preventing-monopolization",
@@ -362,7 +408,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-aiDangers",
     comments: "20",
-    description: "",
+    category: "AI Industry",
+    description:
+      "Why open-source AI is critical for preventing monopolization and ensuring equitable access to artificial intelligence.",
   },
   {
     slug: "animated-drawings",
@@ -377,7 +425,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-animatedHero",
     comments: "15",
-    description: "",
+    category: "Computer Vision",
+    description:
+      "A personal journey through the world of computer graphics, from curiosity-driven experiments to creative AI applications.",
   },
   {
     slug: "deep-learning",
@@ -392,7 +442,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-deepLearningHero",
     comments: "31",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "Key highlights and insights from a lecture on neural network training fundamentals delivered at IISc Bangalore.",
   },
   {
     slug: "authenticity-race",
@@ -407,7 +459,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-authRace",
     comments: "22",
-    description: "",
+    category: "AI Industry",
+    description:
+      "How watermarking technology is evolving to combat deepfakes and verify the authenticity of AI-generated content.",
   },
   {
     slug: "rlhf",
@@ -421,7 +475,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-rlhf",
     comments: "14",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "Understanding Reinforcement Learning from Human Feedback and how it aligns language models with human preferences.",
   },
   {
     slug: "crafting-visions",
@@ -435,7 +491,9 @@ export const blogDataList = [
     heroVariant: "alt-overlay",
     thumbnail: "bg-craftingHero",
     comments: "21",
-    description: "",
+    category: "Generative AI",
+    description:
+      "Exploring the capabilities of DALL-E 3 and how it pushes the boundaries of AI-powered image generation.",
   },
   {
     slug: "federated-learning",
@@ -450,7 +508,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-federatedHero",
     comments: "13",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "How federated learning enables collaborative model training while keeping sensitive data private and secure.",
   },
   {
     slug: "nas",
@@ -465,7 +525,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-nasHero",
     comments: "19",
-    description: "",
+    category: "Research",
+    description:
+      "Practical strategies for overcoming the computational bottlenecks in Neural Architecture Search.",
   },
   {
     slug: "vits",
@@ -480,7 +542,9 @@ export const blogDataList = [
     heroVariant: "overlay",
     thumbnail: "bg-vitsHero",
     comments: "32",
-    description: "",
+    category: "Computer Vision",
+    description:
+      "Comparing Contrastive Learning and Masked Image Modeling approaches for self-supervised Vision Transformer training.",
   },
   {
     slug: "why-ai",
@@ -496,7 +560,9 @@ export const blogDataList = [
       "When do rule-based algorithms not work? When do we need machine learning (ML) based algorithms? Let us try and answer this question using the tasks below:",
     thumbnail: "bg-blog1",
     comments: "33",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "When do rule-based algorithms fall short? Understanding when machine learning is the right approach for your problem.",
   },
   {
     slug: "unknown-classes",
@@ -512,7 +578,9 @@ export const blogDataList = [
       "A Convolutional Neural Network trained on the MNIST dataset when presented images from the Devanagari dataset will wrongly classify the Devanagari letter to one of the MNIST classes 0-9, usually with very high confidence. What can we do to fix this?",
     thumbnail: "bg-blog4",
     comments: "12",
-    description: "",
+    category: "Deep Learning",
+    description:
+      "Techniques for handling unknown or out-of-distribution classes in neural network classification tasks.",
   },
   {
     slug: "oil-gas",
@@ -528,7 +596,9 @@ export const blogDataList = [
       "Oil & Gas which was once was a lucrative investment, now struggles to ensure the same level of light. A lot of things have changed in the past few years which has pushed the Oil & Gas.",
     thumbnail: "bg-blog3",
     comments: "10",
-    description: "",
+    category: "Industry",
+    description:
+      "How AI and digitization are transforming P&ID workflows in the Oil & Gas engineering procurement and construction sector.",
   },
 ];
 

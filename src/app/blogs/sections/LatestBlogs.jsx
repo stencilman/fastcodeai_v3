@@ -2,12 +2,6 @@ import React from "react";
 import BlogCard from "../components/BlogCard";
 import { getAllBlogs } from "../data/blogData";
 
-const getColSpan = (index) => {
-  const cyclePos = index % 10;
-  if (cyclePos === 0 || cyclePos === 6) return "md:col-span-2";
-  return "md:col-span-1";
-};
-
 const LatestBlogs = () => {
   const blogs = getAllBlogs();
 
@@ -18,13 +12,9 @@ const LatestBlogs = () => {
           Blogs
         </h1>
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {blogs.map((blog, index) => (
-          <BlogCard
-            key={blog.slug}
-            blog={blog}
-            className={`col-span-1 ${getColSpan(index)}`}
-          />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {blogs.map((blog) => (
+          <BlogCard key={blog.slug} blog={blog} />
         ))}
       </div>
     </div>

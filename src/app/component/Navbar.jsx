@@ -79,7 +79,15 @@ const Navbar = () => {
               {" "}
               <Image
                 priority
-                className="w-[190px] sm:w-[290px]"
+                className="sm:hidden w-[60px] "
+                src="/logo/logo.svg"
+                alt="logo"
+                width="60"
+                height="68"
+              />
+              <Image
+                priority
+                className="hidden sm:block w-[190px] sm:w-[290px]"
                 src="/logo1.svg"
                 alt="logo"
                 width="290"
@@ -121,20 +129,21 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-[14px] sm:gap-[14px]">
-            <div className="relative z-[1] hidden xl:block">
+            <div className="relative z-[1] block">
               <Button
                 onClick={() => setIsFormModalOpen(true)}
                 name="Get Started"
+                className="!px-[15px] !py-[7px] sm:!px-[25px] sm:!py-[10px]"
               />
             </div>
-            <div className="w-fit xl:hidden">
+            {/* <div className="w-fit xl:hidden">
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={`relative rounded-[4px] z-[1] flex items-center gap-[7px] p-[9px] text-lg justify-between main_cta_button bg-gradient-to-br from-[#2DC1C3] to-[#0268F2]  text-white`}
               >
                 <Handshake className="w-6 h-6" />
               </button>
-            </div>
+            </div> */}
 
             <button
               onClick={handleClick}
