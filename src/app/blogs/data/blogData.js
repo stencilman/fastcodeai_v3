@@ -1,5 +1,22 @@
 export const blogDataList = [
   {
+    slug: "flexa",
+    title: "Fast Code AI Chronicles — Chapter 01: Flexa",
+    href: "/blogs/flexa",
+    authorName: "Parth Basole",
+    authorImg: "/team/parth-bw.webp",
+    publicationDate: "21 Feb 2025",
+    background: "bg-flexa",
+    heroBackground: "bg-flexa",
+    heroVariant: "overlay",
+    heroSubtitle: "At 25, Back Pain Changed Everything.",
+    thumbnail: "bg-flexa",
+    comments: "0",
+    category: "Healthcare",
+    description:
+      "How Fast Code AI pointed its own AI at the team and built Flexa — expert-level physiotherapy tracking on your phone.",
+  },
+  {
     slug: "swiglu",
     title: "SwiGLU: The Activation Function Powering Modern LLMs",
     href: "/blogs/swiglu",
