@@ -1,5 +1,23 @@
 export const blogDataList = [
   {
+    slug: "why-mega-prompts-fail",
+    title: "Why Mega-Prompts Fail: 6 Lessons from an LLM Data Pipeline",
+    href: "/blogs/why-mega-prompts-fail",
+    authorName: "Hrishikesh Bhaskar Jadhav",
+    authorImg: "/team/Jadhav.webp",
+    publicationDate: "20 Feb 2026",
+    background: "bg-[#0b1a3b]",
+    heroBackground: "bg-[#0b1a3b]",
+    heroVariant: "simple",
+    heroSubtitle:
+      "When you first start working with Large Language Models, the instinct is to treat them like magic boxes.",
+    thumbnail: "bg-[#0b1a3b]",
+    comments: "0",
+    category: "Data Engineering",
+    description:
+      "6 lessons learned about moving from basic prompt writing to true LLM Systems Engineering — from mega-prompt failures to confidence detection hacks.",
+  },
+  {
     slug: "mega-prompts-fail",
     title: "Fast Code AI Chronicles — Chapter 2.5: Why Mega-Prompts Fail",
     href: "/blogs/mega-prompts-fail",
