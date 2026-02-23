@@ -1,5 +1,23 @@
 export const blogDataList = [
   {
+    slug: "messy-data-platform",
+    title: "Fast Code AI Chronicles — Chapter 2: The Messy Data Problem",
+    href: "/blogs/messy-data-platform",
+    authorName: "Hrishikesh Bhaskar Jadhav",
+    authorImg: "/team/Jadhav.webp",
+    publicationDate: "23 Feb 2025",
+    background: "bg-messy-data-platform",
+    heroBackground: "bg-messy-data-platform",
+    heroVariant: "overlay",
+    heroSubtitle:
+      "How We Used Open-Source LLMs to Standardise 50,000 Retail Product Names a Day — and Automated 68% of the Work.",
+    thumbnail: "bg-messy-data-platform",
+    comments: "0",
+    category: "Data Engineering",
+    description:
+      "How we built a multi-model reasoning pipeline using open-source LLMs to standardise 50,000 messy retail product names a day — and automated 68% of the work.",
+  },
+  {
     slug: "flexa",
     title: "Fast Code AI Chronicles — Chapter 01: Flexa",
     href: "/blogs/flexa",

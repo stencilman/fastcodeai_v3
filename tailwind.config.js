@@ -85,6 +85,8 @@ module.exports = {
         "hardware-limitation": "url('/blogs/hardware-limitation/main.png')",
         silu: "url('/blogs/silu/main.jpeg')",
         flexa: "url('/blogs/flexa/hero/hero.png')",
+        "messy-data-platform":
+          "url('/blogs/messy-data-platform/hero/hero.png')",
       },
       background: {
         cusgrad:
