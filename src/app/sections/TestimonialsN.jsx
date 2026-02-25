@@ -286,7 +286,7 @@ const TestimonialsN = () => {
                               Yann LeCun
                             </div>
                             <div className=" text-block font-aeonik">
-                              VP & Chief AI Scientist @ Meta
+                              Executive Chairman, AMI Labs - Prof NYU
                             </div>
                           </div>
                         </div>

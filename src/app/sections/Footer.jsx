@@ -9,7 +9,12 @@ import MagneticEffect from "../component/MagneticEffect";
 import GrokIcon from "../component/GrokIcon";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { SiOpenai, SiClaude, SiGooglegemini, SiPerplexity } from "react-icons/si";
+import {
+  SiOpenai,
+  SiClaude,
+  SiGooglegemini,
+  SiPerplexity,
+} from "react-icons/si";
 
 const AI_PROMPT = `As a potential client, I want to clearly understand what I will receive by working with Fastcode AI (fastcode.ai).
 
@@ -110,7 +115,7 @@ const Footer = ({ showExtraSpace }) => {
                   aria-label="YouTube"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >
+                >
                   <div className="w-[56px] h-[56px] rounded-[4px] bg-gradient-to-b from-[#0B1B3F] to-[#081533] border border-[#243A6A] flex items-center justify-center text-white hover:scale-95 active:scale-90 transition-all duration-200 ease-out">
                     <FaYoutube size={22} />
                   </div>
@@ -143,7 +148,7 @@ const Footer = ({ showExtraSpace }) => {
                       size={25}
                     />
                   </Link>
-                  <Link
+                  {/* <Link
                     href={`https://gemini.google.com/app?text=${encodedPrompt}`}
                     target="_blank"
                     aria-label="Gemini"
@@ -152,7 +157,7 @@ const Footer = ({ showExtraSpace }) => {
                       className="text-[#9eb3cf] hover:text-[#4285F4] transition-colors"
                       size={25}
                     />
-                  </Link>
+                  </Link> */}
                   <Link
                     href={`https://www.perplexity.ai/search?q=${encodedPrompt}`}
                     target="_blank"
@@ -163,8 +168,8 @@ const Footer = ({ showExtraSpace }) => {
                       size={25}
                     />
                   </Link>
-                  <Link
-                     href={`https://grok.com/?q=${encodedPrompt}`}
+                  {/* <Link
+                    href={`https://grok.com/?q=${encodedPrompt}`}
                     target="_blank"
                     aria-label="Grok"
                   >
@@ -172,10 +177,10 @@ const Footer = ({ showExtraSpace }) => {
                       className="text-[#9eb3cf] hover:text-gray-400 transition-colors"
                       size={30}
                     />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
-              </div>
+            </div>
             <div className="w-[100%] md:w-[58%] ml-0 md:ml-[80px] lg:ml-[120px] mr-0 md:mr-[10px] flex flex-col justify-around">
               {/* Nav */}
               <div className="w-full border-b border-[#AFC0FF] pb-[22px] mt-[20px] md:mt-[52px]">
@@ -187,7 +192,7 @@ const Footer = ({ showExtraSpace }) => {
                       </li>
                     </Link>
                   </MagneticEffect>
-                   <MagneticEffect>
+                  <MagneticEffect>
                     <Link href="/portfolio" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out text-[#9EBFC3]">
                         Portfolio
@@ -208,7 +213,7 @@ const Footer = ({ showExtraSpace }) => {
                       </li>
                     </Link>
                   </MagneticEffect>
-                  
+
                   {/* <MagneticEffect>
                     <Link href="/about" className="flink">
                       <li className="hover-underline-animation active:scale-90 transition-all duration-300 ease-in-out">

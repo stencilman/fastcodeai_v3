@@ -22,11 +22,11 @@ const testimonials = [
   },
   {
     id: "meta",
-    logo: "/testimonials/logos/meta1.svg",
+    logo: "/testimonials/logos/ami.png",
     logoWidth: 120,
     logoHeight: 40,
     name: "Yann LeCun",
-    title: "VP & Chief AI Scientist @ Meta",
+    title: "Executive Chairman, AMI Labs - Prof NYU",
     image: "/testimonials/yann-lecun.jpg",
     quote:
       "I had the pleasure of working with Arjun while he was a PhD student at NYU. We co-authored a number of papers together on deep unsupervised learning methods. Unsupervised learning and deep learning are very popular topics today, but Arjun worked on this before much of the world had even heard of deep learning. He co-authored some of the very early work on body pose estimation and object localization with convolutional networks.",

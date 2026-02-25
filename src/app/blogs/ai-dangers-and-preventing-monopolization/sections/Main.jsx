@@ -32,7 +32,7 @@ const Main = () => {
 
             <p className="text-[#9EB3CF] text-lg font-bwmss01">
               Today, I want to highlight Yann LeCun, a Turing Award-winning
-              computer scientist and VP and Chief Scientist at #Meta, who
+              computer scientist and Executive Chairman, AMI Labs - Prof NYU, who
               exemplifies this drive.
             </p>
             <p className="text-[#9EB3CF] text-lg font-bwmss01">
