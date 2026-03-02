@@ -15,14 +15,8 @@ export default function DataCenterPricingPage() {
     {
       name: "MiniMax M2.5",
       description: "230B MoE · 10B active",
-      input: "$0.27",
-      output: "$1.08",
-    },
-    {
-      name: "DeepSeek V3.2",
-      description: "685B MoE",
-      input: "$0.23",
-      output: "$0.36",
+      input: "$0.28",
+      output: "$1.14",
     },
   ];
 
