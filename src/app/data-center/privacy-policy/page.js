@@ -168,10 +168,10 @@ export default function DataCenterPrivacyPolicyPage() {
           <p className="text-[#9EB3CF] font-bwmss01 text-sm md:text-lg">
             Email:{" "}
             <Link
-              href="mailto:arjun@fastcode.ai"
+              href="mailto:datacenter@fastcode.ai"
               className="text-[#1082e5] hover:text-[#5dc9de] transition-colors"
             >
-              arjun@fastcode.ai
+              datacenter@fastcode.ai
             </Link>
           </p>
         </div>

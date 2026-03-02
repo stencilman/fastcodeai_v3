@@ -89,10 +89,10 @@ export default function DataCenterPricingPage() {
           Prices are subject to change. For volume pricing or dedicated
           capacity, contact{" "}
           <Link
-            href="mailto:arjun@fastcode.ai"
+            href="mailto:datacenter@fastcode.ai"
             className="text-[#1082e5] hover:underline"
           >
-            arjun@fastcode.ai
+            datacenter@fastcode.ai
           </Link>
           .
         </p>
