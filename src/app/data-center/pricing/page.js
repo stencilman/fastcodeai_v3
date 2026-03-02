@@ -78,10 +78,10 @@ export default function DataCenterPricingPage() {
                       {model.description}
                     </div>
                   </td>
-                  <td className="py-[24px] px-[20px] md:px-[28px] text-[#23f0c3] font-bwmss01 text-[15px] md:text-[17px]">
+                  <td className="py-[24px] px-[20px] md:px-[28px] text-[#1082e5] font-bwmss01 text-[15px] md:text-[17px]">
                     {model.input}
                   </td>
-                  <td className="py-[24px] px-[20px] md:px-[28px] text-[#23f0c3] font-bwmss01 text-[15px] md:text-[17px]">
+                  <td className="py-[24px] px-[20px] md:px-[28px] text-[#1082e5] font-bwmss01 text-[15px] md:text-[17px]">
                     {model.output}
                   </td>
                 </tr>
@@ -96,7 +96,7 @@ export default function DataCenterPricingPage() {
           capacity, contact{" "}
           <Link
             href="mailto:arjun@fastcode.ai"
-            className="text-[#23f0c3] hover:underline"
+            className="text-[#1082e5] hover:underline"
           >
             arjun@fastcode.ai
           </Link>

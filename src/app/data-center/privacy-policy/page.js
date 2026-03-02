@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import Link from "next/link";
+import Button from "../../component/Button";
 
 export default function DataCenterPrivacyPolicyPage() {
   const { setIsActive } = useGlobalContext();
@@ -115,7 +116,7 @@ export default function DataCenterPrivacyPolicyPage() {
             href="https://openrouter.ai/privacy"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#2DC1C3] hover:text-[#5DDCDE] transition-colors"
+            className="text-[#1082e5] hover:text-[#5dc9de] transition-colors"
           >
             OpenRouter&apos;s own Privacy Policy
           </Link>
@@ -168,7 +169,7 @@ export default function DataCenterPrivacyPolicyPage() {
             Email:{" "}
             <Link
               href="mailto:arjun@fastcode.ai"
-              className="text-[#2DC1C3] hover:text-[#5DDCDE] transition-colors"
+              className="text-[#1082e5] hover:text-[#5dc9de] transition-colors"
             >
               arjun@fastcode.ai
             </Link>
