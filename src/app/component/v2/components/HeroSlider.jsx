@@ -236,7 +236,7 @@ const HeroSlider = () => {
         "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
       ctaText: "Discuss your AI Roadmap",
       ctaLink: "/contact",
-      category: "ODO Research Paper",
+      category: "Our Latest Research Paper",
       detail: {
         title: "Our latest breakthrough in AI-powered body reshaping:",
         description:
@@ -277,7 +277,7 @@ const HeroSlider = () => {
         "We help organisations harness AI to transform how they innovate, operate, and compete - from research to real-world deployment.",
       ctaText: "Discuss your AI Roadmap",
       ctaLink: "/contact",
-      category: "MBUX Case Study",
+      category: "Mercedes-Benz User Experience",
       detail: {
         title: "Transforming luxury driving with AI:",
         description:
