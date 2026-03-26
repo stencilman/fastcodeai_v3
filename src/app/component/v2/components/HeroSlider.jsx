@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import {
+  useMorphingDialog,
   MorphingDialog,
   MorphingDialogTrigger,
   MorphingDialogContent,
@@ -18,11 +19,29 @@ import { cn } from "../../../../lib/utils";
 import dynamic from "next/dynamic";
 import Button from "../../Button";
 
-const FormModal = dynamic(() => import("../../../contact/sections/FormModal"), { ssr: false });
+const FormModal = dynamic(() => import("../../../contact/sections/FormModal"), {
+  ssr: false,
+});
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Info } from "lucide-react";
+
+const InfoHoverTrigger = () => {
+  const { setIsOpen } = useMorphingDialog();
+
+  const handleMouseEnter = () => {
+    if (typeof window !== "undefined" && window.innerWidth >= 768) {
+      setIsOpen(true);
+    }
+  };
+
+  return (
+    <span className="hidden md:inline-flex" onMouseEnter={handleMouseEnter}>
+      <Info className="w-5 h-5" />
+    </span>
+  );
+};
 
 const dialogTransition = {
   type: "spring",
@@ -64,7 +83,7 @@ const SlideMorphingDialog = ({
           "group relative overflow-hidden inline-flex w-auto items-center gap-3 rounded-[10px] border border-white/30 bg-[#1A2758]/90 px-6 py-3 text-white transition hover:border-white/60 hover:bg-[#1A2758]",
           showNumber &&
             "bg-black hover:bg-black/90 border-transparent pr-4 pl-4",
-          triggerClassName
+          triggerClassName,
         )}
       >
         <MorphingDialogTitle className="text-sm font-medium tracking-wide text-white flex items-center gap-3">
@@ -95,7 +114,8 @@ const SlideMorphingDialog = ({
               strokeLinejoin="round"
             />
           </svg> */}
-          <Info className="w-5 h-5" />
+          <Info className="w-5 h-5 md:hidden" />
+          <InfoHoverTrigger />
         </span>
         <div
           className="hidden md:block absolute bottom-0 left-0 h-[3px] w-full bg-[#eee5e5] origin-left"
@@ -155,7 +175,14 @@ const SlideMorphingDialog = ({
   );
 };
 
-const VideoController = ({ src, isActive, className, preload = "none", poster, sizes = "100vw" }) => {
+const VideoController = ({
+  src,
+  isActive,
+  className,
+  preload = "none",
+  poster,
+  sizes = "100vw",
+}) => {
   const videoRef = useRef(null);
   const [hasPlayed, setHasPlayed] = useState(false);
 
@@ -364,19 +391,19 @@ const HeroSlider = () => {
                       />
                     </div>
 
-                  {/* Mobile inline video card (separate from background) */}
-                  <div className="md:hidden mt-8 w-full">
-                    <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
-                      <VideoController
-                        src={slide.mobileVideo}
-                        isActive={isActive}
-                        preload={index === 0 ? "auto" : "none"}
-                        poster={slide.mobilePoster}
-                        className="h-full w-full object-cover"
-                        sizes="(max-width: 768px) 95vw, 100vw"
-                      />
+                    {/* Mobile inline video card (separate from background) */}
+                    <div className="md:hidden mt-8 w-full">
+                      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-lg">
+                        <VideoController
+                          src={slide.mobileVideo}
+                          isActive={isActive}
+                          preload={index === 0 ? "auto" : "none"}
+                          poster={slide.mobilePoster}
+                          className="h-full w-full object-cover"
+                          sizes="(max-width: 768px) 95vw, 100vw"
+                        />
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
 
@@ -406,8 +433,8 @@ const HeroSlider = () => {
                               i === activeSlideIndex
                                 ? "scaleX(var(--progress))"
                                 : i < activeSlideIndex
-                                ? "scaleX(1)"
-                                : "scaleX(0)",
+                                  ? "scaleX(1)"
+                                  : "scaleX(0)",
                             transition:
                               i === activeSlideIndex
                                 ? "none"
