@@ -45,9 +45,9 @@ const Footer = ({ showExtraSpace }) => {
               "transparent linear-gradient(360deg, #13224F 0%, #13224F 0%, #0C1C46 51%, #020F3B 100%) 0% 0% no-repeat padding-box",
           }}
         >
-          <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[160px] lg:pr-[73px] justify-between flex-col md:flex-row md:pb-[120px]">
+          <div className="flex h-full w-full pl-[20px] pr-[20px] md:pl-[50px] md:pr-[50px] lg:pl-[120px] xl:pl-[160px] lg:pr-[73px] justify-between flex-col lg:flex-row lg:gap-[64px] xl:gap-[120px] md:pb-[120px]">
             <div
-              className="flex flex-col gap-5 w-[300px] mx-auto md:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[154px] md:mb-0"
+              className="flex flex-col gap-5 w-[300px] mx-auto lg:mx-0 md:w-[369px] h-auto py-[40px] md:py-0 md:h-[407px] rounded-[18px] items-center justify-center relative z-[6] top-[-60px] md:top-[-120px] mb-[154px] md:mb-[220px] lg:mb-0 shrink-0"
               style={{
                 background:
                   "linear-gradient(to bottom right, #000E32, #000929) padding-box, linear-gradient(108deg, #000E32, #000E32, #6586DC, #000E32) border-box",
@@ -181,7 +181,7 @@ const Footer = ({ showExtraSpace }) => {
                 </div>
               </div>
             </div>
-            <div className="w-[100%] md:w-[58%] ml-0 md:ml-[80px] lg:ml-[120px] mr-0 md:mr-[10px] flex flex-col justify-around">
+            <div className="w-full lg:flex-1 lg:min-w-0 mr-0 lg:mr-[10px] flex flex-col justify-start gap-[28px] lg:gap-[34px]">
               {/* Nav */}
               <div className="w-full border-b border-[#AFC0FF] pb-[22px] mt-[20px] md:mt-[52px]">
                 <ul className="flex flex-wrap lg:flex-nowrap gap-[10px] lg:gap-0 justify-center md:justify-around w-full text-white font-aeonik text-[19px] pl-0">
@@ -252,33 +252,55 @@ const Footer = ({ showExtraSpace }) => {
                 </ul>
               </div>
               {/* Address */}
-              <div className="w-full flex flex-col lg:flex-row my-[20px] md:my-[0px] gap-8 md:gap-0 text-center md:text-left">
-                <div className="w-full lg:w-[50%]">
-                  <ul className="pl-0">
-                    <li className="text-[14px]  text-white font-bwss01 font-bold">
+              <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-x-10 xl:gap-x-16 gap-y-10 text-center md:text-left">
+                <div className="w-full">
+                  <ul className="pl-0 mb-0">
+                    <li className="text-[16px] text-white font-bwss01 font-bold leading-tight">
                       Head Office
                     </li>
-                    <li className="text-sm text-[#9EB3CF] font-bwmss01 mt-[10px] md:mt-[19px]">
-                      #48, Bhive Premium Church st,
-                      <br /> Haridevpur, Shanthala Nagar,
-                      <br /> Ashok Nagar, Bengaluru - 560001
-                      <br />
-                      Karnataka, India
+                    <li className="text-[15px] md:text-[16px] text-[#9EB3CF] font-bwmss01 leading-[1.55] mt-[14px]">
+                      Jbr Tech Park, Plot No. 77,
+                      <br /> 6th Rd, EPIP Zone,
+                      <br /> Whitefield, Bengaluru,
+                      <br /> Karnataka 560066
                     </li>
                   </ul>
                 </div>
-                <div className="w-full md:w-[50%]">
-                  <ul className="pl-0">
-                    <li className="text-[14px]  text-white font-bwss01 font-bold">
+                <div className="w-full">
+                  <ul className="pl-0 mb-0">
+                    <li className="text-[16px] text-white font-bwss01 font-bold leading-tight">
+                      UAE Office
+                    </li>
+                    <li className="text-[15px] md:text-[16px] text-[#9EB3CF] font-bwmss01 leading-[1.55] mt-[14px]">
+                      Fastcode AI
+                      <br /> Masdar City Free Zone
+                      <br /> Masdar City - SE45 05 - Abu Dhabi
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-full">
+                  <ul className="pl-0 mb-0">
+                    <li className="text-[16px] text-white font-bwss01 font-bold leading-tight">
+                      German Office
+                    </li>
+                    <li className="text-[15px] md:text-[16px] text-[#9EB3CF] font-bwmss01 leading-[1.55] mt-[14px]">
+                      Königstraße 26
+                      <br /> Stuttgart 70173
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-full">
+                  <ul className="pl-0 mb-0">
+                    <li className="text-[16px] text-white font-bwss01 font-bold leading-tight">
                       Email
                     </li>
-                    <li className="text-[#9EB3CF] font-bwmss01 text-2xl  pl-[4px]">
+                    <li className="text-[18px] md:text-[20px] lg:text-[22px] text-[#9EB3CF] font-bwmss01 leading-tight mt-[12px] break-all">
                       arjun@fastcode.ai
                     </li>
-                    <li className="text-[14px]  text-white font-bwss01 font-bold mt-[8px]">
+                    <li className="text-[16px] text-white font-bwss01 font-bold leading-tight mt-[18px]">
                       Phone
                     </li>
-                    <li className="text-[#9EB3CF] font-bwmss01 text-2xl  pl-[4px]">
+                    <li className="text-[18px] md:text-[20px] lg:text-[22px] text-[#9EB3CF] font-bwmss01 leading-tight mt-[12px]">
                       +91 85530 38132
                     </li>
                   </ul>

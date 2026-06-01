@@ -122,8 +122,8 @@ const LegalNotice = () => {
                     Email: admin@fastcode.ai
                 </p> <p className="text-[#9EB3CF]  text-sm md:text-lg  font-bwmss01 mt-[5px]">
 
-                    Address: FastCode AI , #48, Bhive Premium Church st,Haridevpur,
-                    Shanthala Nagar,Ashok Nagar, Bengaluru - 560001 Karnataka, India
+                    Address: FastCode AI, Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone,
+                    Whitefield, Bengaluru, Karnataka 560066
                 </p>
             </div>
         </div>

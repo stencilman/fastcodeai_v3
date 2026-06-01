@@ -161,9 +161,9 @@ export default function DataCenterPrivacyPolicyPage() {
             Fast Code AI Private Limited
           </p>
           <p className="text-[#9EB3CF] font-bwmss01 text-sm md:text-lg mb-[4px]">
-            #48, Bhive Premium Church St, Haridevpur,
+            Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone,
             <br />
-            Ashok Nagar, Bengaluru — 560001, India
+            Whitefield, Bengaluru, Karnataka 560066
           </p>
           <p className="text-[#9EB3CF] font-bwmss01 text-sm md:text-lg">
             Email:{" "}

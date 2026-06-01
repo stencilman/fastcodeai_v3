@@ -157,18 +157,17 @@ const Form = () => {
               <div>
                 <h6 className="text-white text-2xl font-aeonik">Address</h6>
                 <p className=" text-[#9EB3CF] text-lg font-bwmss01">
-                  #48, Bhive Premium Church st <br />
-                  Haridevpur, Shanthala Nagar,
-                  <br /> Ashok Nagar, Bengaluru - 560001
-                  <br />
-                  Karnataka, India
+                  Jbr Tech Park, Plot No. 77,
+                  <br /> 6th Rd, EPIP Zone,
+                  <br /> Whitefield, Bengaluru,
+                  <br /> Karnataka 560066
                 </p>
               </div>
             </div>
             <div>
               <iframe
                 className="rounded-[20px] w-[100%] h-[222px] md:w-[100%] md:h-[222]"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.2804360631453!2d77.59854315160881!3d12.975756198586895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae173e2de8a801%3A0x1a89454e3024974b!2sBHIVE%20Premium%20Church%20Street!5e0!3m2!1sen!2sin!4v1716794194158!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Jbr%20Tech%20Park%2C%20Plot%20No.%2077%2C%206th%20Rd%2C%20EPIP%20Zone%2C%20Whitefield%2C%20Bengaluru%2C%20Karnataka%20560066&output=embed"
                 width="600"
                 height="450"
                 style={{ border: 0 }}
