@@ -33,10 +33,24 @@ import publication28 from "../../../../../public/research/publications/publicati
 import publication29 from "../../../../../public/research/publications/publication29.webp";
 import publication30 from "../../../../../public/research/publications/publication30.webp";
 import publication31 from "../../../../../public/research/publications/publication31.webp";
+import odo from "../../../../../public/research/publications/odo.png";
 import RevealY from "../../../component/RevealY";
 
 const Publications = () => {
   const publicationList = [
+    {
+      img: odo,
+      technology: "COMPUTER VISION",
+      year: "2025",
+      desciption:
+        "S. Khandelwal, S. Kamath, A. Jain, “Odo: Depth-Guided Diffusion for Identity-Preserving Body Reshaping” in arXiv e-prints, August 2025.",
+      linkName: "Link",
+      linkTo: "https://arxiv.org/abs/2508.13065",
+      downloadName: "Download PDF",
+      downloadTo: "/research/publicationsPdf/odo.pdf",
+      extraName: "Website",
+      extraLink: "https://research.fastcode.ai/odo",
+    },
     {
       img: publication4,
       technology: "TECHNOLOGY",
