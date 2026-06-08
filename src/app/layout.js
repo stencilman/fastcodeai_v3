@@ -77,10 +77,10 @@ export const metadata = {
     siteName: "FastCode AI",
     images: [
       {
-        url: "/public/logo1.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FastCode AI Logo",
+        alt: "FastCode AI - Accelerating Innovation",
       },
     ],
   },
@@ -88,7 +88,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Fast Code AI",
     description: "Fast Code AI - Accelerating Innovation",
-    images: ["/public/logo1.png"],
+    images: ["/og-image.png"],
     creator: "@FastCodeAI",
   },
   icons: {
