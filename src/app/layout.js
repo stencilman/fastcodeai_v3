@@ -55,7 +55,7 @@ export const metadata = {
     template: "%s | FastCode AI",
   },
   description:
-    "Fast Code AI - Accelerating Innovation FastCode AI helps you build and scale AI solutions.",
+    "Taking frontier AI into production - computer vision, RAG Agents, and Generative AI for enterprises in automotive, industrial and beyond.",
   keywords: [
     "AI",
     "Artificial Intelligence",
@@ -73,7 +73,8 @@ export const metadata = {
     locale: "en_US",
     url: "/",
     title: "Fast Code AI ",
-    description: "Fast Code AI - Accelerating Innovation",
+    description:
+      "Taking frontier AI into production - computer vision, RAG Agents, and Generative AI for enterprises in automotive, industrial and beyond.",
     siteName: "FastCode AI",
     images: [
       {
@@ -87,7 +88,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fast Code AI",
-    description: "Fast Code AI - Accelerating Innovation",
+    description:
+      "Taking frontier AI into production - computer vision, RAG Agents, and Generative AI for enterprises in automotive, industrial and beyond.",
     images: ["/og-image.png"],
     creator: "@FastCodeAI",
   },

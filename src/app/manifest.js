@@ -2,7 +2,7 @@ export default function manifest() {
   return {
     name: 'FastCode AI',
     short_name: 'FastCode',
-    description: 'Fast Code AI - Accelerating Innovation',
+    description: 'Taking frontier AI into production - computer vision, RAG Agents, and Generative AI for enterprises in automotive, industrial and beyond.',
     start_url: '/',
     display: 'standalone',
     background_color: '#00081f',
