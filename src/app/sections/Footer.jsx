@@ -272,9 +272,9 @@ const Footer = ({ showExtraSpace }) => {
                       UAE Office
                     </li>
                     <li className="text-[15px] md:text-[16px] text-[#9EB3CF] font-bwmss01 leading-[1.55] mt-[14px]">
-                      Fastcode AI
-                      <br /> Masdar City Free Zone
-                      <br /> Masdar City - SE45 05 - Abu Dhabi
+                      First Floor, Incubator Building,
+                      <br /> Masdar City SE4505,
+                      <br /> Abu Dhabi
                     </li>
                   </ul>
                 </div>
