@@ -33,12 +33,11 @@ export default function DataCenterTermsOfServicePage() {
             Data Center division
           </strong>{" "}
           of Fast Code AI Private Limited (&ldquo;Fast Code AI,&rdquo;
-          &ldquo;we,&rdquo; &ldquo;us&rdquo;). Our GPU inference service is made
-          available exclusively as a model provider through the OpenRouter
-          platform. By accessing models served by our infrastructure through
-          OpenRouter, you agree to these Terms. They do not cover Fast Code
-          AI&apos;s other business lines such as consulting, research, or
-          software development services.
+          &ldquo;we,&rdquo; &ldquo;us&rdquo;). Our GPU inference service provides
+          access to AI models served by our infrastructure. By accessing models
+          served by our infrastructure, you agree to these Terms. They do not
+          cover Fast Code AI&apos;s other business lines such as consulting,
+          research, or software development services.
         </p>
 
         {/* The Service */}
@@ -46,40 +45,9 @@ export default function DataCenterTermsOfServicePage() {
           The Service
         </h2>
         <p className="text-sm md:text-lg text-[#9EB3CF] font-bwmss01 mb-[16px]">
-          We provide GPU compute capacity for AI model inference. Requests reach
-          our infrastructure through OpenRouter, which manages all user-facing
-          accounts, authentication, and billing. We process each inference
-          request, return the output to OpenRouter, and discard it. We do not
-          store prompts, completions, or user identifiers on our systems.
-        </p>
-
-        {/* Your Relationship with OpenRouter */}
-        <h2 className="text-white font-normal font-aeonik text-xl md:text-3xl tracking-wide mt-[20px] md:mt-[36px] mb-[8px] md:mb-[12px]">
-          Your Relationship with OpenRouter
-        </h2>
-        <p className="text-sm md:text-lg text-[#9EB3CF] font-bwmss01 mb-[16px]">
-          Because our service is delivered through OpenRouter, your use of it is
-          also subject to{" "}
-          <Link
-            href="https://openrouter.ai/terms"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#1082e5] hover:text-[#5dc9de] transition-colors"
-          >
-            OpenRouter&apos;s Terms of Service
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="https://openrouter.ai/privacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#1082e5] hover:text-[#5dc9de] transition-colors"
-          >
-            Privacy Policy
-          </Link>
-          . Where our Terms and OpenRouter&apos;s terms both apply, each governs
-          its own portion of the service. We recommend reviewing OpenRouter&apos;s
-          terms for details on accounts, billing, and platform usage.
+          We provide GPU compute capacity for AI model inference. We process each
+          inference request, return the output, and discard it. We do not store
+          prompts, completions, or user identifiers on our systems.
         </p>
 
         {/* Acceptable Use */}
@@ -96,7 +64,7 @@ export default function DataCenterTermsOfServicePage() {
             "Generate or distribute malware, spam, or content intended to harm, defraud, or deceive",
             "Produce content that exploits or endangers minors, or that promotes violence, harassment, or illegal activity",
             "Attempt to disrupt, overload, reverse engineer, or gain unauthorized access to the infrastructure or models",
-            "Circumvent rate limits, usage controls, or the safety and security measures of Fast Code AI or OpenRouter",
+            "Circumvent rate limits, usage controls, or the safety and security measures of Fast Code AI",
           ].map((item, i) => (
             <li
               key={i}
@@ -109,8 +77,7 @@ export default function DataCenterTermsOfServicePage() {
         </ul>
         <p className="text-sm md:text-lg text-[#9EB3CF] font-bwmss01 mb-[16px]">
           We may suspend or restrict access to capacity that we reasonably
-          believe violates these Terms or the acceptable use policies of
-          OpenRouter.
+          believe violates these Terms or applicable law.
         </p>
 
         {/* Models & Outputs */}
@@ -138,27 +105,6 @@ export default function DataCenterTermsOfServicePage() {
           temporarily unavailable due to maintenance, capacity constraints,
           upstream dependencies, or events beyond our reasonable control. We may
           add, modify, or discontinue models and capacity at any time.
-        </p>
-
-        {/* Upstream Infrastructure */}
-        <h2 className="text-white font-normal font-aeonik text-xl md:text-3xl tracking-wide mt-[20px] md:mt-[36px] mb-[8px] md:mb-[12px]">
-          Upstream Infrastructure
-        </h2>
-        <p className="text-sm md:text-lg text-[#9EB3CF] font-bwmss01 mb-[16px]">
-          Portions of our inference capacity may be served using third-party GPU
-          and serverless infrastructure, including{" "}
-          <Link
-            href="https://deepinfra.com/terms"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#1082e5] hover:text-[#5dc9de] transition-colors"
-          >
-            DeepInfra
-          </Link>
-          . Where such providers are used, their respective terms and acceptable
-          use policies also apply to the corresponding portion of the service.
-          These providers process requests on a transient basis to perform
-          inference and do not receive personal data from us.
         </p>
 
         {/* Intellectual Property */}
