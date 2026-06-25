@@ -1,15 +1,8 @@
-import nodemailer from 'nodemailer';
+import { createMailTransporter, getMailCredentials } from "./mailConfig";
 
 export async function sendMail({ to, body }) {
-    const { SMTP_PASSWORD, SMTP_EMAIL } = process.env
-
-    const transport = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: SMTP_EMAIL,
-            pass: SMTP_PASSWORD
-        }
-    });
+    const { email } = getMailCredentials();
+    const transport = createMailTransporter();
 
     try {
         const testResult = await transport.verify()
@@ -21,7 +14,7 @@ export async function sendMail({ to, body }) {
 
     try {
         const sendResult = await transport.sendMail({
-            from: SMTP_EMAIL,
+            from: email,
             to,
             subject: "Contact message(Fast Code AI Website)",
             html: body,

@@ -1,16 +1,11 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import {
+  createMailTransporter,
+  getMailCredentials,
+  MAIL_CONFIG_ERROR,
+} from "../../../lib/mailConfig";
 
 export const runtime = "nodejs";
-
-const buildTransporter = () =>
-  nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.SMTP_EMAIL,
-      pass: process.env.SMTP_PASSWORD,
-    },
-  });
 
 const getAttachment = async (file) => {
   if (!file || typeof file !== "object" || !("arrayBuffer" in file)) {
@@ -33,6 +28,7 @@ const getAttachment = async (file) => {
 
 export async function POST(req) {
   try {
+    const { email: senderEmail } = getMailCredentials();
     const formData = await req.formData();
     const name = formData.get("name")?.toString().trim();
     const email = formData.get("email")?.toString().trim();
@@ -47,9 +43,9 @@ export async function POST(req) {
 
     const attachment = await getAttachment(file);
 
-    const transporter = buildTransporter();
+    const transporter = createMailTransporter();
     const mailOptions = {
-      from: process.env.SMTP_EMAIL,
+      from: senderEmail,
       to: process.env.CAREERS_EMAIL || "arjun@fastcode.ai",
       replyTo: email,
       subject: `New candidate submission from ${name}`,
@@ -64,6 +60,11 @@ export async function POST(req) {
       { status: 200 }
     );
   } catch (error) {
+    if (error.message === MAIL_CONFIG_ERROR) {
+      console.error("Candidate mailer missing SMTP credentials");
+      return NextResponse.json({ error: MAIL_CONFIG_ERROR }, { status: 503 });
+    }
+
     console.error("Error sending candidate mail:", error);
     return NextResponse.json(
       { error: "Error sending email." },

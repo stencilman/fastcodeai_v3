@@ -104,7 +104,7 @@ const FormModal = ({ isOpen, onClose }) => {
       if (response.ok) {
         setIsSubmitted(true);
         setMessage(
-          `Thank you! We'll get back to you at ${formData.email} within 48 hours.`
+          `Thank you! We'll get back to you at ${formData.email} .`
         );
         // Reset form
         nameRef.current.value = "";
