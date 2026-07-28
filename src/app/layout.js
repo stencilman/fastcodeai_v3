@@ -1,6 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "./component/Navbar";
+import Script from "next/script";
 import SmoothScroll from "../components/SmoothScroll";
 import { GlobalProvider } from "./context/GlobalContext";
 
@@ -103,6 +104,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark">
+     <Script id="reb2b-pixel" strategy="afterInteractive">
+          {`!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("Q6J2RHJMYG6D");`}
+        </Script>
       <body className={`${aeonik.variable} ${bwmss01.variable}`}>
         <GlobalProvider>
           <SmoothScroll>
