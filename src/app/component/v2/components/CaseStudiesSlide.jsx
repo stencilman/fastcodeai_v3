@@ -270,6 +270,7 @@ const CaseStudiesSlide = () => {
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             className="case-studies-swiper"
           >
