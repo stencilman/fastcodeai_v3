@@ -111,6 +111,18 @@ const CaseStudiesSlide = () => {
       link: "https://www.driplabs.ai/app",
       ctaText: "Experience DripLabs",
     },
+    {
+      id: 8,
+      title: "Procurement & Supply Chain",
+      description:
+        "Radar turns fragmented sourcing requirements into a validated supplier portfolio, and gets sharper with every decision you make.",
+      details:
+        "Radar parses PRDs, specs and briefs into structured requirements, then discovers, validates and ranks suppliers across capability, risk and fit. Every shortlist, weight change and approval is captured as an auditable trail, so the next sourcing case starts with institutional memory instead of a blank page.",
+      image: "/our-work/radar.png",
+      imageFit: "contain",
+      link: "https://radar.fastcode.ai/",
+      ctaText: "Explore Radar",
+    },
   ];
 
   useEffect(() => {
@@ -275,7 +287,11 @@ const CaseStudiesSlide = () => {
                               src={study.image}
                               alt={study.title}
                               fill
-                              className="object-cover"
+                              className={
+                                study.imageFit === "contain"
+                                  ? "object-contain"
+                                  : "object-cover"
+                              }
                               sizes="(max-width: 768px) calc(100vw - 96px), (max-width: 1200px) 50vw, 33vw"
                             />
                           </div>
