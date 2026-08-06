@@ -115,9 +115,9 @@ const CaseStudiesSlide = () => {
       id: 8,
       title: "Procurement & Supply Chain",
       description:
-        "Radar turns fragmented sourcing requirements into a validated supplier portfolio, and gets sharper with every decision you make.",
+        "Radar transforms fragmented sourcing requirements into a validated supplier portfolio, and gets smarter with every sourcing decision.",
       details:
-        "Radar parses PRDs, specs and briefs into structured requirements, then discovers, validates and ranks suppliers across capability, risk and fit. Every shortlist, weight change and approval is captured as an auditable trail, so the next sourcing case starts with institutional memory instead of a blank page.",
+        "Radar transforms RFQs, technical requirements, specifications and engineering documents into structured sourcing criteria. It discovers, validates and ranks suppliers based on capabilities, risk and strategic fit. Every evaluation, decision and approval is captured as an auditable knowledge base, so every new sourcing project starts with institutional memory instead of a blank page.",
       image: "/our-work/radar.png",
       imageFit: "contain",
       link: "https://radar.fastcode.ai/",

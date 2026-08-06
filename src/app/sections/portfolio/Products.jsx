@@ -185,7 +185,7 @@ const list = [
     imageFit: "contain",
     title: "Radar: Procurement Intelligence Platform",
     description:
-      "Radar turns fragmented sourcing requirements into a validated supplier portfolio, capturing every shortlist, weight change and decision so the next sourcing case starts sharper.",
+      "Radar transforms fragmented sourcing requirements into a validated supplier portfolio, and gets smarter with every sourcing decision.",
     to: "https://radar.fastcode.ai/",
     readTime: "4 Min Read",
   },
