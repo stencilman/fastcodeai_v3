@@ -57,6 +57,18 @@ const CaseStudiesSlide = () => {
       ctaText: "View case study",
     },
     {
+      id: 8,
+      title: "Procurement & Supply Chain",
+      description:
+        "Radar transforms fragmented sourcing requirements into a validated supplier portfolio, and gets smarter with every sourcing decision.",
+      details:
+        "Radar transforms RFQs, technical requirements, specifications and engineering documents into structured sourcing criteria. It discovers, validates and ranks suppliers based on capabilities, risk and strategic fit. Every evaluation, decision and approval is captured as an auditable knowledge base, so every new sourcing project starts with institutional memory instead of a blank page.",
+      image: "/our-work/radar.png",
+      // imageFit: "contain",
+      link: "https://radar.fastcode.ai/",
+      ctaText: "Explore Radar",
+    },
+    {
       id: 3,
       title: "AI Legal Helper",
       description:
@@ -110,18 +122,6 @@ const CaseStudiesSlide = () => {
       image: "/v2/case-studies/case-8.jpg",
       link: "https://www.driplabs.ai/app",
       ctaText: "Experience DripLabs",
-    },
-    {
-      id: 8,
-      title: "Procurement & Supply Chain",
-      description:
-        "Radar turns fragmented sourcing requirements into a validated supplier portfolio, and gets sharper with every decision you make.",
-      details:
-        "Radar parses PRDs, specs and briefs into structured requirements, then discovers, validates and ranks suppliers across capability, risk and fit. Every shortlist, weight change and approval is captured as an auditable trail, so the next sourcing case starts with institutional memory instead of a blank page.",
-      image: "/our-work/radar.png",
-      imageFit: "contain",
-      link: "https://radar.fastcode.ai/",
-      ctaText: "Explore Radar",
     },
   ];
 
@@ -270,6 +270,7 @@ const CaseStudiesSlide = () => {
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             className="case-studies-swiper"
           >
