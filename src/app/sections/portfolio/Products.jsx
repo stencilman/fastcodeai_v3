@@ -13,6 +13,7 @@ import dermos from "../../../../public/our-work/dermos.jpeg";
 import bnk from "../../../../public/our-work/bnk.png";
 import rag from "../../../../public/our-work/rag_weave.jpg";
 import automto from "../../../../public/our-work/automto.png";
+import radar from "../../../../public/our-work/radar.png";
 import fedLearning from "../../../../public/portfolio/fedLearning/img1-2.png";
 import fitness from "../../../../public/portfolio/fitness/img1-2.png";
 import shadow from "../../../../public/shadow/flat.svg";
@@ -178,6 +179,16 @@ const list = [
     to: "https://www.driplabs.ai/app",
     readTime: "4 Min Read",
   },
+  {
+    category: "Procurement & Supply Chain",
+    img: "bg-radar",
+    imageFit: "contain",
+    title: "Radar: Procurement Intelligence Platform",
+    description:
+      "Radar turns fragmented sourcing requirements into a validated supplier portfolio, capturing every shortlist, weight change and decision so the next sourcing case starts sharper.",
+    to: "https://radar.fastcode.ai/",
+    readTime: "4 Min Read",
+  },
 ];
 
 const imageByKey = {
@@ -198,6 +209,7 @@ const imageByKey = {
   "bg-seikor": case5,
   "bg-spiral": case7,
   "bg-driplabs": case8,
+  "bg-radar": radar,
 };
 
 const tagsByTo = {
@@ -218,6 +230,7 @@ const tagsByTo = {
   "https://seikor.com/": ["Recruitment", "AI Platform"],
   "https://spiral.health/": ["Healthcare", "Computer Vision"],
   "https://www.driplabs.ai/app": ["Retail", "Generative AI"],
+  "https://radar.fastcode.ai/": ["Procurement & Supply Chain", "Agentic AI"],
 };
 
 const Products = () => {
@@ -323,7 +336,11 @@ const Products = () => {
                       fill
                       sizes="(max-width: 1024px) 100vw, 33vw"
                       placeholder="blur"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`group-hover:scale-105 transition-transform duration-500 ${
+                        product.imageFit === "contain"
+                          ? "object-contain"
+                          : "object-cover"
+                      }`}
                     />
                   </div>
 
