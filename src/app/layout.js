@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Navbar from "./component/Navbar";
 import Script from "next/script";
 import SmoothScroll from "../components/SmoothScroll";
+import LinkedInInsightTag from "./component/LinkedInInsightTag";
 import { GlobalProvider } from "./context/GlobalContext";
 
 const aeonik = localFont({
@@ -114,6 +115,7 @@ export default function RootLayout({ children }) {
             {children}
           </SmoothScroll>
         </GlobalProvider>
+        <LinkedInInsightTag />
       </body>
     </html>
   );
